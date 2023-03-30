@@ -3,7 +3,7 @@
   "use strict";
 
   // preloader
-  var initPreloader = async function () {
+  var initPreloader = function () {
     $(document).ready(function ($) {
       $('body').addClass('loading');
     });
@@ -29,12 +29,12 @@
       menuItems = document.querySelectorAll('.nav__list-item');
       applyListeners();
     };
-    var applyListeners =await function applyListeners() {
+    var applyListeners = function applyListeners() {
       menu.addEventListener('click', function () {
         return toggleClass(body, 'nav-active');
       });
     };
-    var toggleClass =await function toggleClass(element, stringClass) {
+    var toggleClass = function toggleClass(element, stringClass) {
       if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
     };
     init();
@@ -82,42 +82,46 @@
       }, delta);
     };
 
-    window.onload = function () {
+    window.onload =async function () {
       var elements = document.getElementsByClassName('typewrite');
       for (var i = 0; i < elements.length; i++) {
         var toRotate = elements[i].getAttribute('data-type');
         var period = elements[i].getAttribute('data-period');
         if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
+         new TxtType(elements[i], await JSON.parse(toRotate), period);
         }
       }
     };
   }
 
-  var portfolio_height = async function ()  {
-    var heightPortfolio =  document.querySelector(".portfolio-container");
-    var section =  document.querySelector(".portfolio-section");
-    var bg =  document.querySelector(".bg-image");
+  var portfolio_height = async function () {
+    var heightPortfolio = document.querySelector(".portfolio-container");
+    var section = document.querySelector(".portfolio-section");
+    var bg = document.querySelector(".bg-image");
     var main = document.querySelector(".main");
     var footer = document.querySelector("footer");
 
-    bg.style.height = heightPortfolio.clientHeight + 'px';
-    section.style.height = heightPortfolio.clientHeight + 'px';
-    footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
+    var assignV = async function () {
+      bg.style.height = heightPortfolio.clientHeight + 'px';
+      section.style.height = heightPortfolio.clientHeight + 'px';
+      footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
+    }
+
+    await assignV();
   }
 
-  $(window).resize(function() {
-    portfolio_height();
+  $(window).resize(async function () {
+    await portfolio_height();
   });
 
-  $(document).ready(function () {
+  $(document).ready( function () {
 
     initPreloader();
-    portfolio_height();
-    overlayMenu();
-    typewriter();
+     portfolio_height();
+     overlayMenu();
+     typewriter();
 
-    Chocolat(document.querySelectorAll('.image-link'), {
+     Chocolat(document.querySelectorAll('.image-link'), {
       imageSize: 'contain',
       loop: true,
     });
