@@ -100,7 +100,7 @@
     var bg =  document.querySelector(".bg-image");
     var main = document.querySelector(".main");
     var footer = document.querySelector("footer");
-console.log((heightPortfolio.clientHeight + main.clientHeight))
+
     bg.style.height = heightPortfolio.clientHeight + 'px';
     section.style.height = heightPortfolio.clientHeight + 'px';
     footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
