@@ -1078,7 +1078,9 @@ body.nav-active .nav__list-item:nth-child(10) {
   background-position: center;
   background-size: cover;
   filter: grayscale(70%) brightness(30%) contrast(70%);
-  box-shadow: 0 0 40px
+  box-shadow: 0 0 40px;
+  -webkit-transform: translate(0%, -5%);
+  transform: translate(0%, -5%);
 }
 
 
