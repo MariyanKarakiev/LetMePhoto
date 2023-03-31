@@ -980,7 +980,7 @@ h1.section-title:after {
 .footer .bg-image{
   z-index: -2;
   position: absolute;
-  height: 145vh;
+  height: 135vh;
   left: 0%;
   width: 100%;
   border-radius: 0px !important;
