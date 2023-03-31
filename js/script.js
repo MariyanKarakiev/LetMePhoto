@@ -104,7 +104,6 @@
     var assignV = function () {
       bg.style.height = heightPortfolio.clientHeight + 'px';
       section.style.height = heightPortfolio.clientHeight + 'px';
-    //   footer.style.height = (window.innerHeight - (heightPortfolio.clientHeight + main.clientHeight)) + 'px'
       footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
       console.log(window.innerHeight)
     }

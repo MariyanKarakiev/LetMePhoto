@@ -75,6 +75,7 @@ svg:not(:root) {
   overflow: hidden;
   display: block;
 }
+
 button,
 input,
 optgroup,
@@ -459,6 +460,7 @@ input[type="checkbox"] {
   margin: 5px 10px 0 0;
   line-height: normal;
 }
+
 .btn,
 input[type="button"],
 input[type="submit"],
@@ -507,11 +509,11 @@ a.btn span {
   border-radius: 2em;
 }
 
-.btn.btn-outline{
+.btn.btn-outline {
   text-shadow: none;
   box-shadow: none;
   border-color: rgba(255, 255, 255, 0.5);
-  background-color:transparent;
+  background-color: transparent;
 }
 
 .btn.btn-outline:hover {
@@ -533,6 +535,7 @@ i.icon {
   vertical-align: text-top;
   margin-left: 5px;
 }
+
 .social-links {
   position: fixed;
   bottom: 0;
@@ -621,7 +624,9 @@ h1.section-title:after {
 .mt-5 {
   margin-top: 5px;
 }
+
 ------------------------------------------------------
+
 /** General Tabs
 --------------------------------------------------------------*/
 .nav {
@@ -924,17 +929,17 @@ h1.section-title:after {
 }
 
 /*---Portfolio-----*/
-.portfolio-section{
+.portfolio-section {
   margin-bottom: 19vh;
 }
 
-.portfolio-container{
+.portfolio-container {
   position: absolute;
   z-index: 0;
   width: 100%;
   top: 90vh;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 2%);
 }
 
 .portfolio-section .bg-image {
@@ -973,14 +978,14 @@ h1.section-title:after {
 /*---Footer-----*/
 
 
-.footer{
+.footer {
   z-index: 0;
 }
 
-.footer .bg-image{
+.footer .bg-image {
   z-index: -2;
   position: absolute;
-  height: 135vh;
+  height: 195vh;
   left: 0%;
   width: 100%;
   border-radius: 0px !important;
@@ -989,6 +994,27 @@ h1.section-title:after {
   background-size: cover;
   filter: grayscale(100%) brightness(110%) contrast(100%);
   transform: translate(0%, 11%);
+}
+
+.footer .about {
+  position: relative;
+  height: 70vh;
+  border-radius: 1rem;
+  border-top: 5px solid rgb(92, 92, 92);
+  border-bottom: 5px solid rgb(92, 92, 92);
+  background-color: rgb(24 23 23 / 80%);
+}
+
+.footer h5 {
+  padding-top: 2rem;
+  color: #bdbdbd;
+  text-align: left;
+}
+
+.footer .info-contacts {
+  position: absolute;
+  bottom: 0;
+  margin-top: 30vh;
 }
 
 /* Grids --------------------------------------------*/
