@@ -12,8 +12,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="stylesheet" type="text/css" href="vendor.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- <script src="https://kit.fontawesome.com/8c69571116.js" crossorigin="anonymous"></script> -->
 
@@ -65,87 +65,86 @@
 
     <div class="main" id="billboard">
 
-        <div class="container">
+        <div class="container col-11 billboard-content mt-5">
             <div class="row justify-content-center">
-                <div class="col-11 billboard-content mt-5">
-                    <div class="light text-center">
-                        <h1 class="section-title mt-5 mb-4">Здравейте, аз съм</h1>
+                <div class="light text-center">
 
-                        <span class="designation typewrite" data-period="500"
-                            data-type='[ "Фотограф", "Видеограф", "Режисьор", "Програмист"]'></span>
-                        <p class="pt-3"></p>
-                        <div class="col-md-8 mx-auto">
-                            <div class="row row-cols-md-2 justify-content-center mt-5">
-                                <a href="#portfolio" class="btn btn-pill col btn-large btn-outline-light mt-1">
-                                    <span>Портфолио</span>
-                                    <i class="fa-solid fa-arrow-down"></i>
-                                </a>
-                                <a href="#contacts" class="btn btn-pill col btn-large btn-outline-light mt-1">
-                                    <span>Контакти</span>
-                                    <i class="fa-solid fa-arrow-down"></i></a>
-                            </div>
+                    <h1 class="section-title mt-5 mb-4">Здравейте, аз съм</h1>
+                    <span class="designation typewrite" data-period="500"
+                        data-type='[ "Фотограф", "Видеограф", "Режисьор", "Програмист"]'></span>
+                    <p class="pt-3"></p>
+
+                    <div class="col-lg-5 mx-auto">
+                        <div class="row justify-content-center mt-5">
+                            <a href="#portfolio" class="btn btn-pill btn-large btn-outline">
+                                <span>Портфолио</span>
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </a>
+                            <a href="#contacts" class="btn btn-pill btn-large btn-outline mt-3">
+                                <span>Контакти</span>
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
     <section class="portfolio-section col-12 fancyboxeffect light padding-medium" id="portfolio">
-        <div class="bg-image">
-
-        </div>
+        <div class="bg-image"></div>
         <div class="portfolio-container">
             <div>
-                <a class="image-link" id="bals_weddings" href="images/img1.jpg">
+                <a class="image-link" id="bals_weddings" href="">
                     <img src="images/img1.jpg" alt="model" class="galleryImg">
                     <p class="image-title text-center">Балове и сватби</p>
                 </a>
             </div>
             <div>
-                <a class="image-link" id="bals_weddings" href="images/img2.jpg">
+                <a class="image-link" id="bals_weddings" href="">
                     <img src="images/img2.jpg" alt="model" class="galleryImg">
                     <p class="image-title text-center">Балове и сватби</p>
                 </a>
             </div>
             <div>
-                <a class="image-link" id="bals_weddings" href="images/img3.jpg">
+                <a class="image-link" id="bals_weddings" href="">
                     <img src="images/img3.jpg" alt="model" class="galleryImg">
                     <p class="image-title text-center">Балове и сватби</p>
                 </a>
             </div>
             <div>
-                <a class="image-link" id="bals_weddings" href="images/img3.jpg">
+                <a class="image-link" id="bals_weddings" href="">
                     <img src="images/img3.jpg" alt="model" class="galleryImg">
                     <p class="image-title text-center">Балове и сватби</p>
                 </a>
             </div>
 
         </div>
-        <!-- <div class="pix_btn btn-click text-center">
-            <a href="#" class="btn btn-pill btn-large btn-outline-light mr-3"><span>Виж всички</span>
-                <i src="images/chocolat/angle-right-solid.svg"></i></a>
-        </div> -->
     </section>
-
     <footer class="footer">
-        <div class="bg-image">
-
-        </div>
-        <div class="col-11 container" id="contacts">
-            <div class="row row-cols-1 pb-5 ">
-                <div class="col">
+        <div class="bg-image"></div>
+        <div class="container" id="contacts">
+            <div class="row justify-content-center pt-5 pb-5">
+                <div class="col-md-6 text-center">
                     <h1>jojoj</h1>
                     <div class="social-links">
                         <ul class="list-unstyled d-flex">
-                            <li class="" style="margin-right:40%"><a href="#"><i class="fa-brands fa-facebook-f"
-                                        style="color: #ffffff;"></i></a></li>
-                            <li class="mr-3"><a href="#"><i class="fa-brands fa-instagram"
-                                        style="color: #ffffff;"></i></a></li>
+                            <li class="" style="margin-right:40%">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                </a>
+                            </li>
+                            <li class="mr-3">
+                                <a href="#">
+                                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-6 text-center">
                     <h3>Quick Contact</h2>
                         <form action="" class="contact-form d-flex flex-wrap mt-4">
                             <input type="text" name="name" placeholder="Name" class="name mb-3" required>
@@ -155,8 +154,10 @@
 
                             <div class="pix_btn btn-click text-center mt-5">
                                 <button type="submit" href="#" class="btn btn-pill btn-large btn-outline-light mr-3"
-                                    data-hover="click"><span>Send Message</span>
-                                    <i class="icon icon-paper-plane"></i></button>
+                                    data-hover="click">
+                                    <span>Send Message</span>
+                                    <i class="icon icon-paper-plane"></i>
+                                </button>
                             </div>
                         </form>
                 </div>

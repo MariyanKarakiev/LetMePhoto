@@ -115,7 +115,7 @@
   });
 
   $(document).ready(function () {
-
+    
     initPreloader();
     portfolio_height();
     overlayMenu();
