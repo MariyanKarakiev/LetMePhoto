@@ -94,20 +94,22 @@
     };
   }
 
-  var portfolio_height = async function () {
+  var portfolio_height = function() {
     var heightPortfolio = document.querySelector(".portfolio-container");
     var section = document.querySelector(".portfolio-section");
     var bg = document.querySelector(".portfolio-section .bg-image");
     var main = document.querySelector(".main");
     var footer = document.querySelector(".footer .bg-image");
 
-    var assignV = async function () {
+    var assignV = function () {
       bg.style.height = heightPortfolio.clientHeight + 'px';
       section.style.height = heightPortfolio.clientHeight + 'px';
+    //   footer.style.height = (window.innerHeight - (heightPortfolio.clientHeight + main.clientHeight)) + 'px'
       footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
+      console.log(window.innerHeight)
     }
 
-    await assignV();
+    assignV();
   }
 
   $(window).resize(async function () {

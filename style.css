@@ -974,14 +974,13 @@ h1.section-title:after {
 
 
 .footer{
+  z-index: 0;
 }
 
 .footer .bg-image{
-  --bg-height: 0vh;
   z-index: -2;
   position: absolute;
-  height: 100vh;
-  top: 165%;
+  height: 145vh;
   left: 0%;
   width: 100%;
   border-radius: 0px !important;
