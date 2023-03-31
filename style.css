@@ -1070,7 +1070,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 .portfolio-section .bg-image {
   z-index: -2;
   position: absolute;
-  top: 100vh;
+  top: 95vh;
   left: 0%;
   width: 100%;
   border-radius: 0px !important;
