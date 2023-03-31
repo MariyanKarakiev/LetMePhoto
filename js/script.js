@@ -97,9 +97,9 @@
   var portfolio_height = async function () {
     var heightPortfolio = document.querySelector(".portfolio-container");
     var section = document.querySelector(".portfolio-section");
-    var bg = document.querySelector(".bg-image");
+    var bg = document.querySelector(".portfolio-section .bg-image");
     var main = document.querySelector(".main");
-    var footer = document.querySelector("footer");
+    var footer = document.querySelector(".footer .bg-image");
 
     var assignV = async function () {
       bg.style.height = heightPortfolio.clientHeight + 'px';
