@@ -1070,7 +1070,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 .portfolio-section .bg-image {
   z-index: -2;
   position: absolute;
-  top: 95vh;
+  top: 100vh;
   left: 0%;
   width: 100%;
   border-radius: 0px !important;
@@ -1079,8 +1079,8 @@ body.nav-active .nav__list-item:nth-child(10) {
   background-size: cover;
   filter: grayscale(70%) brightness(30%) contrast(70%);
   box-shadow: 0 0 40px;
-  -webkit-transform: translate(0%, -5%);
-  transform: translate(0%, -5%);
+  -webkit-transform: translate(0%, -2%);
+  transform: translate(0%, -2%);
 }
 
 

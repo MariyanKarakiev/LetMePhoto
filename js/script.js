@@ -103,7 +103,7 @@
     var footer = document.querySelector(".footer .bg-image");
 
     var assignV = function () {
-      bg.style.height = heightPortfolio.clientHeight + 'px';
+      bg.style.height = (heightPortfolio.clientHeight + 100) + 'px';
       section.style.height = heightPortfolio.clientHeight + 'px';
       footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
       console.log(window.innerHeight)
