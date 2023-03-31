@@ -31,6 +31,7 @@
     };
     var applyListeners = function applyListeners() {
       menu.addEventListener('click', function () {
+          console.log("clicked");
         return toggleClass(body, 'nav-active');
       });
     };
