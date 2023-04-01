@@ -99,15 +99,17 @@
   var portfolio_height = function() {
     var heightPortfolio = document.querySelector(".portfolio-container");
     var section = document.querySelector(".portfolio-section");
+    var sectionImg = document.querySelectorAll(".image-card-h");
     var bg = document.querySelector(".portfolio-section .bg-image");
-    var main = document.querySelector(".main");
-    var footer = document.querySelector(".footer .bg-image");
+
+    var footerBg = document.querySelector(".footer .bg-image");
+    var footer = document.querySelector(".footer");
 
     var assignV = function () {
       bg.style.height = (heightPortfolio.clientHeight + 100) + 'px';
       section.style.height = heightPortfolio.clientHeight + 'px';
-    //   footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
-      console.log(window.innerHeight)
+      footerBg.style.height = (footer.clientHeight + bg.clientHeight) + 'px';
+      console.log()
     }
 
     assignV();
