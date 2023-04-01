@@ -106,9 +106,9 @@
     var footer = document.querySelector(".footer");
 
     var assignV = function () {
-      bg.style.height = (heightPortfolio.clientHeight + 100) + 'px';
+      bg.style.height = (heightPortfolio.clientHeight) + 'px';
       section.style.height = heightPortfolio.clientHeight + 'px';
-      footerBg.style.height = (footer.clientHeight + bg.clientHeight) + 'px';
+    //   footerBg.style.height = (footer.clientHeight + bg.clientHeight) + 'px';
       console.log()
     }
 

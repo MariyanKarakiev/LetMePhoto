@@ -1058,8 +1058,8 @@ body.nav-active .nav__list-item:nth-child(10) {
   z-index: 0;
   width: 100%;
   left: 50%;
-  -webkit-transform: translate(-50%, 2%);
-  transform: translate(-50%, -2%);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 
 .portfolio-section .bg-image {
