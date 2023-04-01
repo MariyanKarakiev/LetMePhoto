@@ -1029,7 +1029,6 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 /*---Main-----*/
 .main {
-  height: 70vh;
 }
 
 .main::before {
@@ -1056,6 +1055,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 .portfolio-container {
   position: absolute;
   z-index: 0;
+  top: 90vh;
   width: 100%;
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
