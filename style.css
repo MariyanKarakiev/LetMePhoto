@@ -1142,7 +1142,6 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 .portfolio-container div {
   border-radius: 1rem;
-  overflow: hidden;
 }
 
 .portfolio-container {
@@ -1150,9 +1149,7 @@ body.nav-active .nav__list-item:nth-child(10) {
   grid-gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 41vh);
-  margin: 0 auto;
   max-width: 90%;
-  padding: 0 0;
 }
 
 /* Grid images --------------------------------------------*/
