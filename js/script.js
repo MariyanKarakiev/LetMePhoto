@@ -7,6 +7,7 @@
     $(document).ready(function ($) {
       $('body').addClass('loading');
     });
+    
     $(window).load(function () {
       $('.preloader').fadeOut();
       $('body').removeClass('loading');
@@ -83,7 +84,7 @@
       }, delta);
     };
 
-    window.onload =async function () {
+    window.ready =async function () {
       var elements = document.getElementsByClassName('typewrite');
       for (var i = 0; i < elements.length; i++) {
         var toRotate = elements[i].getAttribute('data-type');
@@ -105,7 +106,7 @@
     var assignV = function () {
       bg.style.height = (heightPortfolio.clientHeight + 100) + 'px';
       section.style.height = heightPortfolio.clientHeight + 'px';
-      footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
+    //   footer.style.top = (heightPortfolio.clientHeight + main.clientHeight) + 'px';
       console.log(window.innerHeight)
     }
 
