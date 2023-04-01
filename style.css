@@ -1029,6 +1029,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 /*---Main-----*/
 .main {
+  height: 90vh;
 }
 
 .main .bg-image {
@@ -1065,6 +1066,7 @@ body.nav-active .nav__list-item:nth-child(10) {
   z-index: -2;
   position: absolute;
   top: 100vh;
+  height: 989px;
   left: 0%;
   width: 100%;
   border-radius: 0px !important;
