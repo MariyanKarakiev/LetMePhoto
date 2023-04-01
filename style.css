@@ -1068,7 +1068,7 @@ body.nav-active .nav__list-item:nth-child(10) {
   height: 989px;
   width: 100%;
   z-index: -2;
-  top: 100vh;
+  top: 90vh;
   left: 0%;
   border-radius: 0px !important;
   background-image: url(images/img_portfolio.jpg);
