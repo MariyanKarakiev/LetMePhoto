@@ -576,7 +576,6 @@ i.icon {
 
 .section-title {
   position: relative;
-  width: 30%;
   margin: 0 auto;
 }
 
@@ -1028,6 +1027,10 @@ body.nav-active .nav__list-item:nth-child(10) {
 }
 
 /*---Main-----*/
+
+header{
+  background-color: transparent;
+}
 .main {
   height: 90vh;
 }
@@ -1065,7 +1068,6 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 .portfolio-section .bg-image {
   position: absolute;
-  height: 989px;
   width: 100%;
   z-index: -2;
   top: 85vh;
@@ -1106,18 +1108,18 @@ body.nav-active .nav__list-item:nth-child(10) {
 }
 
 .footer .bg-image {
-  z-index: -2;
   position: absolute;
-  height: 135vh;
-  left: 0%;
+  z-index: -2;
   width: 100%;
+  left: 0%;
+  top:185vh;
   border-radius: 0px !important;
   background-image: url(images/img_contact.jpg);
   background-position: center;
   background-size: cover;
   filter: grayscale(100%) brightness(110%) contrast(100%);
-  -webkit-transform: translate(0%, -20%);
-  transform: translate(0%, -20%);
+  -webkit-transform: translate(0%, -30vh);
+  transform: translate(0%, -30vh);
 }
 
 .footer .about {
