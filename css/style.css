@@ -801,7 +801,7 @@ h1.section-title:after {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 1);
+  background: #6c757df5;
   border-bottom-left-radius: 200%;
   z-index: -1;
   -webkit-transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, border-radius linear 0.8s;
@@ -813,7 +813,7 @@ h1.section-title:after {
 }
 
 .nav-overlay:after {
-  background: rgba(9, 9, 12, 1);
+  background: #6c757df5;
   background: var(--dark-color);
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
