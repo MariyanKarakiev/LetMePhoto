@@ -121,8 +121,8 @@
             footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
         }
         else{
-            portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight*0.15 + 'px';
-            footer.style.top = (main.clientHeight + portfolioSection.clientHeight*.92) + 'px';
+            portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight*0.25 + 'px';
+            footer.style.top = (main.clientHeight + portfolioSection.clientHeight*.88) + 'px';
         }
     }
 
