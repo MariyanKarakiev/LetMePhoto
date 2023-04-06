@@ -2,6 +2,9 @@
 
     "use strict";
 
+    let path = window.location.pathname;
+    let page = path.split("/").pop();
+
     // preloader
     var initPreloader = function () {
         $(document).ready(function ($) {
@@ -36,7 +39,7 @@
                 return toggleClass(body, 'nav-active');
             });
 
-            menuItems.forEach(i=>i.addEventListener('click', function () {
+            menuItems.forEach(i => i.addEventListener('click', function () {
                 return toggleClass(body, "nav-active")
             }));
         };
@@ -110,11 +113,7 @@
         var main = document.querySelector(".main");
 
         var footerBg = document.querySelector(".footer .bg-image");
-        var footer = document.querySelector(".footer");
-
-        var path = window.location.pathname;
-        var page = path.split("/").pop();
-
+        var footer = document.querySelector(".footer");   
 
         var assignV = function () {
             if (page === "index.html") {
@@ -143,6 +142,12 @@
         portfolio_height();
         overlayMenu();
         typewriter();
+
+        if (page !== "index.html") 
+        Chocolat(document.querySelectorAll('.galleryImg'), {
+            imageSize: 'contain',
+            loop: true,
+        });
     });
 
 })(jQuery);
