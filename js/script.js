@@ -31,10 +31,14 @@
             applyListeners();
         };
         var applyListeners = function applyListeners() {
+
             menu.addEventListener('click', function () {
-                console.log("clicked");
                 return toggleClass(body, 'nav-active');
             });
+
+            menuItems.forEach(i=>i.addEventListener('click', function () {
+                return toggleClass(body, "nav-active")
+            }));
         };
         var toggleClass = function toggleClass(element, stringClass) {
             if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
@@ -113,18 +117,18 @@
 
 
         var assignV = function () {
-            if  (page === "index.html"){
-            portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
-            portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
-            portfolioContainer.style.top = mainBg.clientHeight + 'px';
-            footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
-            footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
+            if (page === "index.html") {
+                portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
+                portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
+                portfolioContainer.style.top = mainBg.clientHeight + 'px';
+                footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
+                footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
+            }
+            else {
+                portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight * 0.25 + 'px';
+                footer.style.top = (main.clientHeight + portfolioSection.clientHeight * .88) + 'px';
+            }
         }
-        else{
-            portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight*0.25 + 'px';
-            footer.style.top = (main.clientHeight + portfolioSection.clientHeight*.88) + 'px';
-        }
-    }
 
         assignV();
     }
@@ -139,10 +143,6 @@
         portfolio_height();
         overlayMenu();
         typewriter();
-        Chocolat(document.querySelectorAll('.galleryImg'), {
-            imageSize: 'contain',
-            loop: true,
-        });
     });
 
 })(jQuery);
