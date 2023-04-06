@@ -2,6 +2,8 @@
 
     "use strict";
 
+    const form = document.getElementById('form');
+
     let path = window.location.pathname;
     let page = path.split("/").pop();
 
@@ -113,7 +115,7 @@
         var main = document.querySelector(".main");
 
         var footerBg = document.querySelector(".footer .bg-image");
-        var footer = document.querySelector(".footer");   
+        var footer = document.querySelector(".footer");
 
         var assignV = function () {
             if (page === "index.html") {
@@ -132,7 +134,14 @@
         assignV();
     }
 
-    $(window).resize(async function () {
+    var alertForSendEmail = function () {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            alert("Изпратихте съобщението успешно!");
+        });
+    }
+
+    $(window).resize(function () {
         portfolio_height();
     });
 
@@ -142,12 +151,13 @@
         portfolio_height();
         overlayMenu();
         typewriter();
+        alertForSendEmail();
 
-        if (page !== "index.html") 
-        Chocolat(document.querySelectorAll('.galleryImg'), {
-            imageSize: 'contain',
-            loop: true,
-        });
+        if (page !== "index.html")
+            Chocolat(document.querySelectorAll('.galleryImg'), {
+                imageSize: 'contain',
+                loop: true,
+            });
     });
 
 })(jQuery);
