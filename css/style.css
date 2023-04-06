@@ -323,11 +323,7 @@ h1 {
   line-height: 1;
 }
 
-.h2,
-h2 {
-  font-size: 2.1em;
-  line-height: 1.2;
-}
+
 
 .h3,
 h3 {
@@ -442,6 +438,26 @@ select,
   margin-bottom: 20px;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+/* typewriter effect */
+/* The typewriter cursor effect */
+.typewrite {
+  border-right: 0.06em solid #fff;
+  /*animation: blink-caret 400ms step-end infinite;*/
+}
+
+/* The typing effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #ccc
+  }
 }
 
 textarea {
@@ -583,14 +599,24 @@ i.icon {
   font-weight: 700;
 }
 
-.section-title:after {
+.section-title h2::after {
+  content: "";
+  width: 7em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 218px;
+  border-bottom: 2px solid #58484900;
+  margin: 0 auto;
+}
+
+h1::after {
   content: "";
   width: 20%;
   position: absolute;
-  bottom: -10px;
   left: 0;
   right: 0;
-  top: 0;
+  bottom: -14px;
   border-bottom: 1px solid #d93c4d;
   margin: 0 auto;
 }
@@ -600,7 +626,7 @@ h1.section-title {
 }
 
 h1.section-title:after {
-  width: 20%;
+  width: 7em;
   margin: auto;
 }
 
@@ -1028,11 +1054,12 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 /*---Main-----*/
 
-header{
+header {
   background-color: transparent;
 }
+
 .main {
-  height: 90vh;
+  height: 69vh;
 }
 
 .main .bg-image {
@@ -1052,7 +1079,7 @@ header{
 
 /*---Portfolio-----*/
 .portfolio-section {
-  margin-bottom: 19vh;
+  margin-bottom: 35vh;
   height: 30vh;
 }
 
@@ -1062,8 +1089,8 @@ header{
   top: 75vh;
   width: 100%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, -12vh);
+  transform: translate(-50%, -12vh);
 }
 
 .portfolio-section .bg-image {
@@ -1112,19 +1139,19 @@ header{
   z-index: -2;
   width: 100%;
   left: 0%;
-  top:185vh;
+  top: 185vh;
   border-radius: 0px !important;
   background-image: url(images/img_contact.jpg);
   background-position: center;
   background-size: cover;
   filter: grayscale(100%) brightness(110%) contrast(100%);
-  -webkit-transform: translate(0%, -30vh);
-  transform: translate(0%, -30vh);
+  -webkit-transform: translate(0%, -22vh);
+  transform: translate(0%, -22vh);
 }
 
 .footer .about {
   position: relative;
-  height: 70vh;
+  height: 65vh;
   border-radius: 1rem;
   border-top: 5px solid rgb(92, 92, 92);
   border-bottom: 5px solid rgb(92, 92, 92);
