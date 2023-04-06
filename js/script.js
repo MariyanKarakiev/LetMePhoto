@@ -122,7 +122,7 @@
         }
         else{
             portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight*0.15 + 'px';
-            footer.style.top = (main.clientHeight + portfolioContainer.clientHeight) + 'px';
+            footer.style.top = (main.clientHeight + portfolioSection.clientHeight*.92) + 'px';
         }
     }
 
@@ -139,7 +139,6 @@
         portfolio_height();
         overlayMenu();
         typewriter();
-        console.log(document.querySelectorAll('.galleryImg'));
         Chocolat(document.querySelectorAll('.galleryImg'), {
             imageSize: 'contain',
             loop: true,

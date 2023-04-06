@@ -1069,7 +1069,7 @@ header {
   z-index: -1;
   top: 0;
   left: 0;
-  background-image: url(images/img_main.jpg);
+  background-image: url(../images/img_main.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1100,7 +1100,7 @@ header {
   top: 85vh;
   left: 0%;
   border-radius: 0px !important;
-  background-image: url(images/img_portfolio.jpg);
+  background-image: url(../images/img_portfolio.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1141,7 +1141,7 @@ header {
   left: 0%;
   top: 185vh;
   border-radius: 0px !important;
-  background-image: url(images/img_contact.jpg);
+  background-image: url(../images/img_contact.jpg);
   background-position: center;
   background-size: cover;
   filter: grayscale(100%) brightness(110%) contrast(100%);
