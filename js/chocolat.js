@@ -3248,7 +3248,6 @@
 	}
 	function loadImage(_ref) {
 	  var _this3 = this;
-		console.log(_ref)
 	  var src = _ref.src,
 	      srcset = _ref.srcset,
 	      sizes = _ref.sizes;
@@ -3396,8 +3395,6 @@
 	var Chocolat = /*#__PURE__*/function () {
 	  function Chocolat(elements, settings) {
 	    var _this = this;
-		console.log("before classcheck")
-		console.log(elements)
 	    _classCallCheck(this, Chocolat);
 
 	    this.settings = settings;
@@ -3428,7 +3425,6 @@
 	        this.off(el, 'click.chocolat');
 	        this.on(el, 'click.chocolat', function (e) {
 	          _newArrowCheck(this, _this2);
-console.log(el)
 	          this.init(i);
 	          e.preventDefault();
 	        }.bind(this));

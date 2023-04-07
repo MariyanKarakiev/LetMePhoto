@@ -554,11 +554,17 @@ i.icon {
 
 .social-links {
   position: fixed;
+  width: 100vw;
   bottom: 0;
   left: 0;
   padding: 30px;
   font-size: 1.4em;
   z-index: 9;
+}
+
+.social-links li{
+  margin-right: 2rem;
+  text-shadow: 0 0 10px #493a3ece;
 }
 
 .light a {
@@ -617,7 +623,7 @@ h1::after {
   left: 0;
   right: 0;
   bottom: -14px;
-  border-bottom: 1px solid #d93c4d;
+  border-bottom: 2px solid #41464b;
   margin: 0 auto;
 }
 

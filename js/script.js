@@ -57,7 +57,7 @@
             this.toRotate = toRotate;
             this.el = el;
             this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
+            this.period = parseInt(period, 70) || 2000;
             this.txt = '';
             this.tick();
             this.isDeleting = false;
@@ -98,7 +98,7 @@
             var elements = document.getElementsByClassName('typewrite');
             for (var i = 0; i < elements.length; i++) {
                 var toRotate = elements[i].getAttribute('data-type');
-                var period = elements[i].getAttribute('data-period'); console.log(i);
+                var period = elements[i].getAttribute('data-period');
                 if (toRotate) {
                     new TxtType(elements[i], JSON.parse(toRotate), period);
                 }
@@ -106,33 +106,28 @@
         };
     }
 
-    var portfolio_height = function () {
-        var portfolioContainer = document.querySelector(".portfolio-container");
+    var portfolio_height = function (){
         var portfolioSection = document.querySelector(".portfolio-section");
-
-        var portfolioBg = document.querySelector(".portfolio-section .bg-image");
-        var mainBg = document.querySelector(".main .bg-image");
-        var main = document.querySelector(".main");
-
-        var footerBg = document.querySelector(".footer .bg-image");
         var footer = document.querySelector(".footer");
+        var main = document.querySelector(".main");
+        var portfolioContainer = document.querySelector(".portfolio-container");
 
-        var assignV = function () {
-            if (page === "index.html") {
+            if (page === "index.html") {  
+                var portfolioBg = document.querySelector(".portfolio-section .bg-image");
+                var mainBg = document.querySelector(".main .bg-image");
+                var footerBg = document.querySelector(".footer .bg-image");
+
+                portfolioContainer.style.top = mainBg.clientHeight + 'px';
+                footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
                 portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
                 portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
-                portfolioContainer.style.top = mainBg.clientHeight + 'px';
                 footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
-                footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
             }
             else {
                 portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight * 0.25 + 'px';
                 footer.style.top = (main.clientHeight + portfolioSection.clientHeight * .88) + 'px';
             }
         }
-
-        assignV();
-    }
 
     var alertForSendEmail = function () {
         form.addEventListener('submit', e => {
@@ -146,9 +141,8 @@
     });
 
     $(document).ready(function () {
-
-        initPreloader();
         portfolio_height();
+        initPreloader();
         overlayMenu();
         typewriter();
         alertForSendEmail();
