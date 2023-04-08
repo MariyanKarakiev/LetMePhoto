@@ -57,19 +57,25 @@
   position: relative;
 }
 
-.footer {
+.contacts {
   width: 100%;
   min-height: 100vh;
   border-radius: 0px !important;
-  background-image: url(../images/img_contact.jpg);
-  background-position: center;
-  background-size: cover;
   filter: grayscale(100%) brightness(110%) contrast(100%);
-  -webkit-transform: translate(0%, 18vh);
-  transform: translate(0%, 18vh);
 }
 
-.footer .about {
+.contacts .bg-image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: top;
+  z-index: -1;
+}
+
+.contacts .about {
   position: inherit;
   height: 65vh;
   border-radius: 1rem;
@@ -78,7 +84,7 @@
   background-color: rgb(24 23 23 / 80%);
 }
 
-.footer h5 {
+.contacts h5 {
   padding-top: 2rem;
   color: #bdbdbd;
   text-align: left;
@@ -87,7 +93,7 @@
 
 /* Grid images --------------------------------------------*/
 .parent img,
-.portfolio-container .image-link img {
+.portfolio-cont .image-link img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -100,12 +106,13 @@
 
 /* Grid items --------------------------------------------*/
 
-.portfolio-container .img-tall {
-  grid-column: span 2 / auto;
+.portfolio-cont .img-tall {
+  grid-row: span 2 / auto;
+  grid-column: span 1 / auto;
 }
 
-.portfolio-container .img-wide {
-  grid-row: span 2 / auto;
+.portfolio-cont .img-wide {
+  grid-column: span 1 / auto;
 }
 
 
