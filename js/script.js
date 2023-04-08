@@ -123,10 +123,6 @@
                 portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
                 footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
             }
-            else {}
-            //     portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight * 0.25 + 'px';
-            //     footer.style.top = (main.clientHeight + portfolioSection.clientHeight * .88) + 'px';
-            // }
         }
 
     // var alertForSendEmail = function () {
@@ -137,22 +133,21 @@
     // }
 
     $(window).resize(function () {
-       //portfolio_height();
+       portfolio_height();
     });
 
 
     $(document).ready(function () {
-       // portfolio_height();
         if (page === "portraits.html"){
-        var lazyLoadInstance = new LazyLoad({
-            // Your custom settings go here
-          });
+            var lazyLoadInstance = new LazyLoad({        
+            });
         }
         initPreloader();
         overlayMenu();
         typewriter();
         //alertForSendEmail();
-
+        portfolio_height();
+        
         if (page !== "index.html")
             Chocolat(document.querySelectorAll('.galleryImg'), {
                 imageSize: 'contain',
