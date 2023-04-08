@@ -64,18 +64,19 @@
         </div><!--header-wrap-->
     </header>
 
-    <section class="main light">
+    <section class="intro light">
         <div class="container">
-            <div class="bg-image"></div>
+            <img class="bg-image lazy" data-src="images/img_main.jpg">
             <div class="row">
                 <div class="section-title text-center">
                     <h2 class="mb-5 mt-5">Балове и сватби</h2>
-                    <p>Доверете ми създаването на красива колекция от специални моменти и емоции,
+                    <p>
+                        Доверете ми създаването на красива колекция от специални моменти и емоции,
                          които ще се радвате да разглеждате и споделяте с близките си.
                     </p>
                 </div>
             </div>
-            <div class="pix_btn btn-click text-center mt-5 mb-5">
+            <div class="pix_btn btn-click text-center mt-5 pb-5">
                 <a href="#gallery" class="btn btn-pill btn-large btn-outline">
                     <span>Галерия</span>
                     <i class="fa-solid fa-arrow-down"></i>
@@ -84,9 +85,10 @@
         </div>
     </section>
 
-    <section id="gallery" class="portfolio-section portfolio-wrap fancyboxeffect light">
+    <section class="portfolio-section" id="gallery">
         <div class="d-flex flex-wrap col-md-12">
-            <div class="portfolio-container">
+            <div class="portfolio-cont">
+                <!-- 1 -->
                 <div class="image-link img-wide">
                     <a class="lazy galleryImg" href="images/balls_weddings/1/IMG_7585-Edit-3-min.jpg">
                         <img src="images/balls_weddings/1/IMG_7585-Edit-3-min.jpg" alt="model" class="">
@@ -113,18 +115,6 @@
                     </a>
                 </div>
                 <!-- 1 -->
-
-                <!-- 2 -->
-<!--                
-                         
-                <div class="image-link img-tall">
-                    <a class="galleryImg" href="images/balls_weddings/IMG_7616-Edit-4-min.jpg">
-                        <img src="images/balls_weddings/2/IMG_7187-Edit-3.jpg" alt="model" class="">
-                    </a>
-                </div> -->
-                <!-- 2 -->
-
-                
                 <!-- 3 -->
                 <div class="image-link img-tall">
                     <a class="lazy galleryImg" href="images/balls_weddings/3/IMG_8161.jpg">
@@ -149,19 +139,13 @@
                 <!-- 3 -->
             </div>
         </div><!--col-md-12-->
-        <!-- 
-        <div class="pix_btn btn-click text-center">
-            <a href="#" class="btn btn-pill btn-large btn-outline-light mr-3"><span>View all</span>
-                <i class="icon icon-arrow-thin-right"></i></a>
-        </div> -->
-
     </section>
 
     <div class="social-links">
         <ul class="list-unstyled d-flex">
             <li>
                 <a href="tel:0876995006">
-                    <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+                    <i  class="fa-solid fa-phone" style="color: #ffffff;"></i>
                 </a>
             </li>
             <li>
@@ -186,7 +170,8 @@
             </li>
         </ul>
     </div>
-    <div class="footer">
+    <section class="contacts">
+        <img class="bg-image lazy" data-src="images/img_contact.jpg">         
         <div class="container" id="contacts">
             <div class="col-10 col-md-12 mx-auto">
                 <div class="row justify-content-center gx-5 pt-5 pb-5">
@@ -196,24 +181,21 @@
                             идеите
                             ви и да ви помогна да получите най-доброто от вашите специални моменти.
                         </h5>
-                        <!-- <h5 class="info-contacts">
-                            Телефон: <a href="tel:0876995006"><u>0876995006</u></a>
-                            <br>
-                            Имейл: <a href="mailto:mariqnkarakiev@gmail.com"><u>mariqnkarakiev@gmail.com</u></a>
-                        </h5> -->
+                      
                     </div>
                     <div class="col-lg-6 justify-content-center text-center">
                         <h3>Свържете се с мен</h3>
-                        <form id="form" class="gform contact-form d-flex flex-wrap mt-4" method="POST" data-email="example@email.net"
-                        action="https://script.google.com/macros/s/AKfycbwLWJSZ8whxslhvy_2IAl3mnEJYGIEXP0mkek2Rx1Sa1AFNkToSdQgzuIJFCUe0SX0I6A/exec">
+                        <form id="form" class="gform contact-form d-flex flex-wrap mt-4" method="POST"
+                            data-email="example@email.net"
+                            action="https://script.google.com/macros/s/AKfycbwLWJSZ8whxslhvy_2IAl3mnEJYGIEXP0mkek2Rx1Sa1AFNkToSdQgzuIJFCUe0SX0I6A/exec">
                             <input type="text" id="name" name="Име" placeholder="Вашето име" class="name mb-3" required>
-                            <input type="text" id="email" name="Имейл/Тел.номер" placeholder="Имейл/Тел. номер" class="mb-3"
-                                required>
-                            <textarea  id="message" name="Съобщение" placeholder="Съобщение" style="height: 150px;" required></textarea>
+                            <input type="text" id="email" name="Имейл/Тел.номер" placeholder="Имейл/Тел. номер"
+                                class="mb-3" required>
+                            <textarea id="message" name="Съобщение" placeholder="Съобщение" style="height: 150px;"
+                                required></textarea>
 
                             <div class="pix_btn btn-click text-center mx-auto mt-5">
-                                <button type="submit" class="btn btn-pill btn-large btn-outline"
-                                    data-hover="click">
+                                <button type="submit" class="btn btn-pill btn-large btn-outline" data-hover="click">
                                     <span>Изпращане</span>
                                     <i class="fa-solid fa-paper-plane" style="color: #ffffff; margin: 0 5%"></i>
                                 </button>
@@ -223,11 +205,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
 
     <script src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/chocolat.js"></script>
+    <script type="text/javascript" src="js/lazyload.min.js"></script>
+    <script type="text/javascript" src="js/form_submission_handler.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 

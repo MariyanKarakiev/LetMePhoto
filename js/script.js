@@ -1,159 +1,157 @@
 
 
-    "use strict";
+"use strict";
 
-    const form = document.getElementById('form');
+const form = document.getElementById('form');
 
-    let path = window.location.pathname;
-    let page = path.split("/").pop();
+let path = window.location.pathname;
+let page = path.split("/").pop();
 
-    // preloader
-    var initPreloader = function () {
-        $(document).ready(function ($) {
-            $('body').addClass('loading');
-        });
+// preloader
+var initPreloader = function () {
+    $(document).ready(function ($) {
+        $('body').addClass('loading');
+    });
 
-        window.addEventListener('load', function () {
-            $('.preloader').fadeOut();
-            $('body').removeClass('loading');
-        });
+    window.addEventListener('load', function () {
+        $('.preloader').fadeOut();
+        $('body').removeClass('loading');
+    });
+}
+
+//Overlay Menu Navigation
+var overlayMenu = async function () {
+
+    if (!$('.nav-overlay').length) {
+        return false;
     }
 
-    //Overlay Menu Navigation
-    var overlayMenu = async function () {
+    var body = undefined;
+    var menu = undefined;
+    var menuItems = undefined;
+    var init = function init() {
+        body = document.querySelector('body');
+        menu = document.querySelector('.menu-btn');
+        menuItems = document.querySelectorAll('.nav__list-item');
+        applyListeners();
+    };
+    var applyListeners = function applyListeners() {
 
-        if (!$('.nav-overlay').length) {
-            return false;
+        menu.addEventListener('click', function () {
+            return toggleClass(body, 'nav-active');
+        });
+
+        menuItems.forEach(i => i.addEventListener('click', function () {
+            return toggleClass(body, "nav-active")
+        }));
+    };
+    var toggleClass = function toggleClass(element, stringClass) {
+        if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
+    };
+    init();
+}
+
+var typewriter = function () {
+
+    var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 70) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
         }
 
-        var body = undefined;
-        var menu = undefined;
-        var menuItems = undefined;
-        var init = function init() {
-            body = document.querySelector('body');
-            menu = document.querySelector('.menu-btn');
-            menuItems = document.querySelectorAll('.nav__list-item');
-            applyListeners();
-        };
-        var applyListeners = function applyListeners() {
+        this.el.innerHTML = this.txt;
 
-            menu.addEventListener('click', function () {
-                return toggleClass(body, 'nav-active');
-            });
+        var that = this;
+        var delta = 200 - Math.random() * 100;
 
-            menuItems.forEach(i => i.addEventListener('click', function () {
-                return toggleClass(body, "nav-active")
-            }));
-        };
-        var toggleClass = function toggleClass(element, stringClass) {
-            if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
-        };
-        init();
-    }
+        if (this.isDeleting) { delta /= 2; }
 
-    var typewriter = function () {
-
-        var TxtType = function (el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 70) || 2000;
-            this.txt = '';
-            this.tick();
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
             this.isDeleting = false;
-        };
+            this.loopNum++;
+            delta = 500;
+        }
 
-        TxtType.prototype.tick = function () {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
+        setTimeout(function () {
+            that.tick();
+        }, delta);
+    };
 
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
+    window.onload = function () {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
             }
+        }
+    };
+}
 
-            this.el.innerHTML = this.txt;
+var portfolio_height = function () {
+    var portfolioSection = document.querySelector(".portfolio-section");
+    var footer = document.querySelector(".footer");
+    var main = document.querySelector(".main");
+    var portfolioContainer = document.querySelector(".portfolio-container");
 
-            var that = this;
-            var delta = 200 - Math.random() * 100;
+    if (page === "index.html") {
+        var portfolioBg = document.querySelector(".portfolio-section .bg-image");
+        var mainBg = document.querySelector(".main .bg-image");
+        var footerBg = document.querySelector(".footer .bg-image");
 
-            if (this.isDeleting) { delta /= 2; }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function () {
-                that.tick();
-            }, delta);
-        };
-
-        window.onload = function () {
-            var elements = document.getElementsByClassName('typewrite');
-            for (var i = 0; i < elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-type');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtType(elements[i], JSON.parse(toRotate), period);
-                }
-            }
-        };
+        portfolioContainer.style.top = mainBg.clientHeight + 'px';
+        footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
+        portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
+        portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
+        footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
     }
+}
 
-    var portfolio_height = function (){
-        var portfolioSection = document.querySelector(".portfolio-section");
-        var footer = document.querySelector(".footer");
-        var main = document.querySelector(".main");
-        var portfolioContainer = document.querySelector(".portfolio-container");
-
-            if (page === "index.html") {  
-                var portfolioBg = document.querySelector(".portfolio-section .bg-image");
-                var mainBg = document.querySelector(".main .bg-image");
-                var footerBg = document.querySelector(".footer .bg-image");
-
-                portfolioContainer.style.top = mainBg.clientHeight + 'px';
-                footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
-                portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
-                portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
-                footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
-            }
-        }
-
-    // var alertForSendEmail = function () {
-    //     form.addEventListener('submit', e => {
-    //         e.preventDefault();
-    //         alert("Изпратихте съобщението успешно!");
-    //     });
-    // }
-
-    $(window).resize(function () {
-       portfolio_height();
+var alertForSendEmail = function () {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        alert("Изпратихте съобщението успешно!");
     });
+}
+
+$(window).resize(function () {
+    portfolio_height();
+});
 
 
-    $(document).ready(function () {
-        if (page === "portraits.html"){
-            var lazyLoadInstance = new LazyLoad({        
-            });
-        }
-        initPreloader();
-        overlayMenu();
-        typewriter();
-        //alertForSendEmail();
-        portfolio_height();
-        
-        if (page !== "index.html")
-            Chocolat(document.querySelectorAll('.galleryImg'), {
-                imageSize: 'contain',
-                loop: true,
-            });
+$(document).ready(function () {
+    var lazyLoadInstance = new LazyLoad({
     });
+    initPreloader();
+    overlayMenu();
+    typewriter();
+    alertForSendEmail();
+    portfolio_height();
+
+    if (page !== "index.html")
+        Chocolat(document.querySelectorAll('.galleryImg'), {
+            imageSize: 'contain',
+            loop: true,
+        });
+});
 
 /*
 (function() {
