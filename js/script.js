@@ -142,6 +142,11 @@
 
     $(document).ready(function () {
         portfolio_height();
+        if (page === "portraits.html"){
+        var lazyLoadInstance = new LazyLoad({
+            // Your custom settings go here
+          });
+        }
         initPreloader();
         overlayMenu();
         typewriter();
