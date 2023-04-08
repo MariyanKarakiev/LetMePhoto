@@ -64,9 +64,9 @@
         </div><!--header-wrap-->
     </header>
 
-    <section class="main light">
+    <section class="intro light">
         <div class="container">
-            <div class="bg-image"></div>
+            <img class="bg-image lazy" data-src="images/img_main.jpg">
             <div class="row">
                 <div class="section-title text-center">
                     <h2 class="mb-5 mt-5">Портрети</h2>
@@ -77,52 +77,52 @@
                     </p>
                 </div>
             </div>
-            <div class="pix_btn btn-click text-center mt-5 mb-5">
+            <div class="pix_btn btn-click text-center mt-5 pb-5">
                 <a href="#gallery" class="btn btn-pill btn-large btn-outline">
                     <span>Галерия</span>
-                    <i class="fa-solid fa-arrow-down"></i>
+                    <i class="lazy fa-solid fa-arrow-down"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="portfolio-section portfolio-wrap fancyboxeffect light">
+    <section class="portfolio-section" id="gallery">
         <div class="d-flex flex-wrap col-md-12">
-            <div class="portfolio-container">
-                <div class="image-link img-wide">
-                    <a class="lazy galleryImg" href="images/portraits/img1-h.jpg">
-                        <img src="images/portraits/img1-h.jpg" alt="model" class="">
+            <div class="portfolio-cont">
+                <div class="image-link img-">
+                    <a class="galleryImg"  href="images/portraits/img1-h.jpg">
+                        <img class="lazy" data-src="images/portraits/img1-h.jpg" alt="model">
                     </a>
                 </div>
                 <div class="image-link img-tall">
-                    <a class=" lazy galleryImg" href="images/portraits/img9-v.jpg">
-                        <img src="images/portraits/img9-v.jpg" alt="model" class="">
+                    <a class="galleryImg" href="images/portraits/img9-v.jpg">
+                        <img class="lazy" data-src="images/portraits/img9-v.jpg" alt="model">
                     </a>
                 </div>
-                <div class="image-link img-wide">
-                    <a class="lazy galleryImg" href="images/portraits/img7-h.jpg" title="image">
-                        <img src="images/portraits/img7-h.jpg" alt="model" class="g">
+                <div class="image-link">
+                    <a class="galleryImg" href="images/portraits/img7-h.jpg" title="image">
+                        <img class="lazy" data-src="images/portraits/img7-h.jpg" alt="model">
                     </a>
                 </div>
-                <div class="image-link img-tall">
-                    <a class="lazy galleryImg" href="images/portraits/img8-v.jpg">
-                        <img src="images/portraits/img8-v.jpg" alt="model" class="">
+                <div class="image-link">
+                    <a class="galleryImg" href="images/portraits/img8-v.jpg">
+                        <img class="lazy" data-src="images/portraits/img8-v.jpg" alt="model">
                     </a>
                 </div>
 
-                <div class="image-link img-wide">
-                    <a class="lazy galleryImg" href="images/portraits/img5-h.jpg">
-                        <img src="images/portraits/img5-h.jpg" alt="model" class="">
+                <div class="image-link">
+                    <a class="galleryImg" href="images/portraits/img5-h.jpg">
+                        <img class="lazy" data-src="images/portraits/img5-h.jpg" alt="model">
                     </a>
                 </div>
-                <div class="image-link img-wide">
-                    <a class="lazy galleryImg" href="images/portraits/img6-h-d.jpg">
-                        <img src="images/portraits/img6-h-d.jpg" alt="model" class="">
+                <div class="image-link">
+                    <a class="galleryImg" href="images/portraits/img6-h-d.jpg">
+                        <img class="lazy" data-src="images/portraits/img6-h-d.jpg" alt="model">
                     </a>
                 </div>
-                <div class="image-link img-wide">
-                    <a class="lazy galleryImg" href="images/portraits/img4-h.jpg">
-                        <img src="images/portraits/img4-h.jpg" alt="model" class="">
+                <div class="image-link">
+                    <a class="galleryImg" href="images/portraits/img4-h.jpg">
+                        <img class="lazy" data-src="images/portraits/img4-h.jpg" alt="model">
                     </a>
                 </div>
             </div>
@@ -139,27 +139,27 @@
         <ul class="list-unstyled d-flex">
             <li>
                 <a href="tel:0876995006">
-                    <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+                    <i  class="lazy fa-solid fa-phone" style="color: #ffffff;"></i>
                 </a>
             </li>
             <li>
                 <a href="https://www.facebook.com/marian.karakiev/">
-                    <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                    <i class="lazy fa-brands fa-facebook-f" style="color: #ffffff;"></i>
                 </a>
             </li>
             <li>
                 <a href="https://instagram.com/let_me_photographyou?igshid=ZDdkNTZiNTM=">
-                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="lazy fa-brands fa-instagram" style="color: #ffffff;"></i>
                 </a>
             </li>
             <li>
                 <a href="mailto:mariqnkarakiev@gmail.com">
-                    <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+                    <i class="lazy fa-regular fa-envelope" style="color: #ffffff;"></i>
                 </a>
             </li>
             <li class="ms-auto">
                 <a href="#">
-                    <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+                    <i class="lazy fa-solid fa-arrow-up" style="color: #ffffff;"></i>
                 </a>
             </li>
         </ul>
@@ -174,11 +174,7 @@
                             идеите
                             ви и да ви помогна да получите най-доброто от вашите специални моменти.
                         </h5>
-                        <!-- <h5 class="info-contacts">
-                            Телефон: <a href="tel:0876995006"><u>0876995006</u></a>
-                            <br>
-                            Имейл: <a href="mailto:mariqnkarakiev@gmail.com"><u>mariqnkarakiev@gmail.com</u></a>
-                        </h5> -->
+                      
                     </div>
                     <div class="col-lg-6 justify-content-center text-center">
                         <h3>Свържете се с мен</h3>

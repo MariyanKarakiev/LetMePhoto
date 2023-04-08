@@ -1,4 +1,4 @@
-(function ($) {
+
 
     "use strict";
 
@@ -13,7 +13,7 @@
             $('body').addClass('loading');
         });
 
-        $(window).load(function () {
+        window.addEventListener('load', function () {
             $('.preloader').fadeOut();
             $('body').removeClass('loading');
         });
@@ -123,25 +123,26 @@
                 portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
                 footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
             }
-            else {
-                portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight * 0.25 + 'px';
-                footer.style.top = (main.clientHeight + portfolioSection.clientHeight * .88) + 'px';
-            }
+            else {}
+            //     portfolioSection.style.height = portfolioContainer.clientHeight + portfolioContainer.clientHeight * 0.25 + 'px';
+            //     footer.style.top = (main.clientHeight + portfolioSection.clientHeight * .88) + 'px';
+            // }
         }
 
-    var alertForSendEmail = function () {
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            alert("Изпратихте съобщението успешно!");
-        });
-    }
+    // var alertForSendEmail = function () {
+    //     form.addEventListener('submit', e => {
+    //         e.preventDefault();
+    //         alert("Изпратихте съобщението успешно!");
+    //     });
+    // }
 
     $(window).resize(function () {
-        portfolio_height();
+       //portfolio_height();
     });
 
+
     $(document).ready(function () {
-        portfolio_height();
+       // portfolio_height();
         if (page === "portraits.html"){
         var lazyLoadInstance = new LazyLoad({
             // Your custom settings go here
@@ -150,7 +151,7 @@
         initPreloader();
         overlayMenu();
         typewriter();
-        alertForSendEmail();
+        //alertForSendEmail();
 
         if (page !== "index.html")
             Chocolat(document.querySelectorAll('.galleryImg'), {
@@ -158,8 +159,6 @@
                 loop: true,
             });
     });
-
-})(jQuery);
 
 /*
 (function() {
