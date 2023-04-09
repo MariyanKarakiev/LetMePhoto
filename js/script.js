@@ -34,20 +34,22 @@ var overlayMenu = async function () {
     var body = undefined;
     var menu = undefined;
     var menuItems = undefined;
+   
     var init = function init() {
         body = document.querySelector('body');
         menu = document.querySelector('.menu-btn');
         menuItems = document.querySelectorAll('.nav__list-item');
         applyListeners();
     };
+   
     var applyListeners = function applyListeners() {
 
         menu.addEventListener('click', function () {
             return toggleClass(body, 'nav-active');
         });
 
-        menuItems.forEach(i => function (){
-            if(i.textContent != "Галерия") {
+        menuItems.forEach(i => {
+            if(i.textContent.trim() == "Контакти") {
                 i.addEventListener('click', function () {
             return toggleClass(body, "nav-active")
         })}});

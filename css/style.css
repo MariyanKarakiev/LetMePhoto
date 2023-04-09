@@ -940,8 +940,8 @@ h1.section-title:after {
 }
 
 #gallery-items {
-  border-left: solid rgba(255, 255, 255, 0.779);
-  border-right: solid rgb(255, 255, 255, 0.779);
+  border-left: 0.2rem solid rgba(255, 255, 255, 0.779);
+  border-right: 0.2rem solid rgb(255, 255, 255, 0.779);
 }
 
 #gallery-items a{
