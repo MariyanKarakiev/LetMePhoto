@@ -11,9 +11,14 @@ let page = path.split("/").pop();
 var initPreloader = function () {
     $(document).ready(function ($) {
         $('body').addClass('loading');
+
+        setTimeout(function () {
+            $('.preloader').fadeOut();
+            $('body').removeClass('loading');
+        },6000)
     });
 
-    window.addEventListener('load', function () {
+    $(window).load(function () {
         $('.preloader').fadeOut();
         $('body').removeClass('loading');
     });
@@ -41,16 +46,18 @@ var overlayMenu = async function () {
             return toggleClass(body, 'nav-active');
         });
 
-        menuItems.forEach(i => i.addEventListener('click', function () {
+        menuItems.forEach(i => function (){
+            if(i.textContent != "Галерия") {
+                i.addEventListener('click', function () {
             return toggleClass(body, "nav-active")
-        }));
+        })}});
+      
     };
     var toggleClass = function toggleClass(element, stringClass) {
         if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
     };
     init();
 }
-
 var typewriter = function () {
 
     var TxtType = function (el, toRotate, period) {
@@ -105,7 +112,6 @@ var typewriter = function () {
         }
     };
 }
-
 var portfolio_height = function () {
     var portfolioSection = document.querySelector(".portfolio-section");
     var footer = document.querySelector(".footer");
@@ -124,7 +130,6 @@ var portfolio_height = function () {
         footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
     }
 }
-
 var alertForSendEmail = function () {
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -135,14 +140,14 @@ var alertForSendEmail = function () {
 $(window).resize(function () {
     portfolio_height();
 });
-
-
 $(document).ready(function () {
+    initPreloader();
+
     var lazyLoadInstance = new LazyLoad({
     });
-    initPreloader();
-    overlayMenu();
+
     typewriter();
+    overlayMenu();
     alertForSendEmail();
     portfolio_height();
 
@@ -151,47 +156,5 @@ $(document).ready(function () {
             imageSize: 'contain',
             loop: true,
         });
-});
 
-/*
-(function() {
-  var triggerBttn = document.getElementById( 'trigger-overlay' ),
-    overlay = document.querySelector( 'div.overlay' ),
-    closeBttn = overlay.querySelector( 'button.overlay-close' );
-    transEndEventNames = {
-      'WebkitTransition': 'webkitTransitionEnd',
-      'MozTransition': 'transitionend',
-      'OTransition': 'oTransitionEnd',
-      'msTransition': 'MSTransitionEnd',
-      'transition': 'transitionend'
-    },
-    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-    support = { transitions : Modernizr.csstransitions };
- 
-  function toggleOverlay() {
-    if( classie.has( overlay, 'open' ) ) {
-      classie.remove( overlay, 'open' );
-      classie.add( overlay, 'close' );
-      var onEndTransitionFn = function( ev ) {
-        if( support.transitions ) {
-          if( ev.propertyName !== 'visibility' ) return;
-          this.removeEventListener( transEndEventName, onEndTransitionFn );
-        }
-        classie.remove( overlay, 'close' );
-      };
-      if( support.transitions ) {
-        overlay.addEventListener( transEndEventName, onEndTransitionFn );
-      }
-      else {
-        onEndTransitionFn();
-      }
-    }
-    else if( !classie.has( overlay, 'close' ) ) {
-      classie.add( overlay, 'open' );
-    }
-  }
- 
-  triggerBttn.addEventListener( 'click', toggleOverlay );
-  closeBttn.addEventListener( 'click', toggleOverlay );
 });
-*/
