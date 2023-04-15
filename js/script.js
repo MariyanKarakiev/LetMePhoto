@@ -15,7 +15,7 @@ var initPreloader = function () {
         setTimeout(function () {
             $('.preloader').fadeOut();
             $('body').removeClass('loading');
-        },6000)
+        }, 6000)
     });
 
     $(window).load(function () {
@@ -34,14 +34,14 @@ var overlayMenu = async function () {
     var body = undefined;
     var menu = undefined;
     var menuItems = undefined;
-   
+
     var init = function init() {
         body = document.querySelector('body');
         menu = document.querySelector('.menu-btn');
         menuItems = document.querySelectorAll('.nav__list-item');
         applyListeners();
     };
-   
+
     var applyListeners = function applyListeners() {
 
         menu.addEventListener('click', function () {
@@ -49,11 +49,13 @@ var overlayMenu = async function () {
         });
 
         menuItems.forEach(i => {
-            if(i.textContent.trim() == "Контакти") {
+            if (i.textContent.trim() == "Контакти") {
                 i.addEventListener('click', function () {
-            return toggleClass(body, "nav-active")
-        })}});
-      
+                    return toggleClass(body, "nav-active")
+                })
+            }
+        });
+
     };
     var toggleClass = function toggleClass(element, stringClass) {
         if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
@@ -144,19 +146,52 @@ $(window).resize(function () {
 });
 $(document).ready(function () {
     initPreloader();
-
     var lazyLoadInstance = new LazyLoad({
     });
-
     typewriter();
     overlayMenu();
     alertForSendEmail();
-    portfolio_height();
 
-    if (page !== "index.html")
+    const galleryContainer = document.getElementById("gallery");
+    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + page.split('.')[0] + '/'
+  
+    // const href = 'images/portraits/'
+    const tallImgNumbers = [2, 4, 5, 8, 10]
+    const widths = [400,800,1200]
+
+    
+
+    for (let i = 1; i < 13; i++) {
+        let srcset =''
+        const imageCard = document.createElement('div');
+        const imageClickable = document.createElement('a');
+        const image = document.createElement('img');
+
+        let srcsetArr = widths.map(w=>`${href}/tr:w-${w}/img${i}.jpg ${w}w`)
+       
+        console.log(srcsetArr.join(','))
+
+        imageCard.classList = ["image-link"];
+        tallImgNumbers.includes(i) ? imageCard.classList.add('img-tall') : imageCard.classList.add('img-wide');
+        imageClickable.classList = ["galleryImg"]
+        // imageClickable.href = `${href}/tr:w-/img${i}.jpg ${}`
+        // image.classList = ["lazy"];
+        // image.src = `${href}/tr:w-800/img${i}.jpg`
+
+        image.srcset = srcsetArr.join(',');
+        console.log(`${href}img${i}.jpg`)
+        imageClickable.appendChild(image);
+        imageCard.appendChild(imageClickable);
+        galleryContainer.appendChild(imageCard);
+    }
+
+    if (page !== "index.html") {
         Chocolat(document.querySelectorAll('.galleryImg'), {
             imageSize: 'contain',
             loop: true,
         });
+    }
+
+    portfolio_height();
 
 });
