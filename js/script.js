@@ -159,7 +159,7 @@ $(document).ready(function () {
     const tallImgNumbers = [2, 4, 5, 8, 10]
     const widths = [400,800,1200]
 
-    
+    if (page !== "index.html") {
 
     for (let i = 1; i < 13; i++) {
         let srcset =''
@@ -185,7 +185,7 @@ $(document).ready(function () {
         galleryContainer.appendChild(imageCard);
     }
 
-    if (page !== "index.html") {
+   
         Chocolat(document.querySelectorAll('.galleryImg'), {
             imageSize: 'contain',
             loop: true,
