@@ -564,7 +564,7 @@ i.icon {
   z-index: 9;
 }
 
-.social-links li{
+.social-links li {
   margin-right: 1.8rem;
   text-shadow: 0 0 10px #493a3ece;
   padding-left: 0pt;
@@ -689,7 +689,7 @@ h1.section-title:after {
   height: 150px;
 }
 
-.preloader svg g {
+.preloader img {
   animation: slide 2s linear infinite;
 }
 
@@ -715,24 +715,11 @@ h1.section-title:after {
 
 @keyframes slide {
   0% {
-    transform: translateY(-50px);
+    transform: scale(0)
   }
+
   100% {
-    transform: translateY(50px);
-  }
-}
-@keyframes escalade {
-  0% {
-    stroke-dasharray: 0 157px;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 157px 157px;
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dasharray: 157px 157px;
-    stroke-dashoffset: -156px;
+    transform: scale(1.2);
   }
 }
 
@@ -748,14 +735,9 @@ h1.section-title:after {
 }
 
 /* Main logo */
-.main-logo a {
-  color: #111;
-  font-size: 25px;
-  font-weight: 700;
-}
-
-.light .main-logo a {
-  color: #fff;
+.logo {
+  color: #ffffff;
+  width: 3rem;
 }
 
 /* - Side Nav Bar
@@ -947,12 +929,12 @@ h1.section-title:after {
   border-right: 0.2rem solid rgb(255, 255, 255, 0.779);
 }
 
-#gallery-items a{
+#gallery-items a {
   font-size: 2rem !important;
   padding: 0.5rem 0px;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -1119,7 +1101,7 @@ header {
   z-index: -1;
   top: 0;
   left: 0;
-  background-image: url(../images/img_main.jpg);
+  background-image: url(https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1150,7 +1132,7 @@ header {
   top: 85vh;
   left: 0%;
   border-radius: 0px !important;
-  background-image: url(../images/img_portfolio.jpg);
+  background-image: url(https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1191,7 +1173,7 @@ header {
   left: 0%;
   top: 185vh;
   border-radius: 0px !important;
-  background-image: url(../images/img_contact.jpg);
+  background-image: url(https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg);
   background-position: center;
   background-size: cover;
   filter: grayscale(100%) brightness(110%) contrast(100%);
