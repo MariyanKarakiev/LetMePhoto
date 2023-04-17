@@ -161,7 +161,7 @@ $(document).ready(function () {
 
     if (page !== "index.html") {
 
-    for (let i = 1; i < 13; i++) {
+    for (let i = 12; 0 < i; i--) {
         let srcset =''
         const imageCard = document.createElement('div');
         const imageClickable = document.createElement('a');
