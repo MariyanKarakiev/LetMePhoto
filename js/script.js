@@ -191,7 +191,7 @@ $(document).ready(function () {
             const imageClickable = document.createElement('a');
             const image = document.createElement('img');
 
-            let srcsetArr = widths.map(w => `${href}img${i}.jpg`)
+            let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
             console.log(srcsetArr.join(','))
 
@@ -202,7 +202,7 @@ $(document).ready(function () {
             // image.classList = ["lazy"];
             // image.src = `${href}/tr:w-800/img${i}.jpg`
 
-            image.srcset = `${href}img${i}.jpg`;
+            image.srcset = srcsetArr;
             console.log(`${href}img${i}.jpg`)
             imageClickable.appendChild(image);
             imageCard.appendChild(imageClickable);
