@@ -128,10 +128,10 @@ var portfolio_height = function () {
         var footerBg = document.querySelector(".footer .bg-image");
 
         portfolioContainer.style.top = mainBg.clientHeight + 'px';
-        footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
         portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
         portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
-        footerBg.style.height = (footer.clientHeight + portfolioBg.clientHeight) + 'px';
+        footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
+        footerBg.style.height = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
     }
 }
 var alertForSendEmail = function () {
