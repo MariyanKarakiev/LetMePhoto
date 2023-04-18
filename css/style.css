@@ -1,3 +1,4 @@
+
 html,
 body {
   position: relative;
@@ -626,7 +627,8 @@ h1::after {
   left: 0;
   right: 0;
   bottom: -14px;
-  border-bottom: 2px solid #41464b;
+  border-radius: 3rem;
+  border: 2px solid #cbd5e0;
   margin: 0 auto;
 }
 
@@ -690,7 +692,7 @@ h1.section-title:after {
 }
 
 .preloader img {
-  animation: slide 2s linear infinite;
+  animation: slide 3s linear infinite;
 }
 
 .preloader svg g:nth-child(2) {
@@ -1062,14 +1064,15 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 /* -- Billboard Section
 --------------------------------------------------------------*/
-.billboard-content h1 {
+.main h1 {
   font-size: calc(1.375rem + 2vw);
 }
 
-.billboard-content span.designation {
+.main span.designation {
   font-size: calc(1.375rem + 2.5vw);
   font-weight: 300;
   color: #dddddd;
+  /* font-family: ChaletComprime; */
 }
 
 .contact-form input[type="text"],
@@ -1152,7 +1155,7 @@ header {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-family: Raleway, sans-serif;
+  font-family: ChaletComprime, sans-serif;
   font-weight: 700;
   font-size: calc(1.375rem + 1vw);
 }
