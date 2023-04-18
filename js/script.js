@@ -3,7 +3,7 @@
 "use strict";
 
 const form = document.getElementById('form');
-
+let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
 
@@ -140,7 +140,12 @@ var alertForSendEmail = function () {
         alert("Изпратихте съобщението успешно!");
     });
 }
-
+$(document).scroll(() => {
+    if (!scrolled) {
+        portfolio_height();
+        scrolled = true;
+    }
+})
 $(window).resize(function () {
     portfolio_height();
 });
@@ -168,7 +173,7 @@ $(document).ready(function () {
             imgsCount = 9
             tallImgNumbers = [2, 4, 7]
             break;
-            
+
         case "еvents":
             imgsCount = 0
             tallImgNumbers = [2, 4, 7]
