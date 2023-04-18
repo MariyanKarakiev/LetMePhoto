@@ -122,7 +122,7 @@ var portfolio_height = function () {
     var main = document.querySelector(".main");
     var portfolioContainer = document.querySelector(".portfolio-container");
 
-    if (page === "index.html") {
+    if (page === "index.html" || page === "") {
         var portfolioBg = document.querySelector(".portfolio-section .bg-image");
         var mainBg = document.querySelector(".main .bg-image");
         var footerBg = document.querySelector(".footer .bg-image");
