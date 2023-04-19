@@ -62,6 +62,61 @@ var overlayMenu = async function () {
     };
     init();
 }
+var populateGallery = function() {
+    const galleryContainer = document.getElementById("gallery");
+    const pageName = page.split('.')[0]
+    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + page.split('.')[0] + '/'
+    //const href = 'images/' + page.split('.')[0] + '/'
+    let tallImgNumbers = []
+    let imgsCount = 0
+   
+    switch (pageName) {
+        case "portraits":
+            imgsCount = 12
+            tallImgNumbers = [2, 4, 5, 8, 10]
+            break;
+        case "balls_weddings":
+            imgsCount = 9
+            tallImgNumbers = [2, 4, 7]          
+            break;
+        case "events":
+            imgsCount = 11
+            tallImgNumbers = [9]
+            break;
+        case "others":
+            imgsCount = 0
+            tallImgNumbers = [2, 4, 7]
+            break;
+    }
+
+    const widths = [400, 800, 1200]
+
+    if (page !== "index.html") {
+
+        for (let i = imgsCount; 0 < i; i--) {
+            let srcset = ''
+            const imageCard = document.createElement('div');
+            const imageClickable = document.createElement('a');
+            const image = document.createElement('img');
+
+            let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
+
+            imageCard.classList = ["image-link"];
+            tallImgNumbers.includes(i) ? imageCard.classList.add('img-tall') : imageCard.classList.add('img-wide');
+            imageClickable.classList = ["galleryImg"]
+            // imageClickable.href = `${href}/tr:w-/img${i}.jpg ${}`
+            // image.classList = ["lazy"];
+            // image.src = `${href}/tr:w-800/img${i}.jpg`
+
+            image.srcset = srcsetArr;
+           // image.src = `${href}img${i}.jpg`;
+            //console.log(`${href}img${i}.jpg`)
+            imageClickable.appendChild(image);
+            imageCard.appendChild(imageClickable);
+            galleryContainer.appendChild(imageCard);
+        }
+    }
+}
 var typewriter = function () {
 
     var TxtType = function (el, toRotate, period) {
@@ -154,73 +209,13 @@ $(document).ready(function () {
     var lazyLoadInstance = new LazyLoad({
     });
     typewriter();
+    populateGallery();
+    portfolio_height();
     overlayMenu();
     alertForSendEmail();
-
-    const galleryContainer = document.getElementById("gallery");
-    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + page.split('.')[0] + '/'
-    const pageName = page.split('.')[0]
-    //const href = 'images/' + page.split('.')[0] + '/'
-    let tallImgNumbers = []
-    let imgsCount = 0
-
-    switch (pageName) {
-        case "portraits":
-            imgsCount = 12
-            tallImgNumbers = [2, 4, 5, 8, 10]
-            break;
-        case "balls_weddings":
-            imgsCount = 9
-            tallImgNumbers = [2, 4, 7]
-            break;
-
-        case "еvents":
-            imgsCount = 0
-            tallImgNumbers = [2, 4, 7]
-            break;
-
-        case "others":
-            imgsCount = 0
-            tallImgNumbers = [2, 4, 7]
-            break;
-
-    }
-
-    const widths = [400, 800, 1200]
-
-    if (page !== "index.html") {
-
-        for (let i = imgsCount; 0 < i; i--) {
-            let srcset = ''
-            const imageCard = document.createElement('div');
-            const imageClickable = document.createElement('a');
-            const image = document.createElement('img');
-
-            let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
-
-            console.log(srcsetArr.join(','))
-
-            imageCard.classList = ["image-link"];
-            tallImgNumbers.includes(i) ? imageCard.classList.add('img-tall') : imageCard.classList.add('img-wide');
-            imageClickable.classList = ["galleryImg"]
-            // imageClickable.href = `${href}/tr:w-/img${i}.jpg ${}`
-            // image.classList = ["lazy"];
-            // image.src = `${href}/tr:w-800/img${i}.jpg`
-
-            image.srcset = srcsetArr;
-            console.log(`${href}img${i}.jpg`)
-            imageClickable.appendChild(image);
-            imageCard.appendChild(imageClickable);
-            galleryContainer.appendChild(imageCard);
-        }
-
-
-        Chocolat(document.querySelectorAll('.galleryImg'), {
-            imageSize: 'contain',
-            loop: true,
-        });
-    }
-
-    portfolio_height();
+    Chocolat(document.querySelectorAll('.galleryImg'), {
+        imageSize: 'contain',
+        loop: true,
+    });
 
 });
