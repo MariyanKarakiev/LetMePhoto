@@ -24,7 +24,7 @@
     <script src="https://kit.fontawesome.com/8c69571116.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-black">
+<body>
     <div class="preloader">
         <img class="main-logo" style="width:30vw" src="images/kraino.svg" alt="logo">
     </div>
@@ -38,8 +38,6 @@
                         aria-expanded="false" aria-controls="collapseExample">Галерия</a>
                 </li>
                 <div class="collapse" id="gallery-items">
-                    <li class="nav__list-item"><a href="balls_weddings.html" class="hover-target">Балове и сватби</a>
-                    </li>
                     <li class="nav__list-item"><a href="portraits.html" class="hover-target">Портрети</a></li>
                     <li class="nav__list-item"><a href="events.html" class="hover-target">Събития</a></li>
                     <li class="nav__list-item"><a href="others.html" class="hover-target">Други</a></li>
@@ -48,7 +46,7 @@
             </ul>
         </div>
     </div>
-    <header id="header" class="light">
+    <header id="header" class="light hidden">
         <div id="header-wrap">
             <nav id="navbar">
                 <div>
@@ -65,8 +63,12 @@
     </header>
 
     <section class="intro light">
-        <div class="container">
-            <img class="bg-image lazy" data-src="images/img_main.jpg">
+        <img class="bg-image lazy" src="images/img_main.jpg" srcset="
+        https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg 400w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg 800w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg 1200w">
+        <div class="container col-11 billboard-content mt-3 mb-5 hidden">
+        <div class="container hidden">
             <div class="row">
                 <div class="section-title text-center">
                     <h2 class="mb-5 mt-5">Балове и сватби</h2>
@@ -122,10 +124,13 @@
         </ul>
     </div>
     <section class="contacts">
-        <img class="bg-image lazy" data-src="images/img_contact.jpg">
+        <img class="bg-image" src="images/img_contact.jpg" srcset="
+        https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg 400w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg 800w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg 1200w">
         <div class="container" id="contacts">
             <div class="col-10 col-md-12 mx-auto">
-                <div class="row justify-content-center gx-5 pt-5 pb-5">
+                <div class="row justify-content-center gx-5 pt-5 pb-5 hidden">
                     <div class="col-lg-6 about pt-3 mb-5 pb-5">
                         <p class="info">
                             Ако ви харесва работата ми, свържете се с мен! Ще се радвам да обсъдим
@@ -134,7 +139,7 @@
                         </p>
 
                     </div>
-                    <div class="col-lg-6 justify-content-center text-center">
+                    <div class="col-lg-6 justify-content-center text-center hidden">
                         <h3>Свържете се с мен</h3>
                         <form id="form" class="gform contact-form d-flex flex-wrap mt-4" method="POST"
                             data-email="example@email.net"
@@ -157,7 +162,6 @@
             </div>
         </div>
     </section>
-
 
     <script src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
