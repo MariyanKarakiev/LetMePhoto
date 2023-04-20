@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-    <title>LetMePhoto - фотографски услуги</title>
+    <title>LetMePhoto - Фотографски услуги</title>
     <link rel="icon" type="image/x-icon" href="images/kraino.svg" alt="logo">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <header id="header" class="light">
+    <header id="header" class="light hidden">
         <div id="header-wrap">
             <nav id="navbar">
                 <div>
@@ -64,10 +64,13 @@
     </header>
 
     <div class="main">
-        <div class="container col-11 billboard-content mt-3 mb-5">
+        <img class="bg-image" src="images/img_main.jpg" srcset="
+        https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg 400w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg 800w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_main.jpg 1200w">
+        <div class="container col-11 billboard-content mt-3 mb-5 hidden">
             <div class="row justify-content-center">
                 <div class="light text-center">
-                    <div class="bg-image"></div>
                     <h1 class="section-title mt-2 mb-4">Добре дошли в</h1>
                     <span class="designation typewrite" data-period="500"
                         data-type='[ "LetMePhoto"]'></span>
@@ -93,37 +96,43 @@
     </div>
 
     <section class="portfolio-section col-12 fancyboxeffect light" id="portfolio">
-        <div class="bg-image"></div>
-        <div class="portfolio-container">
-            <div class="image-card-h">
+        <img class="bg-image" src="images/img_portfolio.jpg" srcset="
+        https://ik.imagekit.io/ycbriiund/LetMePhoto/img_portfolio.jpg 400w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_portfolio.jpg 800w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_portfolio.jpg 1200w">
+        <div class="portfolio-container hidden blured">
+            <div class="image-card">
                 <a class="image-link img-tall" id="bals_weddings" href="balls_weddings.html">
                     <img src="images/img1.jpg" alt="model" class="">
                     <p class="image-title text-center">Балове и сватби</p>
                 </a>
             </div>
             <div>
-                <a class="image-link img-wide" id="bals_weddings" href="portraits.html">
+                <a class="image-link" id="bals_weddings" href="portraits.html">
                     <img src="images/img2.jpg" alt="model" class="">
                     <p class="image-title text-center">Портрети</p>
                 </a>
             </div>
             <div>
-                <a class="image-link img-wide" id="bals_weddings" href="events.html">
+                <a class="image-link" id="bals_weddings" href="events.html">
                     <img src="images/img3.jpg" alt="model" class="">
                     <p class="image-title text-center">Събития</p>
                 </a>
             </div>
             <div>
-                <a class="image-link" id="bals_weddings" href="">
-                    <img src="images/img_main.jpg" alt="model" class="">
+                <a class="image-link" href="others.html">
+                    <img src="images/img_main.jpg" alt="model" href="others.html">
                     <p class="image-title text-center">Други</p>
                 </a>
             </div>
-
+            
         </div>
     </section>
     <div class="footer">
-        <div class="bg-image"></div>
+        <img class="bg-image" src="images/img_contact.jpg" srcset="
+        https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg 400w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg 800w,
+         https://ik.imagekit.io/ycbriiund/LetMePhoto/img_contact.jpg 1200w">
         <div class="social-links">
             <ul class="list-unstyled d-flex">
                 <li>
@@ -155,7 +164,7 @@
         </div>
         <div class="container" id="contacts">
             <div class="col-10 col-md-12 mx-auto">
-                <div class="row justify-content-center gx-5 pt-5 pb-5">
+                <div class="row justify-content-center gx-5 pt-5 pb-5 hidden">
                     <div class="col-lg-6 about pt-3 mb-5 pb-5">
                         <p class="info">
                             Ако ви харесва работата ми, свържете се с мен! Ще се радвам да обсъдим
@@ -163,7 +172,7 @@
                             ви и да ви помогна да получите най-доброто от вашите специални моменти.
                         </p>
                     </div>
-                    <div class="col-lg-6 justify-content-center text-center">
+                    <div class="col-lg-6 justify-content-center text-center hidden">
                         <h3>Свържете се с мен</h3>
                         <form id="form" class="gform contact-form d-flex flex-wrap mt-4" method="POST"
                             data-email="example@email.net"

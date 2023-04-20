@@ -7,8 +7,8 @@ let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
 
-// preloader
-var initPreloader = function () {
+
+function initPreloader() {
     $(document).ready(function ($) {
         $('body').addClass('loading');
 
@@ -23,10 +23,7 @@ var initPreloader = function () {
         $('body').removeClass('loading');
     });
 }
-
-//Overlay Menu Navigation
-var overlayMenu = async function () {
-
+function overlayMenu() {
     if (!$('.nav-overlay').length) {
         return false;
     }
@@ -62,7 +59,72 @@ var overlayMenu = async function () {
     };
     init();
 }
-var typewriter = function () {
+function populateGallery() {
+    const galleryContainer = document.getElementById("gallery");
+    const widths = [400, 800, 1200]
+    const pageName = page.split('.')[0]
+    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + pageName
+    const href2 = 'images/' + pageName
+    let tallImgNumbers = []
+    let imgsCount = 0
+
+    //sets number of images to be requested and images with numbers in their names that are tall
+    switch (pageName) {
+        case "portraits":
+            imgsCount = 12
+            tallImgNumbers = [2, 4, 5, 8, 10]
+            break;
+        case "balls_weddings":
+            imgsCount = 9
+            tallImgNumbers = [2, 4, 7]
+            break;
+        case "events":
+            imgsCount = 11
+            tallImgNumbers = [9]
+            break;
+        case "others":
+            imgsCount = 0
+            tallImgNumbers = [2, 4, 7]
+            break;
+    }
+
+    function galleryElementFactory(galleryContainer) {
+        for (let i = imgsCount; 0 < i; i--) {
+
+            const imageCard = document.createElement('div');
+            const imageLink = document.createElement('a');
+            const image = document.createElement('img');
+
+            let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
+
+            let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
+            imageCard.classList = [`image-link ${imageType} hidden`];
+
+            //sets class for chocolat usage
+            imageLink.classList = ["galleryImg"]
+            //for when optimised images are not available in chocolat
+            imageLink.href = `${href2}/img${i}.jpg`
+            //for delivery of optimised images in chocolat
+            imageLink.dataset.srcset = srcsetArr
+
+            //for lazy loading 
+            image.classList = ["lazy"];
+            //for delivery of optimised images in gallery section
+            image.srcset = srcsetArr;
+            //for when optimised images are not available
+            image.src = `${href2}/img${i}.jpg`
+
+            imageLink.appendChild(image);
+            imageCard.appendChild(imageLink);
+            galleryContainer.appendChild(imageCard);
+        }
+    }
+
+    if (page !== "index.html") {
+        galleryElementFactory(galleryContainer);
+    }
+}
+function typewriter() {
 
     var TxtType = function (el, toRotate, period) {
         this.toRotate = toRotate;
@@ -116,7 +178,7 @@ var typewriter = function () {
         }
     };
 }
-var portfolio_height = function () {
+function portfolio_height() {
     var portfolioSection = document.querySelector(".portfolio-section");
     var footer = document.querySelector(".footer");
     var main = document.querySelector(".main");
@@ -131,14 +193,29 @@ var portfolio_height = function () {
         portfolioBg.style.height = (portfolioContainer.clientHeight) + 'px';
         portfolioSection.style.height = portfolioContainer.clientHeight + 'px';
         footerBg.style.top = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
-        footerBg.style.height = (mainBg.clientHeight + portfolioContainer.clientHeight) + 'px';
+        footerBg.style.height = (mainBg.clientHeight + portfolioContainer.clientHeight*0.60) + 'px'; 
     }
 }
-var alertForSendEmail = function () {
+function alertForSendEmail() {
     form.addEventListener('submit', e => {
         e.preventDefault();
         alert("Изпратихте съобщението успешно!");
     });
+}
+function animateOnIntersect() {
+    const observer = new IntersectionObserver((entries) => {
+        console.log(entries)
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+            else{
+                entry.target.classList.remove("visible");
+            }
+        });
+    })
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el)=>observer.observe(el))
 }
 $(document).scroll(() => {
     if (!scrolled) {
@@ -154,73 +231,14 @@ $(document).ready(function () {
     var lazyLoadInstance = new LazyLoad({
     });
     typewriter();
-    overlayMenu();
-    alertForSendEmail();
-
-    const galleryContainer = document.getElementById("gallery");
-    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + page.split('.')[0] + '/'
-    const pageName = page.split('.')[0]
-    //const href = 'images/' + page.split('.')[0] + '/'
-    let tallImgNumbers = []
-    let imgsCount = 0
-
-    switch (pageName) {
-        case "portraits":
-            imgsCount = 12
-            tallImgNumbers = [2, 4, 5, 8, 10]
-            break;
-        case "balls_weddings":
-            imgsCount = 9
-            tallImgNumbers = [2, 4, 7]
-            break;
-
-        case "еvents":
-            imgsCount = 0
-            tallImgNumbers = [2, 4, 7]
-            break;
-
-        case "others":
-            imgsCount = 0
-            tallImgNumbers = [2, 4, 7]
-            break;
-
-    }
-
-    const widths = [400, 800, 1200]
-
-    if (page !== "index.html") {
-
-        for (let i = imgsCount; 0 < i; i--) {
-            let srcset = ''
-            const imageCard = document.createElement('div');
-            const imageClickable = document.createElement('a');
-            const image = document.createElement('img');
-
-            let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
-
-            console.log(srcsetArr.join(','))
-
-            imageCard.classList = ["image-link"];
-            tallImgNumbers.includes(i) ? imageCard.classList.add('img-tall') : imageCard.classList.add('img-wide');
-            imageClickable.classList = ["galleryImg"]
-            // imageClickable.href = `${href}/tr:w-/img${i}.jpg ${}`
-            // image.classList = ["lazy"];
-            // image.src = `${href}/tr:w-800/img${i}.jpg`
-
-            image.srcset = srcsetArr;
-            console.log(`${href}img${i}.jpg`)
-            imageClickable.appendChild(image);
-            imageCard.appendChild(imageClickable);
-            galleryContainer.appendChild(imageCard);
-        }
-
-
-        Chocolat(document.querySelectorAll('.galleryImg'), {
-            imageSize: 'contain',
-            loop: true,
-        });
-    }
-
+    populateGallery();
     portfolio_height();
+    overlayMenu();
+    animateOnIntersect()
+    alertForSendEmail();
+    Chocolat(document.querySelectorAll('.galleryImg'), {
+        imageSize: 'contain',
+        loop: true,
+    });
 
 });
