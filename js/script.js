@@ -62,16 +62,14 @@ var overlayMenu = async function () {
     };
     init();
 }
-var populateGallery = function () {
+var populateGallery = function() {
     const galleryContainer = document.getElementById("gallery");
-    const widths = [400, 800, 1200]
     const pageName = page.split('.')[0]
-    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + pageName
-    const href2 = 'images/' + pageName
+    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + page.split('.')[0] + '/'
+    //const href = 'images/' + page.split('.')[0] + '/'
     let tallImgNumbers = []
     let imgsCount = 0
-
-    //sets number of images to be requested and images with numbers in their names that are tall
+   
     switch (pageName) {
         case "portraits":
             imgsCount = 12
@@ -79,7 +77,7 @@ var populateGallery = function () {
             break;
         case "balls_weddings":
             imgsCount = 9
-            tallImgNumbers = [2, 4, 7]
+            tallImgNumbers = [2, 4, 7]          
             break;
         case "events":
             imgsCount = 11
@@ -90,38 +88,35 @@ var populateGallery = function () {
             tallImgNumbers = [2, 4, 7]
             break;
     }
-    function galleryElementFactory(galleryContainer) {
-        for (let i = imgsCount; 0 < i; i--) {
 
+    const widths = [400, 800, 1200]
+
+    if (page !== "index.html") {
+
+        for (let i = imgsCount; 0 < i; i--) {
+            let srcset = ''
             const imageCard = document.createElement('div');
-            const imageLink = document.createElement('a');
+            const imageClickable = document.createElement('a');
             const image = document.createElement('img');
 
             let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
-            let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
-            imageCard.classList = [`image-link ${imageType}`];
+            imageCard.classList = ["image-link"];
+            tallImgNumbers.includes(i) ? imageCard.classList.add('img-tall') : imageCard.classList.add('img-wide');
+            imageClickable.classList = ["galleryImg"]
+            // imageClickable.href = `${href}/tr:w-/img${i}.jpg ${}`
+            // image.classList = ["lazy"];
+            // image.src = `${href}/tr:w-800/img${i}.jpg`
 
-            imageLink.classList = ["galleryImg"]
-            imageLink.href = `${href2}/img${i}.jpg`
-
-            image.classList = ["lazy"];
             image.srcset = srcsetArr;
-
-            imageLink.appendChild(image);
-            imageCard.appendChild(imageLink);
+           // image.src = `${href}img${i}.jpg`;
+            //console.log(`${href}img${i}.jpg`)
+            imageClickable.appendChild(image);
+            imageCard.appendChild(imageClickable);
             galleryContainer.appendChild(imageCard);
         }
     }
-
-    if (page !== "index.html") {
-        galleryElementFactory(galleryContainer);
-        // image.src = `${href}/tr:w-800/img${i}.jpg`
-        // image.src = `${href}img${i}.jpg`;
-        //console.log(`${href}img${i}.jpg`)
-    }
 }
-
 var typewriter = function () {
 
     var TxtType = function (el, toRotate, period) {
@@ -218,7 +213,6 @@ $(document).ready(function () {
     portfolio_height();
     overlayMenu();
     alertForSendEmail();
-   
     Chocolat(document.querySelectorAll('.galleryImg'), {
         imageSize: 'contain',
         loop: true,
