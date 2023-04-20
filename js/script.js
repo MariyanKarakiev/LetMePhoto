@@ -204,7 +204,6 @@ function alertForSendEmail() {
 }
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
-        console.log(entries)
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
