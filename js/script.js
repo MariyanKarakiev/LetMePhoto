@@ -196,10 +196,13 @@ function portfolio_height() {
         footerBg.style.height = (mainBg.clientHeight + portfolioContainer.clientHeight*0.60) + 'px'; 
     }
 }
-function alertForSendEmail() {
+function emailSender() {
     form.addEventListener('submit', e => {
         e.preventDefault();
         alert("Изпратихте съобщението успешно!");
+        let btn = document.querySelector(".contacts button")
+        form.reset();
+        btn.disabled =false;
     });
 }
 function animateOnIntersect() {
@@ -216,6 +219,11 @@ function animateOnIntersect() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el)=>observer.observe(el))
 }
+
+$("button").click(()=>{
+    $("button").disabled = false;
+    console.log('reset')
+})
 $(document).scroll(() => {
     if (!scrolled) {
         portfolio_height();
@@ -234,7 +242,7 @@ $(document).ready(function () {
     portfolio_height();
     overlayMenu();
     animateOnIntersect()
-    alertForSendEmail();
+    emailSender();
     Chocolat(document.querySelectorAll('.galleryImg'), {
         imageSize: 'contain',
         loop: true,
