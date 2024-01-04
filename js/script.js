@@ -24,7 +24,7 @@ function initPreloader() {
     });
 }
 function overlayMenu() {
-    if (!$('.nav-overlay').length) {
+    if (document.getElementsByClassName('.nav-overlay').length) {
         return false;
     }
 
@@ -196,10 +196,13 @@ function portfolio_height() {
         footerBg.style.height = (mainBg.clientHeight + portfolioContainer.clientHeight*0.60) + 'px'; 
     }
 }
-function alertForSendEmail() {
+function emailSender() {
     form.addEventListener('submit', e => {
         e.preventDefault();
         alert("Изпратихте съобщението успешно!");
+        let btn = document.querySelector(".contacts button")
+        form.reset();
+        btn.disabled =false;
     });
 }
 function animateOnIntersect() {
@@ -216,28 +219,33 @@ function animateOnIntersect() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el)=>observer.observe(el))
 }
-$(document).scroll(() => {
-    if (!scrolled) {
-        portfolio_height();
-        scrolled = true;
-    }
-})
-$(window).resize(function () {
-    portfolio_height();
-});
-$(document).ready(function () {
-    initPreloader();
-    var lazyLoadInstance = new LazyLoad({
-    });
-    typewriter();
-    populateGallery();
-    portfolio_height();
+
+// $("button").click(()=>{
+//    // $("button").disabled = false;
+//    // console.log('reset')
+// })
+// $(document).scroll(() => {
+//     if (!scrolled) {
+//        // portfolio_height();
+//       //  scrolled = true;
+//     }
+// })
+// $(window).resize(function () {
+//   //  portfolio_height();
+// });
+document.addEventListener("DOMContentLoaded",()=>{
+    // initPreloader();
+    // var lazyLoadInstance = new LazyLoad({
+    // });
+    // typewriter();
+    // populateGallery();
+    // portfolio_height();
     overlayMenu();
-    animateOnIntersect()
-    alertForSendEmail();
-    Chocolat(document.querySelectorAll('.galleryImg'), {
-        imageSize: 'contain',
-        loop: true,
-    });
+    animateOnIntersect();
+   // emailSender();
+    // Chocolat(document.querySelectorAll('.galleryImg'), {
+    //     imageSize: 'contain',
+    //     loop: true,
+    // });
 
 });
