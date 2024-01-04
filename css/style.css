@@ -14,7 +14,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-style: normal;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -743,7 +742,7 @@ h1.section-title:after {
 }
 
 #main_carousel {
-  height: 100vh;
+  height: 98vh;
 }
 
 .carousel-inner {
@@ -756,9 +755,28 @@ h1.section-title:after {
 
 .carousel-item img {
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   width: 100%;
   height: 100%;
+}
+.carousel-item h2{
+
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 1px #535353;
+}
+
+.carousel-item a{
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px 60px;
+  margin-top: 40px;
+  background-color: #f8f9fa24;
+  box-shadow: 3px 1px 5px #53535378;
+}
+.carousel-caption{
+  bottom: 4.25rem;
 }
 
 main img{
