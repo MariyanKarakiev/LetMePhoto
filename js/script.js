@@ -211,9 +211,9 @@ function animateOnIntersect() {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
             }
-            else{
-                entry.target.classList.remove("visible");
-            }
+            // else{
+            //     entry.target.classList.remove("visible");
+            // }
         });
     })
     const hiddenElements = document.querySelectorAll(".hidden");
@@ -234,15 +234,15 @@ function animateOnIntersect() {
 //   //  portfolio_height();
 // });
 document.addEventListener("DOMContentLoaded",()=>{
-    // initPreloader();
-    // var lazyLoadInstance = new LazyLoad({
-    // });
+   //initPreloader();
+    var lazyLoadInstance = new LazyLoad({
+     });
     // typewriter();
-    // populateGallery();
+       populateGallery();
     // portfolio_height();
-    overlayMenu();
-    animateOnIntersect();
-   // emailSender();
+       overlayMenu();
+       animateOnIntersect();
+       emailSender();
     // Chocolat(document.querySelectorAll('.galleryImg'), {
     //     imageSize: 'contain',
     //     loop: true,
