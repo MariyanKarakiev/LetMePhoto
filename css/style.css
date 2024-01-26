@@ -6,7 +6,13 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  /* Add other formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   position: relative;
