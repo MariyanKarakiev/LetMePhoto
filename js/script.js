@@ -1,6 +1,7 @@
 "use strict";
 
 const form = document.getElementById('form');
+const body = document.getElementById('body');
 let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
