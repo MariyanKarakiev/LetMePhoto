@@ -22,17 +22,11 @@
  color: #ffffff;
  height: 30px
 }
-
-#main_carousel {
- height: 100vh
+.carousel{
+ height: 98vh;
 }
-
-.carousel-inner {
- height: 100%
-}
-
-.carousel-item {
- height: 100%
+.carousel-item{
+  height: 98vh;
 }
 
 .carousel-item img {
