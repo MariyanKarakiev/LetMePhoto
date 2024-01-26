@@ -115,6 +115,7 @@ footer {
  }
  .navbar-toggler-icon{
   width: 40px;
+  height: 40px;
  }
  .navbar-toggler:focus{
   box-shadow: none;
