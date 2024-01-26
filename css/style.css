@@ -1,4 +1,18 @@
-
+@font-face {
+  font-family: 'Murs';
+  src: url('../fonts/MursGothic-WideDark.woff2') format('woff2'),
+       url('../fonts/MursGothic-WideDark.woff') format('woff');
+  /* Add other formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MySans3';
+  src: url('../fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  /* Add other formats if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   position: relative;
@@ -14,7 +28,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-style: normal;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -137,7 +150,8 @@ html {
 body {
   font-family: Raleway, sans-serif;
   line-height: 1.8;
-  color: #ffffff;
+  color: #121212;
+  overflow: hidden;
 }
 
 a {
@@ -586,7 +600,7 @@ i.icon {
 .light span,
 .light div,
 .light ul {
-  color: #fff;
+  color: #3c3a3a;
 }
 
 
@@ -756,9 +770,40 @@ h1.section-title:after {
 
 .carousel-item img {
   object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.carousel-item .bg {
+  object-fit: cover;
   object-position: top;
   width: 100%;
   height: 100%;
+ }
+.carousel-item h2{
+  font-family: 'Murs', sans-serif;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 2rem;
+  text-shadow: 0px 1px 3px #212529;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.carousel-item a{
+  font-weight: 700;
+  font-size: 1.1em;
+  font-family: 'MySans3';
+  color: #f0f0f0;
+  border-radius: 0px;
+  padding: 10px 60px;
+  margin-top: 40px;
+  background-color: transparent !important;
+  text-transform: uppercase;
+  /* box-shadow: 3px 1px 5px #53535378; */
+}
+.carousel-caption{
+  bottom: 1.25rem;
 }
 
 main img{
@@ -800,7 +845,7 @@ main img{
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #111;
+  background-color: #f0f0f0 !important;
   transition-duration: .25s;
 }
 
@@ -1314,5 +1359,5 @@ header {
 
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
-  margin-top: 70vh;
+  margin-top: 90vh;
 }
