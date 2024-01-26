@@ -110,9 +110,11 @@ footer {
  .navbar-toggler{
   color: #f0f0f0;
   z-index: 1;
-  width: 30px;
   box-shadow: none;
   border: none;
+ }
+ .navbar-toggler-icon{
+  width: 40px;
  }
  .navbar-toggler:focus{
   box-shadow: none;
