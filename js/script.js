@@ -123,6 +123,9 @@ function animateOnIntersect() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el))
 }
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     animateOnIntersect();

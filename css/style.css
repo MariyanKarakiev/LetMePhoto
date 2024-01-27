@@ -6,6 +6,14 @@ body{
   background-color: #6c757d;
 }
 
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 @font-face {
  font-family: 'Murs';
  src: url('../fonts/MursGothic-WideDark.woff2') format('woff2'),
