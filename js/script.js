@@ -22,13 +22,13 @@ function populateGallery(galleryName) {
             imgsCount = 12
             break;
         case "balls_weddings":
-            imgsCount = 9
+            imgsCount = 13
             break;
         case "events":
             imgsCount = 11
             break;
-        case "others":
-            imgsCount = 0
+        case "weddings":
+            imgsCount = 6
             break;
     }
 
