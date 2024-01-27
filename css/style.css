@@ -3,7 +3,7 @@ body{
   --bs-navbar-padding-x: 1.1em;
   --bs-navbar-padding-y: 1.5rem;
   --bs-gutter-x: 3.5rem;
-  background-color: #6c757d;
+  background-color: #282828;
 }
 
 img {
@@ -98,7 +98,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #6c757d;
+  background-color: #282828;
   font-family: 'MySans3';
   font-weight: 500;
 }
@@ -111,7 +111,7 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #6c757d;
+  background: #282828;
   display: flex;
   align-items: center;
   justify-content: center;
