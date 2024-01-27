@@ -107,6 +107,9 @@ footer {
   justify-content: center;
   text-align: center;
  }
+ .navbar-brand{
+  z-index: 1;
+ }
  .navbar-toggler{
   color: #f0f0f0;
   z-index: 1;
@@ -123,3 +126,35 @@ footer {
 .navbar-collapse.show{
   transition: all 0.5s;
 }
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+  position: absolute;
+  top:90%;
+}
+
+
+.portfolio-section {
+  background-color: #fffcfd;
+  width: 100%;
+  height: auto !important;
+  margin-bottom: 0 !important;
+}
+
+.gallery-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0em;
+}
+
+.gallery-container div {
+  border-radius: 0rem; 
+}
+
+
+.image-link {
+  position: relative;
+}
+
+
