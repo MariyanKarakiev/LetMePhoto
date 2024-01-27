@@ -5,39 +5,40 @@ const body = document.getElementById('body');
 let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
+let imgsCount = 0
 
-function populateGallery() {
+function populateGallery(galleryName) {
     const galleryContainer = document.getElementById("gallery");
-    galleryContainer.hidden=false;
+    galleryContainer.hidden = false;
     const widths = [400, 800, 1200]
     const pageName = 'portraits'
-    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + pageName
-    const href2 = 'images/' + pageName
+    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
+    const href2 = 'images/' + galleryName
     let tallImgNumbers = []
-    let imgsCount = 0
 
     //sets number of images to be requested and images with numbers in their names that are tall
-    switch (pageName) {
+    switch (galleryName) {
         case "portraits":
             imgsCount = 12
-            tallImgNumbers = [2, 4, 5, 8, 10]
             break;
         case "balls_weddings":
             imgsCount = 9
-            tallImgNumbers = [2, 4, 7]
             break;
         case "events":
             imgsCount = 11
-            tallImgNumbers = [9]
             break;
         case "others":
             imgsCount = 0
-            tallImgNumbers = [2, 4, 7]
             break;
     }
 
     function galleryElementFactory(galleryContainer) {
-        for (let i = imgsCount; 0 < i; i--) {
+        //clean images
+        while (galleryContainer.firstChild) {
+            galleryContainer.removeChild(galleryContainer.firstChild)
+        }
+
+        for (let i = imgsCount; 1 <= i; i--) {
 
             const imageCard = document.createElement('div');
             const imageLink = document.createElement('a');
@@ -120,10 +121,24 @@ function animateOnIntersect() {
         });
     })
     const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((el)=>observer.observe(el))
+    hiddenElements.forEach((el) => observer.observe(el))
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
     animateOnIntersect();
-   
+
+    // Get all anchor elements within the carousel
+    var carouselAnchors = document.querySelectorAll('.carousel-item a');
+
+    // Add click event listeners to each anchor
+    carouselAnchors.forEach(function (anchor) {
+        anchor.addEventListener('click', function (event) {
+            // Prevent the default behavior (e.g., following the link)
+            event.preventDefault();
+            // Get the text content of the clicked anchor's parent carousel-caption
+            console.log(anchor.id)
+            populateGallery(anchor.id);
+            window.location.href = anchor.getAttribute('href');
+        });
+    });
 });
