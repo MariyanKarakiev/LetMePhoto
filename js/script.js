@@ -28,7 +28,7 @@ function populateGallery(galleryName) {
             imgsCount = 11
             break;
         case "weddings":
-            imgsCount = 6
+            imgsCount = 7
             break;
     }
 
