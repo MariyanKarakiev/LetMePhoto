@@ -52,7 +52,7 @@ function populateGallery(galleryName) {
             //sets class for chocolat usage
             imageLink.classList = ["galleryImg"]
             //for when optimised images are not available in chocolat
-            imageLink.href = `${href2}/img${i}.jpg`
+            //imageLink.href = `${href2}/img${i}.jpg`
             //for delivery of optimised images in chocolat
             imageLink.dataset.srcset = srcsetArr
 
