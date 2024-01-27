@@ -3,7 +3,7 @@ body{
   --bs-navbar-padding-x: 1.1em;
   --bs-navbar-padding-y: 1.5rem;
   --bs-gutter-x: 3.5rem;
-  background-color: #1a1a18;
+  background-color: #6c757d;
 }
 
 @font-face {
@@ -90,7 +90,9 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #1a1a18;
+  background-color: #6c757d;
+  font-family: 'MySans3';
+  font-weight: 500;
 }
 
 
@@ -157,4 +159,7 @@ footer {
   position: relative;
 }
 
+footer img{
+  width: 20px;
+}
 
