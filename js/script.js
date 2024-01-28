@@ -21,7 +21,7 @@ function populateGallery(galleryName) {
         case "portraits":
             imgsCount = 12
             break;
-        case "balls_weddings":
+        case "balls":
             imgsCount = 13
             break;
         case "events":
@@ -68,10 +68,10 @@ function populateGallery(galleryName) {
             galleryContainer.appendChild(imageCard);
         }
     }
-
-    if (page !== "index.html") {
-        galleryElementFactory(galleryContainer);
-    }
+    galleryElementFactory(galleryContainer)
+    galleryContainer.scrollIntoView({
+        behavior: 'smooth' // You can also use 'auto' or 'instant'
+      });
 }
 function overlayMenu() {
     if (document.getElementsByClassName('.nav-overlay').length) {
@@ -139,9 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Prevent the default behavior (e.g., following the link)
             event.preventDefault();
             // Get the text content of the clicked anchor's parent carousel-caption
-            console.log(anchor.id)
+          
             populateGallery(anchor.id);
-            window.location.href = anchor.getAttribute('href');
         });
     });
 });
