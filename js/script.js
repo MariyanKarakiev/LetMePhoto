@@ -22,7 +22,7 @@ function populateGallery(galleryName) {
             imgsCount = 16
             break;
         case "balls":
-            imgsCount = 14
+            imgsCount = 13
             break;
         case "events":
             imgsCount = 11
@@ -65,7 +65,7 @@ function populateGallery(galleryName) {
             //for lazy loading 
             image.classList = ["lazy img-fluid"];
             //for delivery of optimised images in gallery section
-            // image.srcset = srcsetArr;
+            image.srcset = srcsetArr;
             //for when optimised images are not available
             image.src = `${href2}/img${i}.jpg`
 
