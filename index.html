@@ -66,9 +66,9 @@
           <button type="button" data-bs-target="#main_carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#main_carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div> -->
-        <div class="carousel-inner">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img  class="d-block h-100" src="images/07.jpg" srcset="
+                    <img class="d-block h-100 lazy" src="images/07.jpg" srcset="
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/07.jpg?updatedAt=1706522877667 400w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/07.jpg?updatedAt=1706522877667 800w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/07.jpg?updatedAt=1706522877667 1200w">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img  class="d-block h-100" src="images/5.jpg" srcset="
+                    <img class="d-block h-100 lazy" src="images/5.jpg" srcset="
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/5.jpg?updatedAt=1706522877667 400w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/5.jpg?updatedAt=1706522877667 800w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/5.jpg?updatedAt=1706522877667 1200w">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img  class="d-block h-100" src="images/img3.jpg" srcset="
+                    <img class="d-block h-100 lazy" src="images/img3.jpg" srcset="
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/img3.jpg?updatedAt=1706522877667 400w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/img3.jpg?updatedAt=1706522877667 800w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/img3.jpg?updatedAt=1706522877667 1200w">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img  class="d-block h-100" src="images/3.jpg" srcset="
+                    <img class="d-block h-100 lazy" src="images/3.jpg" srcset="
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/3.jpg?updatedAt=1706522877667 400w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/3.jpg?updatedAt=1706522877667 800w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/3.jpg?updatedAt=1706522877667 1200w">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img  class="d-block h-100" src="images/4.jpg" srcset="
+                    <img class="d-block h-100 lazy" src="images/4.jpg" srcset="
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/4.jpg?updatedAt=1706522877667 400w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/4.jpg?updatedAt=1706522877667 800w,
                     https://ik.imagekit.io/ycbriiund/LetMePhoto/4.jpg?updatedAt=1706522877667 1200w">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/street/img4.jpg" class="d-block h-100 img-to-right" alt="...">
+                    <img class="d-block h-100 img-to-right lazy" src="/images/street/img4.jpg alt=" ...">
                     <div class="carousel-caption d-md-block">
                         <h2>Стрийт фотография</h2>
                         <a id="street" href="#gallery">Разгледай</a>
@@ -138,7 +138,7 @@
 
     <section class="portfolio-section">
         <div id="gallery" class="gallery-container mt-5" hidden>
-           
+
         </div>
     </section>
 
@@ -148,9 +148,13 @@
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-body-secondary" href="https://www.facebook.com/profile.php?id=100091929785008"><img src="images/facebook.svg" alt=""></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="m.me/101563912919633"><img src="images/facebook-messenger.svg" alt=""></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/letmephoto"><img src="images/instagram.svg" alt=""></a></li>
+            <li class="ms-3"><a class="text-body-secondary"
+                    href="https://www.facebook.com/profile.php?id=100091929785008"><img src="images/facebook.svg"
+                        alt=""></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="m.me/101563912919633"><img
+                        src="images/facebook-messenger.svg" alt=""></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/letmephoto"><img
+                        src="images/instagram.svg" alt=""></a></li>
         </ul>
     </footer>
 
@@ -159,7 +163,7 @@
         crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="js/chocolat.js"></script> -->
     <script type="text/javascript" src="js/lazyload.min.js"></script>
-   <!--  <script type="text/javascript" src="js/form_submission_handler.js"></script> -->
+    <!--  <script type="text/javascript" src="js/form_submission_handler.js"></script> -->
     <script type="text/javascript" src="js/script.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>

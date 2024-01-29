@@ -1,5 +1,6 @@
-body{
-  --bs-secondary-color: #f0f0f0 ; /* Define your global color variable */
+body {
+  --bs-secondary-color: #f0f0f0;
+  /* Define your global color variable */
   --bs-navbar-padding-x: 1.1em;
   --bs-navbar-padding-y: 1.5rem;
   --bs-gutter-x: 3.5rem;
@@ -15,85 +16,94 @@ img {
 }
 
 @font-face {
- font-family: 'Murs';
- src: url('../fonts/MursGothic-WideDark.woff2') format('woff2'),
- url('../fonts/MursGothic-WideDark.woff') format('woff');
- 
- font-weight: 400;
- font-style: normal
+  font-family: 'Murs';
+  src: url('../fonts/MursGothic-WideDark.woff2') format('woff2'),
+    url('../fonts/MursGothic-WideDark.woff') format('woff');
+
+  font-weight: 400;
+  font-style: normal
 }
+
 @font-face {
- font-family: 'MySans3';
- src: url('../fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
- 
- font-weight: 400;
- font-style: normal
+  font-family: 'MySans3';
+  src: url('../fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+
+  font-weight: 400;
+  font-style: normal
 }
-.bg-transparent{
+
+.bg-transparent {
   background-color: transparent;
 }
-.logo{
- padding: 1em 2em
+
+.logo {
+  padding: 1em 2em
 }
 
 .logo img {
- color: #ffffff;
- height: 30px
+  color: #ffffff;
+  height: 30px
 }
-.carousel{
- height: 90vh;
+
+.carousel {
+  height: 90vh;
 }
-.carousel-item{
+
+.carousel-item {
   height: 90vh;
 }
 
 .carousel-item img {
- object-fit: cover;
- object-position: center;
- width: 100%;
- height: 100%
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%
 }
+
 @media only screen and (max-width: 600px) {
-  .img-to-right  {
-     object-position:right !important;
+  .img-to-right {
+    object-position: right !important;
   }
 }
+
 .carousel-item .bg {
- object-fit: cover;
- object-position: top;
- width: 100%;
- height: 100%
- }
-.carousel-item h2{
- font-family: 'Murs', sans-serif;
- font-weight: 700;
- color: #f0f0f0;
- margin-bottom: 2rem;
- text-shadow: 0px 1px 3px #212529;
- text-transform: uppercase;
- margin-bottom: 0px
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%
 }
 
-.carousel-item a{
- font-weight: 700;
- font-size: 1em;
- font-family: 'MySans3';
- color: #f0f0f0;
- border-radius: 0px;
- padding: 10px 60px;
- margin-top: 40px;
- background-color: transparent !important;
- text-transform: uppercase;
- text-decoration: none;
-}
-.carousel-caption{
- bottom: 1.25rem
+.carousel-item h2 {
+  font-family: 'Murs', sans-serif;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 2rem;
+  text-shadow: 0px 1px 3px #212529;
+  text-transform: uppercase;
+  margin-bottom: 0px
 }
 
-main img{
- vertical-align: middle;
- align-items: center;
- object-fit: cover
+.carousel-item a {
+  font-weight: 700;
+  font-size: 1em;
+  font-family: 'MySans3';
+  color: #f0f0f0;
+  border-radius: 0px;
+  padding: 10px 60px;
+  margin-top: 40px;
+  background-color: transparent !important;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.carousel-caption {
+  bottom: 1.25rem
+}
+
+main img {
+  vertical-align: middle;
+  align-items: center;
+  object-fit: cover
 }
 
 
@@ -121,30 +131,36 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
- }
- .navbar-brand{
+}
+
+.navbar-brand {
   z-index: 1;
- }
- .navbar-toggler{
+}
+
+.navbar-toggler {
   color: #f0f0f0;
   z-index: 1;
   box-shadow: none;
   border: none;
- }
- .navbar-toggler-icon{
+}
+
+.navbar-toggler-icon {
   width: 40px;
   height: 40px;
- }
- .navbar-toggler:focus{
+}
+
+.navbar-toggler:focus {
   box-shadow: none;
- }
-.navbar-collapse.show{
+}
+
+.navbar-collapse.show {
   transition: all 0.5s;
 }
+
 .carousel-control-next-icon,
-.carousel-control-prev-icon{
+.carousel-control-prev-icon {
   position: absolute;
-  top:90%;
+  top: 90%;
 }
 
 
@@ -164,7 +180,7 @@ footer {
 }
 
 .gallery-container div {
-  border-radius: 0rem; 
+  border-radius: 0rem;
 }
 
 
@@ -172,8 +188,7 @@ footer {
   position: relative;
 }
 
-footer img{
+footer img {
   width: 20px;
   color: #fefefe;
 }
-
