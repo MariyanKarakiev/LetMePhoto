@@ -19,16 +19,22 @@ function populateGallery(galleryName) {
     //sets number of images to be requested and images with numbers in their names that are tall
     switch (galleryName) {
         case "portraits":
-            imgsCount = 12
+            imgsCount = 16
             break;
         case "balls":
-            imgsCount = 13
+            imgsCount = 14
             break;
         case "events":
             imgsCount = 11
             break;
         case "weddings":
             imgsCount = 7
+            break;
+        case "products":
+            imgsCount = 20
+            break;
+        case "street":
+            imgsCount = 3
             break;
     }
 
@@ -54,12 +60,12 @@ function populateGallery(galleryName) {
             //for when optimised images are not available in chocolat
             //imageLink.href = `${href2}/img${i}.jpg`
             //for delivery of optimised images in chocolat
-            imageLink.dataset.srcset = srcsetArr
+            //  imageLink.dataset.srcset = srcsetArr
 
             //for lazy loading 
             image.classList = ["lazy img-fluid"];
             //for delivery of optimised images in gallery section
-            image.srcset = srcsetArr;
+            // image.srcset = srcsetArr;
             //for when optimised images are not available
             image.src = `${href2}/img${i}.jpg`
 
@@ -71,7 +77,7 @@ function populateGallery(galleryName) {
     galleryElementFactory(galleryContainer)
     galleryContainer.scrollIntoView({
         behavior: 'smooth' // You can also use 'auto' or 'instant'
-      });
+    });
 }
 function overlayMenu() {
     if (document.getElementsByClassName('.nav-overlay').length) {
@@ -139,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Prevent the default behavior (e.g., following the link)
             event.preventDefault();
             // Get the text content of the clicked anchor's parent carousel-caption
-          
+
             populateGallery(anchor.id);
         });
     });
