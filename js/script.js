@@ -10,7 +10,7 @@ let imgsCount = 0
 function populateGallery(galleryName) {
     const galleryContainer = document.getElementById("gallery");
     galleryContainer.hidden = false;
-    const widths = [400, 800, 1200]
+    const widths = [400, 800, 1800]
     const pageName = 'portraits'
     const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
     const href2 = 'images/' + galleryName
@@ -117,9 +117,11 @@ function overlayMenu() {
 }
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
+     
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
+                console.log(entry);
             }
             // else{
             //     entry.target.classList.remove("visible");
