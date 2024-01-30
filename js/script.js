@@ -18,7 +18,7 @@ function populateGallery(galleryName) {
 
     //sets number of images to be requested and images with numbers in their names that are tall
     switch (galleryName) {
-        case "portraits":
+        case "portraitss":
             imgsCount = 16
             break;
         case "balls":
