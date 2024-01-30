@@ -10,7 +10,7 @@ body {
   --bs-navbar-padding-x: 1.1em;
   --bs-navbar-padding-y: 1.5rem;
   --bs-gutter-x: 3.5rem;
-  background-color: #282828;
+  background-color: #fefefe;
 }
 
 img {
@@ -193,7 +193,6 @@ footer {
 
 
 .portfolio-section {
-  background-color: #fffcfd;
   width: 100%;
   height: auto !important;
   margin-bottom: 0 !important;
@@ -208,6 +207,7 @@ footer {
 }
 
 .gallery-container div {
+  margin-bottom: 20px;
   border-radius: 0rem;
 }
 
