@@ -10,7 +10,7 @@ let imgsCount = 0
 function populateGallery(galleryName) {
     const galleryContainer = document.getElementById("gallery");
     galleryContainer.hidden = false;
-    const widths = [400, 800, 1800]
+    const widths = [767, 1024]
     const pageName = 'portraits'
     const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
     const href2 = 'images/' + galleryName
