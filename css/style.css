@@ -212,7 +212,9 @@ footer {
   border-radius: 0rem;
 }
 
-
+.main-section{
+  height: 90vh;
+}
 .image-link {
   position: relative;
 }
