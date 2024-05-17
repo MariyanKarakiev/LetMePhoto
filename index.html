@@ -39,13 +39,23 @@
     </div> -->
 
 <body>
-    <nav class="navbar nav-overlay fixed-top bg-transparent" data-bs-theme="dark">
-        <div class="container-fluid pt-2 ps-4 pe-3 fast-tr hidden">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
+        <div class="container-fluid">
+            <div class="d-flex mx-auto gap-2">
+                <a class="nav-link" href="#gallery">А</a>
+                <a class="nav-link" href="#gallery"></a>П</a>
+                <a class="nav-link" href="#gallery">С</a>
+                <a class="nav-link" href="#gallery">И</a>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar nav-overlay fixed-top" data-bs-theme="dark">
+        <div class="container-fluid ps-4 pe-3 fast-tr hidden">
             <a class="navbar-brand" href="#"><img class="logo" src="images/kraino.svg" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -68,13 +78,8 @@
             </div>
         </div>
     </nav>
-    <section>
-        <div id="main_carousel" class="carousel slide">
-            <!-- <div class="carousel-indicators">
-          <button type="button" data-bs-target="#main_carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#main_carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#main_carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div> -->
+    <section class="main-section">
+        <div id="main_carousel" class="col-9 carousel slide carousel-vertical" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block h-100 lazy" src="images/07.jpg" srcset="
@@ -148,12 +153,12 @@
     </section>
 
     <section class="portfolio-section">
-        <div id="gallery" class="gallery-container mt-5" hidden>
+        <div id="gallery" class="col-12 col-md-9 gallery-container mt-5" hidden>
 
         </div>
     </section>
 
-    <footer class="d-flex flex-wrap justify-content-between pt-3 px-3">
+    <!-- <footer class="d-flex flex-wrap justify-content-between pt-1 px-3 fixed-bottom">
         <div class="col-md-4 d-flex align-items-center">
             <span class="mb-3 mb-md-0 text-body-secondary">LetMePhoto - фотографски услуги</span>
         </div>
@@ -167,6 +172,37 @@
             <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/letmephoto"><img
                         src="images/instagram.svg" alt=""></a></li>
         </ul>
+    </footer> -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>За нас</h5>
+                    <p>Ние сме LetMePhoto! Предлагаме фотографски услуги, дизайн и разработка на уебсайтове, а понякога
+                        се заемаме и с по-непретенциозни видео задачи.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Социални мрежи</h5>
+                    <div class="d-flex gap-2 ">
+                        <a href="https://www.facebook.com/profile.php?id=100091929785008"><img src="images/facebook.svg"
+                                alt=""></a>
+                        <a href="m.me/101563912919633"><img src="images/facebook-messenger.svg" alt=""></a>
+                        <a href="https://www.instagram.com/letmephoto"><img src="images/instagram.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Връзка с нас</h5>
+                    <address>
+                        <p>letmephoto.info@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center social-icons">
+                <p>Designed and developed by <a class="text-link" href="https://letmephoto.vercel.app/">LetMePhoto</a>
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

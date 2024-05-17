@@ -1,16 +1,15 @@
-html{
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-
+html {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
 
 body {
   --bs-secondary-color: #f0f0f0;
   /* Define your global color variable */
-  --bs-navbar-padding-x: 1.1em;
-  --bs-navbar-padding-y: 1.5rem;
   --bs-gutter-x: 3.5rem;
-  background-color: #d9d9d9;
+  background-color: #fdfdfd;
 }
 
 img {
@@ -38,58 +37,132 @@ img {
   font-style: normal
 }
 
-.bg-transparent {
+.logo {
+  height: 20px;
+  /* transform: rotate(-45deg); */
+}
+
+nav {
   background-color: transparent;
 }
 
-.logo{
-  height: 25px;
+.navbar {
+  --bs-navbar-padding-y: 0rem !important;
 }
 
-.carousel {
-  height: 100vh;
+.navbar-brand {
+  border:none;
 }
+
+.navbar-collapse {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #282828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.navbar-brand {
+  z-index: 1;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.navbar-toggler {
+  z-index: 1; 
+  border: none;
+  visibility: hidden;
+}
+
+.navbar-toggler-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-collapse.show {
+  transition: all 0.5s;
+}
+
+/* .carousel {
+  height: 100vh;
+  width: 75vw;
+} */
 
 .carousel-item {
   height: 100vh;
+  padding: 20px 20px;
 }
 
 .carousel-item img {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 100%
-}
-.hidden{
-opacity:0;
- transition:ease-in 1.3s;
-}
-.visible{
-opacity: 1 !important;
+  height: 100%;
+  border-radius:20px;
 }
 
-.fast-tr{
-  transition:ease-in 0.3s !important;
+.hidden {
+  opacity: 0;
+  transition: ease-in 1.3s;
 }
+
+.visible {
+  opacity: 1 !important;
+}
+
+.fast-tr {
+  transition: ease-in 0.3s !important;
+}
+
+.text-link{
+  text-decoration:none;
+  color: #545a6b;
+}
+
 @media only screen and (max-width: 600px) {
   .img-to-right {
     object-position: right !important;
   }
+
   .carousel-item {
     height: 90vh !important;
   }
+
   .carousel {
-    height: 90vh !important;
+    height: 100vh !important;
+    width: 100vw !important;
   }
+
+  .gallery-container {
+    width: 100vw !important;
+  }
+
   .logo {
     height: 40px !important;
+    margin-top: -10px;
   }
+
+.navbar{
+  padding-top: 10px;
+  padding-bottom: 30px ;
+  border-top: 1px solid #212529;
+}
+.navbar-toggler{
+  visibility: visible !important;
+}
   .navbar-toggler-icon {
     width: 40px !important;
     height: 40px !important;
-  }
-  .navbar-brand {
-    margin-top: 7px !important;
   }
 }
 
@@ -105,7 +178,6 @@ opacity: 1 !important;
   font-weight: 700;
   color: #f0f0f0;
   margin-bottom: 2rem;
-  text-shadow: 0px 1px 3px #212529;
   text-transform: uppercase;
   margin-bottom: 0px
 }
@@ -140,76 +212,31 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #282828;
   font-family: 'MySans3';
   font-weight: 500;
-}
-
-
-.navbar-collapse {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #282828;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.navbar-brand {
-  margin-top: -10px;
-  z-index: 1;
-}
-
-.navbar-toggler {
-  color: #f0f0f0;
-  z-index: 1;
-  box-shadow: none;
-  border: none;
-}
-
-.navbar-toggler-icon {
-  width: 25px;
-  height: 25px;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-.navbar-collapse.show {
-  transition: all 0.5s;
+  background-color: #373b46;
 }
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   position: absolute;
-  top: 90%;
+  top: 83.5%;
 }
 
 
-.portfolio-section {
-  width: 100%;
-  height: auto !important;
-  margin-bottom: 0 !important;
-}
-
-.gallery-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0em;
-}
+.main-section {
+  height: 100vh;
+   }
+  
 
 .gallery-container div {
-
   margin-bottom: 7px;
-  border-radius: 0rem;
+  padding: 20px 20px;
+} 
+
+.gallery-container img {
+  border-radius: 20px;
+  max-height: 95vh !important;
 }
 
 .main-section{
