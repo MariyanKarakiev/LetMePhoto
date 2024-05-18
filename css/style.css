@@ -39,7 +39,7 @@ img {
 
 .logo {
   height: 1.7rem;
-  margin-top: 1rem ;
+  margin-top: 1rem;
 }
 
 nav {
@@ -161,16 +161,18 @@ nav {
     background-color: #353b41 !important;
     /* box-shadow: 1px 3px 2px #212529; */
   }
+
   .navbar-bottom a {}
 
   .navbar-bottom img {
     width: 1.7rem !important;
     box-shadow: 0px 0px 10px #353b41 !important;
   }
-.horizontal-sm
-{
-  display: flex !important;
-}
+
+  .horizontal-sm {
+    display: flex !important;
+  }
+
   .navbar-toggler {
     visibility: visible !important;
   }
