@@ -158,6 +158,7 @@ nav {
     width: 90vw !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-right: 1.2rem !important;
     border-radius: 20px;
     background-color: #353b41 !important;
     /* box-shadow: 1px 3px 2px #212529; */
@@ -279,12 +280,11 @@ footer img {
 }
 
 .navbar-bottom {
-  padding: 0.7rem;
   padding-top: 0.5rem;
   padding-bottom: 0.7rem;
   border-radius: 20px;
-  margin-right: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-right: .6rem;
+  margin-bottom: 1.1rem;
   margin-left: 3.2rem;
   background-color: #353b41 !important;
   /* box-shadow: 1px 3px 2px #212529; */
