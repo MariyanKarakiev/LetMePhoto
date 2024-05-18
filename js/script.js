@@ -123,9 +123,9 @@ function animateOnIntersect() {
                 entry.target.classList.add("visible");
                 console.log(entry);
             }
-            // else{
-            //     entry.target.classList.remove("visible");
-            // }
+            //  else{
+            //      entry.target.classList.remove("visible");
+            //  }
         });
     })
     const hiddenElements = document.querySelectorAll(".hidden");
@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // Prevent the default behavior (e.g., following the link)
             event.preventDefault();
             // Get the text content of the clicked anchor's parent carousel-caption
-
             populateGallery(anchor.id);
         });
     });
