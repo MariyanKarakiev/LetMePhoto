@@ -93,14 +93,16 @@ nav {
   transition: all 0.5s;
 }
 
-/* .carousel {
-  height: 100vh;
-  width: 75vw;
-} */
+ .carousel {
+  padding: 20px 20px;
+} 
 
 .carousel-item {
-  height: 100vh;
-  padding: 20px 20px;
+  height: 92vh;
+}
+
+.carousel-inner{
+  border-radius: 20px;
 }
 
 .carousel-item img {
@@ -278,7 +280,7 @@ footer img {
 }
 
 .navbar-bottom {
-  width: 23vw;
+ 
   padding: 0.7rem;
   padding-top: 0.5rem;
   padding-bottom: 0.7rem;
