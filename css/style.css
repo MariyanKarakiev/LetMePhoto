@@ -137,7 +137,7 @@ nav {
   }
 
   .carousel-item {
-    height: 90vh !important;
+    height: 85vh!important;
   }
 
   .carousel {
@@ -159,7 +159,6 @@ nav {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 20px;
-    margin: 1.2rem;
     background-color: #353b41 !important;
     /* box-shadow: 1px 3px 2px #212529; */
   }
@@ -280,7 +279,6 @@ footer img {
 }
 
 .navbar-bottom {
- 
   padding: 0.7rem;
   padding-top: 0.5rem;
   padding-bottom: 0.7rem;
