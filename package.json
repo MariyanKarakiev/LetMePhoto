@@ -1,0 +1,24 @@
+{
+  "name": "portfolio_photography",
+  "version": "1.0.0",
+  "description": "my portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariyanKarakiev/Pertfolio.git"
+  },
+  "author": "Mariyan Karakiev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariyanKarakiev/Pertfolio/issues"
+  },
+  "homepage": "https://github.com/MariyanKarakiev/Pertfolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4"
+  }
+}
