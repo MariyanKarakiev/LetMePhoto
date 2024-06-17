@@ -132,6 +132,9 @@ nav {
     object-position: right !important;
   }
 
+  .main-section {
+    height: auto !important;
+  }
   .carousel-item {
     height: 85vh !important;
   }
@@ -275,18 +278,19 @@ footer img {
 }
 
 .menu img {
-  width: 1.5rem;
+  width: 1.2rem;
   height: auto;
   /* box-shadow: 1px 2px 0px #0d0e10;   */
 }
 
 .card {
-  height: 25vh;
+  height: 25.8vh;
   border-radius: 16px;
   background-size: cover;
   background-position: center;
   color: white;
   box-sizing: border-box;
+  text-align: start;
 }
 
 .card img {
@@ -297,30 +301,33 @@ footer img {
   font-weight: 700;
   font-size: 1em;
   font-family: 'MySans3';
+  text-align: start;
   color: #f0f0f0;
-  border-radius: 0px;
-  padding: 10px 60px;
-  margin-top: 40px;
+  margin-bottom: 4.5rem;
   background-color: transparent !important;
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 1px 2px 1px #353b41;
+  text-shadow: 1px 2px 1px #282828;
+  background-color: #545a6b;
 }
 
 .card a {
   font-family: 'Murs', sans-serif;
   font-weight: 700;
+  text-align: start;
   font-size: 0.8rem;
-  text-decoration: none;
-  color: #f0f0f0;
   text-transform: uppercase;
   text-shadow: 1px 2px 1px #353b41;
 }
-
+.card a:hover {
+  text-shadow: 1px 2px 30px #0e1011 !important;
+  cursor: default;
+}
 .menu{
   height: 5vh;
   background-color: #373b46;
 }
+
 .rounded {
   border-radius: 20px !important;
 }
