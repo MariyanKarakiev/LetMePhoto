@@ -1,13 +1,5 @@
-html {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
 body {
   --bs-secondary-color: #f0f0f0;
-  /* Define your global color variable */
   --bs-gutter-x: 3.5rem;
   background-color: #fdfdfd;
 }
@@ -18,23 +10,6 @@ img {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-}
-
-@font-face {
-  font-family: 'Murs';
-  src: url('../fonts/MursGothic-WideDark.woff2') format('woff2'),
-    url('../fonts/MursGothic-WideDark.woff') format('woff');
-
-  font-weight: 400;
-  font-style: normal
-}
-
-@font-face {
-  font-family: 'MySans3';
-  src: url('../fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-
-  font-weight: 400;
-  font-style: normal
 }
 
 .logo {
@@ -52,20 +27,6 @@ nav {
 
 .navbar-brand {
   border: none;
-}
-
-.navbar-collapse {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #282828;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 .navbar-brand {
@@ -89,19 +50,11 @@ nav {
   box-shadow: none;
 }
 
-.navbar-collapse.show {
-  transition: all 0.5s;
-}
-
- .carousel {
-  padding: 20px 20px;
-} 
-
 .carousel-item {
-  height: 92vh;
+  height: 93vh;
 }
 
-.carousel-inner{
+.carousel-inner {
   border-radius: 20px;
 }
 
@@ -136,12 +89,16 @@ nav {
     object-position: right !important;
   }
 
+  .main-section {
+    height: auto !important;
+  }
+
   .carousel-item {
-    height: 85vh!important;
+    height: 85vh !important;
   }
 
   .carousel {
-    height: 100vh !important;
+    height: 90vh !important;
     width: 100vw !important;
   }
 
@@ -152,27 +109,6 @@ nav {
   .logo {
     height: 2.5rem !important;
     margin-top: 1rem !important;
-  }
-
-  .navbar-bottom {
-    width: 90vw !important;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-right: 1.2rem !important;
-    border-radius: 20px;
-    background-color: #353b41 !important;
-    /* box-shadow: 1px 3px 2px #212529; */
-  }
-
-  .navbar-bottom a {}
-
-  .navbar-bottom img {
-    width: 1.7rem !important;
-    box-shadow: 0px 0px 10px #353b41 !important;
-  }
-
-  .horizontal-sm {
-    display: flex !important;
   }
 
   .navbar-toggler {
@@ -187,13 +123,6 @@ nav {
   .mobile-visible {
     visibility: visible !important;
   }
-}
-
-.carousel-item .bg {
-  object-fit: cover;
-  object-position: top;
-  width: 100%;
-  height: 100%
 }
 
 .carousel-item h2 {
@@ -218,11 +147,10 @@ nav {
   text-transform: uppercase;
   text-decoration: none;
   text-shadow: 1px 2px 1px #353b41;
-
 }
 
 .carousel-caption {
-  bottom: 1.25rem
+  bottom: 1.25rem;
 }
 
 footer {
@@ -236,7 +164,7 @@ footer {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   position: absolute;
-  top: 81.5%;
+  top: 85.5%;
   padding: 10px;
 }
 
@@ -249,9 +177,12 @@ footer {
 }
 
 .main-section {
-  height: 100vh;
+  height: 93vh;
 }
 
+.gallery-container {
+  margin-top: 0rem;
+}
 
 .gallery-container div {
   margin-bottom: 7px;
@@ -264,14 +195,6 @@ footer {
 
 }
 
-.main-section {
-  height: 100vh;
-}
-
-.image-link {
-  position: relative;
-}
-
 footer img {
   width: 20px;
   color: #fefefe;
@@ -281,20 +204,72 @@ footer img {
   visibility: visible;
 }
 
-.navbar-bottom {
-  padding-top: 0.5rem;
-  padding-bottom: 0.7rem;
-  border-radius: 20px;
-  margin-right: .6rem;
-  margin-bottom: 1.1rem;
-  margin-left: 3.2rem;
-  background-color: #353b41 !important;
-  /* box-shadow: 1px 3px 2px #212529; */
-}
-
-.navbar-bottom img {
+.menu img {
   width: 1.2rem;
   height: auto;
-  box-shadow: 0px 0px 10px #282828;
-  border-radius: 20px;
+}
+
+.card {
+  height: 25.8vh;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  box-sizing: border-box;
+  text-align: start;
+}
+
+.card img {
+  display: none;
+}
+
+.card p {
+  font-weight: 700;
+  font-size: 1em;
+  font-family: 'MySans3';
+  text-align: start;
+  color: #f0f0f0;
+  margin-bottom: 4.5rem;
+  background-color: transparent !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 1px 2px 1px #282828;
+  background-color: #545a6b;
+}
+
+.card a {
+  font-family: 'Murs', sans-serif;
+  font-weight: 700;
+  text-align: start;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 1px #353b41;
+}
+
+.card a:hover {
+  text-shadow: 1px 2px 30px #0e1011 !important;
+  cursor: default;
+}
+
+.menu {
+  background-color: #373b46;
+}
+
+.rounded {
+  border-radius: 20px !important;
+}
+
+/*! CSS Used fontfaces */
+@font-face {
+  font-family: 'Murs';
+  src: url('http://localhost:5500/fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MySans3';
+  src: url('http://localhost:5500/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }

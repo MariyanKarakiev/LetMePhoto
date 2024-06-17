@@ -53,7 +53,7 @@ function populateGallery(galleryName) {
             let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
             let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
-            imageCard.classList = [`image-link ${imageType}`];
+            imageCard.classList = [`image-link text-center ${imageType}`];
 
             //sets class for chocolat usage
             imageLink.classList = ["galleryImg"]
@@ -63,7 +63,7 @@ function populateGallery(galleryName) {
             //  imageLink.dataset.srcset = srcsetArr
 
             //for lazy loading 
-            image.classList = ["lazy img-fluid"];
+            image.classList = ["lazy img-fluid mx-auto"];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
@@ -117,11 +117,10 @@ function overlayMenu() {
 }
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
-     
+
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
-                console.log(entry);
             }
             // else{
             //     entry.target.classList.remove("visible");
@@ -137,7 +136,35 @@ document.addEventListener('contextmenu', function (e) {
 
 document.addEventListener("DOMContentLoaded", () => {
     animateOnIntersect();
+    AddBgToCards();
+    AddGalleryToAnchor();
 
+});
+
+function AddBgToCards() {
+    // взимат се всички карти
+    var cards = document.querySelectorAll('.card');
+
+    //за всяка карта се излича img и при налична такава се задава bg-image
+    cards.forEach((card) => {
+
+        let img = card.children[0];
+        img.addEventListener('load', function () {
+            var selectedSrc = img.currentSrc || img.src;
+            card.style.backgroundImage = 'url(' + selectedSrc + ')';
+            // card.style.filter = 'brightness(0%)';
+            console.log(img);
+        });
+
+        if (!img.completed) {
+            var selectedSrc = img.currentSrc || img.src;
+            card.style.backgroundImage = 'url(' + selectedSrc + ')';
+            console.log(img);
+        }
+    });
+};
+
+function AddGalleryToAnchor() {
     // Get all anchor elements within the carousel
     var carouselAnchors = document.querySelectorAll('.carousel-item a');
 
@@ -147,8 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Prevent the default behavior (e.g., following the link)
             event.preventDefault();
             // Get the text content of the clicked anchor's parent carousel-caption
-
             populateGallery(anchor.id);
         });
     });
-});
+}
