@@ -149,17 +149,14 @@ function AddBgToCards() {
     cards.forEach((card) => {
 
         let img = card.children[0];
+        img.addEventListener('load', function () {
+            var selectedSrc = img.currentSrc || img.src;
+            card.style.backgroundImage = 'url(' + selectedSrc + ')';
+            // card.style.filter = 'brightness(0%)';
+            console.log(img);
+        });
 
         if (!img.completed) {
-            img.addEventListener('load', function () {
-                var selectedSrc = img.currentSrc || img.src;
-                card.style.backgroundImage = 'url(' + selectedSrc + ')';
-                // card.style.filter = 'brightness(0%)';
-                console.log(img);
-            });
-        }
-
-        else {
             var selectedSrc = img.currentSrc || img.src;
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
             console.log(img);
