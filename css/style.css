@@ -1,18 +1,15 @@
 @font-face {
   font-family: 'Murs';
-  src: url('../fonts/MursGothic-WideDark.woff2') format('woff2'),
-    url('../fonts/MursGothic-WideDark.woff') format('woff');
-
+  src: url('http://localhost:5500/fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'MySans3';
-  src: url('../fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-
+  src: url('http://localhost:5500/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
 }
 
 body {
@@ -99,57 +96,6 @@ nav {
 .text-link {
   text-decoration: none;
   color: #545a6b;
-}
-
-@media only screen and (max-width: 600px) {
-  .img-to-right {
-    object-position: right !important;
-  }
-
-  .main-section {
-    height: auto !important;
-  }
-
-  .carousel-item {
-    height:75vh !important;
-  }
-
-  .carousel {
-    height: 90vh !important;
-    width: 100vw !important;
-  }
-
-  .gallery-container {
-    width: 100vw !important;
-  }
-
-  .logo {
-    height: 2.5rem !important;
-    margin-top: 1rem !important;
-  }
-
-  .navbar-toggler {
-    visibility: visible !important;
-  }
-
-  .navbar-toggler-icon {
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  .menu {
-    position: fixed;
-    z-index: 3;
-    top: 91.5%;
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    width: 89.5%;
-    height: 5vh;
-  }
-
-  .mobile-visible {
-    visibility: visible !important;
-  }
 }
 
 .carousel-item h2 {
@@ -250,13 +196,18 @@ footer img {
   display: none;
 }
 
+.card .info-wrapper {
+  height: 25.8vh;
+  position: relative;
+}
+
 .card p {
+  position: absolute;
+  top: 5%;
   font-weight: 700;
   font-size: 1em;
   font-family: 'MySans3';
   text-align: start;
-  color: #f0f0f0;
-  margin-bottom: 44%;
   background-color: transparent !important;
   text-transform: uppercase;
   text-decoration: none;
@@ -265,6 +216,8 @@ footer img {
 
 
 .card a {
+  position: absolute;
+  bottom: 5%;
   font-family: 'Murs', sans-serif;
   font-weight: 700;
   text-align: start;
@@ -287,16 +240,67 @@ footer img {
 }
 
 /*! CSS Used fontfaces */
-@font-face {
-  font-family: 'Murs';
-  src: url('http://localhost:5500/fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'MySans3';
-  src: url('http://localhost:5500/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+
+
+@media only screen and (max-width: 787px) {
+  .img-to-right {
+    object-position: right !important;
+  }
+
+  .main-section {
+    height: auto !important;
+  }
+
+  .carousel-item {
+    height: 75vh !important;
+  }
+
+  .carousel {
+    height: 90vh !important;
+    width: 100vw !important;
+  }
+
+  .gallery-container {
+    width: 100vw !important;
+  }
+
+  .logo {
+    height: 2.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .navbar-toggler {
+    visibility: visible !important;
+  }
+
+  .navbar-toggler-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .carousel-control-next-icon, .carousel-control-prev-icon{
+    top:77.5% !important;
+
+  }
+  .menu {
+    padding-top: 22px !important;
+    position: fixed;
+    z-index: 3;
+    left: 2%;
+    top: 92.5%;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    width: 96.5%;
+    height: 6vh;
+  }
+
+  .menu img {
+    width: 1.9rem !important;
+  }
+
+  .card p {}
+
+  .mobile-visible {
+    visibility: visible !important;
+  }
 }
