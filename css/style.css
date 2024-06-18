@@ -610,11 +610,11 @@ footer img {
   }
 
   .carousel-item {
-    height: 75vh !important;
+    height: 85vh !important;
   }
 
   .carousel {
-    height: 80vh !important;
+    height: 95vh !important;
     width: 100vw !important;
   }
 
