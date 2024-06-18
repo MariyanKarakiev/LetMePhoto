@@ -111,7 +111,7 @@ nav {
   }
 
   .carousel-item {
-    height: 85vh !important;
+    height:75vh !important;
   }
 
   .carousel {
@@ -135,6 +135,16 @@ nav {
   .navbar-toggler-icon {
     width: 40px !important;
     height: 40px !important;
+  }
+
+  .menu {
+    position: fixed;
+    z-index: 3;
+    top: 91.5%;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    width: 89.5%;
+    height: 5vh;
   }
 
   .mobile-visible {
@@ -246,13 +256,13 @@ footer img {
   font-family: 'MySans3';
   text-align: start;
   color: #f0f0f0;
-  margin-bottom: 4.5rem;
+  margin-bottom: 44%;
   background-color: transparent !important;
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 1px 2px 1px #282828;
-  background-color: #545a6b;
+  text-shadow: 1px 2px 1px #343a4094;
 }
+
 
 .card a {
   font-family: 'Murs', sans-serif;
