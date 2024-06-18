@@ -130,18 +130,7 @@ function animateOnIntersect() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el))
 }
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    animateOnIntersect();
-    AddBgToCards();
-    AddGalleryToAnchor();
-
-});
-
-function AddBgToCards() {
+function addBgToCards() {
     // взимат се всички карти
     var cards = document.querySelectorAll('.card');
 
@@ -161,8 +150,7 @@ function AddBgToCards() {
         }
     });
 };
-
-function AddGalleryToAnchor() {
+function addGalleryToAnchor() {
     // Get all anchor elements within the carousel
     var carouselAnchors = document.querySelectorAll('.carousel-item a');
 
@@ -176,3 +164,12 @@ function AddGalleryToAnchor() {
         });
     });
 }
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    animateOnIntersect();
+    addBgToCards();
+    addGalleryToAnchor();
+});
