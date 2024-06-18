@@ -153,13 +153,11 @@ function AddBgToCards() {
             var selectedSrc = img.currentSrc || img.src;
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
             // card.style.filter = 'brightness(0%)';
-            console.log(img);
         });
 
         if (!img.completed) {
             var selectedSrc = img.currentSrc || img.src;
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
-            console.log(img);
         }
     });
 };

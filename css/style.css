@@ -257,7 +257,7 @@ footer img {
   }
 
   .carousel {
-    height: 90vh !important;
+    height: 80vh !important;
     width: 100vw !important;
   }
 
@@ -278,16 +278,19 @@ footer img {
     width: 40px !important;
     height: 40px !important;
   }
-  .carousel-control-next-icon, .carousel-control-prev-icon{
-    top:77.5% !important;
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    top: 77.5% !important;
 
   }
+
   .menu {
-    padding-top: 22px !important;
+    padding-top: 15px !important;
     position: fixed;
     z-index: 3;
     left: 2%;
-    top: 92.5%;
+    top: 91.5%;
     border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
     width: 96.5%;
