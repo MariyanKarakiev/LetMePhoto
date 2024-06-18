@@ -290,15 +290,15 @@ footer img {
     position: fixed;
     z-index: 3;
     left: 2%;
-    top: 90.5%;
+    top: 89.5%;
     border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
     width: 96.5%;
-    height: 6vh;
+    height: 7vh;
   }
 
   .menu img {
-    width: 1.5rem !important;
+    width: 1.2rem !important;
   }
 
   .card p {}
