@@ -130,18 +130,7 @@ function animateOnIntersect() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el))
 }
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    animateOnIntersect();
-    AddBgToCards();
-    AddGalleryToAnchor();
-
-});
-
-function AddBgToCards() {
+function addBgToCards() {
     // взимат се всички карти
     var cards = document.querySelectorAll('.card');
 
@@ -153,18 +142,15 @@ function AddBgToCards() {
             var selectedSrc = img.currentSrc || img.src;
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
             // card.style.filter = 'brightness(0%)';
-            console.log(img);
         });
 
         if (!img.completed) {
             var selectedSrc = img.currentSrc || img.src;
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
-            console.log(img);
         }
     });
 };
-
-function AddGalleryToAnchor() {
+function addGalleryToAnchor() {
     // Get all anchor elements within the carousel
     var carouselAnchors = document.querySelectorAll('.carousel-item a');
 
@@ -178,3 +164,46 @@ function AddGalleryToAnchor() {
         });
     });
 }
+
+function menuListeners() {
+    const menu = document.getElementById('menu');
+    const components = document.getElementsByClassName('component');
+    const ancorsInMenu = menu.children;
+
+    for (let i = 0; i < ancorsInMenu.length; i++) {
+        let a = ancorsInMenu[i];
+
+        a.addEventListener('click', (e) => {
+            console.log(a)
+            e.preventDefault();
+
+            for (let i = 0; i < components.length; i++) {
+                let component = components[i];
+                
+                if (component.id == a.id) {
+                    console.log(a.id + '  ' + component.id + 'if')
+                    component.style.display = 'block'
+                    console.log(component.style.display)
+
+                }
+                else {
+                    console.log(a.id + '  ' + component.id)      
+                    component.style.display = 'none'
+                    console.log(component.style.display)
+               
+                }
+            }
+
+        })
+    }
+}
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    animateOnIntersect();
+    addBgToCards();
+    addGalleryToAnchor();
+    menuListeners();
+});
