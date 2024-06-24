@@ -452,6 +452,8 @@ nav {
   box-shadow: none;
 }
 
+
+
 .carousel-item {
   height: 93vh;
 }
@@ -468,27 +470,10 @@ nav {
   border-radius: 20px;
 }
 
-.hidden {
-  opacity: 0;
-  transition: ease-in 1.3s;
-}
-
-.visible {
-  opacity: 1 !important;
-}
-
-.fast-tr {
-  transition: ease-in 0.3s !important;
-}
-
-.text-link {
-  text-decoration: none;
-  color: #545a6b;
-}
-
 .carousel-item h2 {
   font-family: 'Murs', sans-serif;
   font-weight: 700;
+  font-size: 1.5rem;
   color: #f0f0f0;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -509,20 +494,19 @@ nav {
   text-decoration: none;
   text-shadow: 1px 2px 1px #353b41;
 }
-.contact{
+
+.contact {
   display: none;
 }
+
 .contact .card {
- height: 100%;
+  height: 90vh;
   background-image: url("./contacts.jpg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   box-sizing: border-box;
 }
-
-.contact .gform {}
-
 .contact button {
   font-weight: 700;
   font-size: 1.5em;
@@ -534,11 +518,9 @@ nav {
   text-shadow: 1px 2px 1px #353b41;
   transition: transform 0.3s ease;
 }
-
 .contact button:hover {
   transform: scale(1.1);
 }
-
 .contact h3 {
   font-weight: 700;
   font-size: 1.5rem;
@@ -548,13 +530,13 @@ nav {
   text-transform: uppercase;
   text-shadow: 1px 2px 1px #353b41;
 }
-
 .contact input {
   box-shadow: 1px 1px 10px #353b41;
 }
 .contact textarea {
   box-shadow: 1px 1px 10px #353b41;
 }
+
 .contact input::placeholder {
   color: #373b46;
   font-family: 'MySans3';
@@ -568,9 +550,11 @@ nav {
 .pt-25 {
   padding-top: 25vh;
 }
+
 .pb-25 {
   padding-bottom: 25vh;
 }
+
 .carousel-caption {
   bottom: 1.25rem;
 }
@@ -688,6 +672,23 @@ footer img {
   border-radius: 20px !important;
 }
 
+.hidden {
+  opacity: 0;
+  transition: ease-in 1.3s;
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+.fast-tr {
+  transition: ease-in 0.3s !important;
+}
+
+.text-link {
+  text-decoration: none;
+  color: #545a6b;
+}
 /*! CSS Used fontfaces */
 
 
@@ -749,13 +750,20 @@ footer img {
   .menu img {
     width: 1.2rem !important;
   }
+
   .mobile-visible {
     visibility: visible !important;
   }
-  .pt-25{
+
+  .pt-25 {
     padding-top: 13vh !important;
   }
-  .pb-25{
+
+  .pb-25 {
     padding-bottom: 12vh !important;
+  }
+
+  .contact .card {
+    height: auto !important;
   }
 }
