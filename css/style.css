@@ -735,15 +735,11 @@ footer img {
   }
 
   .menu {
-    /* padding-top: 15px !important; */
+    left: 8%;
+    width: 83.5vw;
     position: fixed;
     z-index: 3;
-    left: 5%;
     top: 89.5%;
-    /* border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important; */
-    width: 90.5%;
-    height: 4vh;
     box-shadow: 1px 1px 3px #272a32;
   }
 
