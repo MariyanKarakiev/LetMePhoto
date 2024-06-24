@@ -55,15 +55,8 @@ function populateGallery(galleryName) {
             let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
             imageCard.classList = [`image-link text-center ${imageType}`];
 
-            //sets class for chocolat usage
-            imageLink.classList = ["galleryImg"]
-            //for when optimised images are not available in chocolat
-            //imageLink.href = `${href2}/img${i}.jpg`
-            //for delivery of optimised images in chocolat
-            //  imageLink.dataset.srcset = srcsetArr
-
             //for lazy loading 
-            image.classList = ["lazy img-fluid mx-auto"];
+            image.classList = ["lazy img-fluid mb-3 mx-auto rounded"];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
