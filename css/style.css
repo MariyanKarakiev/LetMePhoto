@@ -703,7 +703,7 @@ footer img {
   }
 
   .carousel-item {
-    height: 77vh !important;
+    height: 85vh !important;
   }
 
   .carousel {
@@ -760,6 +760,6 @@ footer img {
   }
 
   .contact .card {
-    height: auto !important;
+    height: 85vh !important;
   }
 }
