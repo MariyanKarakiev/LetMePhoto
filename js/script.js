@@ -2,13 +2,13 @@
 
 const form = document.getElementById('form');
 const body = document.getElementById('body');
+const galleryContainer = document.getElementById("gallery");
 let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
 let imgsCount = 0
 
 function populateGallery(galleryName) {
-    const galleryContainer = document.getElementById("gallery");
     galleryContainer.hidden = false;
     const widths = [767, 1024]
     const pageName = 'portraits'
@@ -68,6 +68,7 @@ function populateGallery(galleryName) {
         }
     }
     galleryElementFactory(galleryContainer)
+    galleryContainer.style.display = "block";
     galleryContainer.scrollIntoView({
         behavior: 'smooth' // You can also use 'auto' or 'instant'
     });
@@ -169,10 +170,14 @@ function menuListeners() {
         a.addEventListener('click', (e) => {
             console.log(a)
             e.preventDefault();
+            //hide gallery
+            window.scrollTo(0, 0);
+
+            setTimeout(() => { galleryContainer.style.display = "none" }, 1000)
 
             for (let i = 0; i < components.length; i++) {
                 let component = components[i];
-                
+
                 if (component.id == a.id) {
                     console.log(a.id + '  ' + component.id + 'if')
                     component.style.display = 'block'
@@ -180,9 +185,9 @@ function menuListeners() {
 
                 }
                 else {
-                    console.log(a.id + '  ' + component.id)      
+                    console.log(a.id + '  ' + component.id)
                     component.style.display = 'none'
-                    console.log(component.style.display)    
+                    console.log(component.style.display)
                 }
             }
 

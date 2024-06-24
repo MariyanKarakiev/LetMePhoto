@@ -28,6 +28,7 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+    scroll-behavior: smooth;
 }
 
 /* Sections
@@ -703,7 +704,7 @@ footer img {
   }
 
   .carousel-item {
-    height: 72vh !important;
+    height: 70vh !important;
   }
 
   .carousel {
