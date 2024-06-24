@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Murs';
-  src: url('http://localhost:5500/fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
+  src: url('./fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MySans3';
-  src: url('http://localhost:5500/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  src: url('./fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
