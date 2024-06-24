@@ -189,8 +189,7 @@ function menuListeners() {
                 else {
                     console.log(a.id + '  ' + component.id)      
                     component.style.display = 'none'
-                    console.log(component.style.display)
-               
+                    console.log(component.style.display)    
                 }
             }
 
