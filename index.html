@@ -37,9 +37,9 @@
             <a class="navbar-brand" href="#"><img class="logo" src="images/kraino.svg" alt=""></a>
         </div>
     </nav>
-    <section class="main-section my-3">
-        <div class="row mx-1 justify-content-center ">
-            <div class="col-12 col-md-9 mb-5 carousel slide carousel-vertical component" id="home"
+    <div class="main-section my-3">
+        <div class="row mx-1 justify-content-center">
+            <section class="col-12 col-md-9 mb-5 carousel slide carousel-vertical component" id="home"
                 data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -108,8 +108,8 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-            </div>
-            <div class="col-12 col-md-9 mb-4 contact text-center  component rounded hidden" id="contact">
+            </section>
+            <section class="contact col-12 col-md-9 mb-4 text-center component rounded hidden" id="contact">
                 <div class="card px-3 pt-25 pb-25 text-center">
                     <h3>Направете запитване!</h3>
                     <form id="form" class="gform col-lg-7 mt-5 mx-auto" method="POST" data-email="example@email.net"
@@ -129,13 +129,14 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </section>
 
-            <div class="gallery-section mb-3 mt-3">
+            <section class="gallery-section mb-3 mt-3" id="gallery-section">
                 <div id="gallery" class="col-12 col-md-9 px-3 gallery-container" hidden>
                 </div>
-            </div>
-            <div class="col-12 col-md-3">
+            </section>
+
+            <section class="highlight-section col-12 col-md-3 " id="highlight-section">
                 <div class="card mb-3 px-3">
                     <img class="lazy" src="images/products/img19.jpg" srcset="
                      https://ik.imagekit.io/ycbriiund/LetMePhoto/products/img19.jpg?updatedAt=1706522877667 400w,
@@ -156,8 +157,6 @@
                         <p href="#gallery">Заснемане на абитуриентска фотосесия</p>
                         <a>Тук→</a>
                     </div>
-
-
                 </div>
                 <div class="card mb-3 px-3" style="background-position: top;">
                     <img class="lazy" src="images/4.jpg" srcset="
@@ -177,8 +176,10 @@
                         <a class="mx-auto" id="contact"><img src="./images/contact.png" alt=""></a>
                     </div>
                 </div>
-            </div>
-    </section>
+            </section>
+           
+        </div>
+    </div>
     <footer class="bg-dark text-light">
         <div class="container">
             <div class="row">

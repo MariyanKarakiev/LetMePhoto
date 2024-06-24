@@ -194,6 +194,9 @@ function menuListeners() {
         })
     }
 }
+
+
+
 document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
@@ -203,4 +206,11 @@ document.addEventListener("DOMContentLoaded", () => {
     addBgToCards();
     addGalleryToAnchor();
     menuListeners();
+
+    // Get references to the sections
+const gallerySection = document.getElementById('gallery-section');
+const targetSection = document.getElementById('highlight-section');
+
+// Move the gallery section after the target section
+targetSection.parentNode.insertBefore(gallerySection, targetSection.nextSibling);
 });

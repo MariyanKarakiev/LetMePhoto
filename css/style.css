@@ -608,7 +608,7 @@ footer img {
 }
 
 .mobile-visible {
-  visibility: visible;
+  display: none;
 }
 
 .menu img {
@@ -749,7 +749,7 @@ footer img {
   }
 
   .mobile-visible {
-    visibility: visible !important;
+    display: block !important;
   }
 
   .pt-25 {
