@@ -163,8 +163,8 @@ function loadingScreen() {
     const loadingScreen = document.getElementById("loading-screen");
     var images = [...document.querySelectorAll('img')];
     body.style.height = '100vh !important';
-    window.addEventListener("load", () => { loadingScreen.style.display = "none"; })
-    setTimeout(()=>{},1000);
+    window.addEventListener("load", () => { setInterval(()=>{loadingScreen.style.display = "none"; },2000); })
+    
 }
 
 document.addEventListener('contextmenu', function (e) {
