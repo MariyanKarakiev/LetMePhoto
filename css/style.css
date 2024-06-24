@@ -753,7 +753,7 @@ footer img {
   }
 
   .pt-25 {
-    padding-top: 13vh !important;
+    padding-top: 16vh !important;
   }
 
   .pb-25 {
@@ -761,6 +761,6 @@ footer img {
   }
 
   .contact .card {
-    height: 75vw !important;
+    height: 75vh !important;
   }
 }
