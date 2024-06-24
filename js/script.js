@@ -1,7 +1,7 @@
 "use strict";
 
 const form = document.getElementById('form');
-const body = document.getElementById('body');
+const body = document.querySelector('body');
 const galleryContainer = document.getElementById("gallery");
 let scrolled = false;
 let path = window.location.pathname;
@@ -73,42 +73,6 @@ function populateGallery(galleryName) {
         behavior: 'smooth' // You can also use 'auto' or 'instant'
     });
 }
-function overlayMenu() {
-    if (document.getElementsByClassName('.nav-overlay').length) {
-        return false;
-    }
-
-    var body = undefined;
-    var menu = undefined;
-    var menuItems = undefined;
-
-    var init = function init() {
-        body = document.querySelector('body');
-        menu = document.querySelector('.menu-btn');
-        menuItems = document.querySelectorAll('.nav__list-item');
-        applyListeners();
-    };
-
-    var applyListeners = function applyListeners() {
-
-        menu.addEventListener('click', function () {
-            return toggleClass(body, 'nav-active');
-        });
-
-        menuItems.forEach(i => {
-            if (i.textContent.trim() == "Контакти") {
-                i.addEventListener('click', function () {
-                    return toggleClass(body, "nav-active")
-                })
-            }
-        });
-
-    };
-    var toggleClass = function toggleClass(element, stringClass) {
-        if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
-    };
-    init();
-}
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
 
@@ -134,8 +98,8 @@ function addBgToCards() {
         let img = card.children[0];
         img.addEventListener('load', function () {
             var selectedSrc = img.currentSrc || img.src;
+            console.log(selectedSrc)
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
-            // card.style.filter = 'brightness(0%)';
         });
 
         if (!img.completed) {
@@ -195,22 +159,28 @@ function menuListeners() {
     }
 }
 
-
+function loadingScreen() {
+    const loadingScreen = document.getElementById("loading-screen");
+    var images = [...document.querySelectorAll('img')];
+    body.style.height = '100vh !important';
+    window.addEventListener("load", () => { loadingScreen.style.display = "none"; })
+}
 
 document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    loadingScreen();
     animateOnIntersect();
     addBgToCards();
     addGalleryToAnchor();
     menuListeners();
 
     // Get references to the sections
-const gallerySection = document.getElementById('gallery-section');
-const targetSection = document.getElementById('highlight-section');
-
-// Move the gallery section after the target section
-targetSection.parentNode.insertBefore(gallerySection, targetSection.nextSibling);
+    const gallerySection = document.getElementById('gallery-section');
+    const targetSection = document.getElementById('highlight-section');
 });
+
+
+// Call disableScroll() to disable scrolling and enableScroll() to re-enable it.

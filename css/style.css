@@ -29,6 +29,13 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
     scroll-behavior: smooth;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+  
+}
+
+.html::-webkit-scrollbar {
+  display: none;
 }
 
 /* Sections
@@ -420,6 +427,37 @@ img {
   margin-top: 1rem;
 }
 
+
+.loading-screen {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1999;
+  align-items: center;
+  background-color: #272a32;
+}
+.loading-screen img{
+  width: 100px;
+  height: 100px;
+  animation: spin 2s infinite;
+}
+@keyframes spin {
+  0%, 100% {
+      transform: rotate(0);
+  }
+  50% {
+      transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+}
+}
+
+
+
+
 nav {
   background-color: transparent;
 }
@@ -500,7 +538,6 @@ nav {
 
 .contact .card {
   height: 90vh;
-  background-image: url("./contacts.jpg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
@@ -573,7 +610,7 @@ footer {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   position: absolute;
-  top: 85.5%;
+  top: 93.5%;
   padding: 10px;
 }
 
@@ -586,7 +623,7 @@ footer {
 }
 
 .main-section {
-  height: 90vh;
+  height: auto;
 }
 
 .gallery-container {
@@ -731,7 +768,7 @@ footer img {
 
   .carousel-control-next-icon,
   .carousel-control-prev-icon {
-    top: 70.5% !important;
+    top: 87.5% !important;
 
   }
 
@@ -761,6 +798,6 @@ footer img {
   }
 
   .contact .card {
-    height: 75vh !important;
+    height: auto !important;
   }
 }
