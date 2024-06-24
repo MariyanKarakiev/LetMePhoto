@@ -164,6 +164,7 @@ function loadingScreen() {
     var images = [...document.querySelectorAll('img')];
     body.style.height = '100vh !important';
     window.addEventListener("load", () => { loadingScreen.style.display = "none"; })
+    setTimeout(()=>{},1000);
 }
 
 document.addEventListener('contextmenu', function (e) {
