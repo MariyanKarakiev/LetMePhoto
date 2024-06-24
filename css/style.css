@@ -552,6 +552,10 @@ nav {
 .pb-25 {
   padding-bottom: 25vh;
 }
+.px-0-2{
+padding-left: .2rem !important;
+padding-right: .2rem !important;
+}
 
 .carousel-caption {
   bottom: 1.25rem;

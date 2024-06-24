@@ -53,10 +53,10 @@ function populateGallery(galleryName) {
             let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
             let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
-            imageCard.classList = [`image-link text-center ${imageType}`];
+            imageCard.classList = [`image-link text-center ${imageType} px-0-2`];
 
             //for lazy loading 
-            image.classList = ["lazy img-fluid mb-3 mx-auto rounded"];
+            image.classList = ["lazy img-fluid mb-3  mx-auto rounded"];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
