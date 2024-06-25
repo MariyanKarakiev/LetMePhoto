@@ -120,7 +120,7 @@ function addGalleryToAnchor() {
     carouselAnchors.forEach(function (anchor) {
         anchor.addEventListener('click', function (event) {
             // Prevent the default behavior (e.g., following the link)
-            event.preventDefault();
+           
             // Get the text content of the clicked anchor's parent carousel-caption
             populateGallery(anchor.id);
         });
