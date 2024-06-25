@@ -2,14 +2,14 @@
 
 const form = document.getElementById('form');
 const body = document.querySelector('body');
-const galleryContainer = document.getElementById("gallery");
+const galleryContainers = document.querySelectorAll("#gallery");
 let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
 let imgsCount = 0
 
 function populateGallery(galleryName) {
-    galleryContainer.hidden = false;
+
     const widths = [767, 1024]
     const pageName = 'portraits'
     const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
@@ -37,9 +37,18 @@ function populateGallery(galleryName) {
             imgsCount = 3
             break;
     }
-
+    //iterate through the 2 galleries and fill them 
+    galleryContainers.forEach(galleryContainer => {
+        galleryElementFactory(galleryContainer)
+        galleryContainer.hidden = false;
+        galleryContainer.style.display = "block";
+        // galleryContainer.scrollIntoView({
+        //     behavior: 'smooth'
+        // });
+    })
     function galleryElementFactory(galleryContainer) {
         //clean images
+
         while (galleryContainer.firstChild) {
             galleryContainer.removeChild(galleryContainer.firstChild)
         }
@@ -67,11 +76,6 @@ function populateGallery(galleryName) {
             galleryContainer.appendChild(imageCard);
         }
     }
-    galleryElementFactory(galleryContainer)
-    galleryContainer.style.display = "block";
-    galleryContainer.scrollIntoView({
-        behavior: 'smooth' // You can also use 'auto' or 'instant'
-    });
 }
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
@@ -163,8 +167,8 @@ function loadingScreen() {
     const loadingScreen = document.getElementById("loading-screen");
     var images = [...document.querySelectorAll('img')];
     body.style.height = '100vh !important';
-    window.addEventListener("load", () => { setInterval(()=>{loadingScreen.style.display = "none"; },2000); })
-    
+    window.addEventListener("load", () => { setInterval(() => { loadingScreen.style.display = "none"; }, 2000); })
+
 }
 
 document.addEventListener('contextmenu', function (e) {
