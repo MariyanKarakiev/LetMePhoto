@@ -2,7 +2,7 @@
 
 const form = document.getElementById('form');
 const body = document.querySelector('body');
-const galleryContainers = document.querySelectorAll("#gallery");
+const galleryContainer = document.getElementById("gallery");
 let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
@@ -37,15 +37,14 @@ function populateGallery(galleryName) {
             imgsCount = 3
             break;
     }
-    //iterate through the 2 galleries and fill them 
-    galleryContainers.forEach(galleryContainer => {
         galleryElementFactory(galleryContainer)
         galleryContainer.hidden = false;
         galleryContainer.style.display = "block";
-        // galleryContainer.scrollIntoView({
-        //     behavior: 'smooth'
-        // });
-    })
+    //     galleryContainer.scrollIntoView({
+    //         behavior: 'smooth' // You can also use 'auto' or 'instant'
+    // })
+
+
     function galleryElementFactory(galleryContainer) {
         //clean images
 
@@ -120,7 +119,7 @@ function addGalleryToAnchor() {
     carouselAnchors.forEach(function (anchor) {
         anchor.addEventListener('click', function (event) {
             // Prevent the default behavior (e.g., following the link)
-           
+            event.preventDefault();
             // Get the text content of the clicked anchor's parent carousel-caption
             populateGallery(anchor.id);
         });
