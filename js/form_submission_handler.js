@@ -20,7 +20,7 @@
     }).filter(function (item, pos, self) {
       return self.indexOf(item) == pos && item;
     });
-    console.log(fields)          // we are submitting via xhr below
+    // we are submitting via xhr below
 
     var formData = {};
     fields.forEach(function (name) {
@@ -41,7 +41,7 @@
         formData[name] = data.join(', ');
       }
     });
-    console.log(formData)          // we are submitting via xhr below
+    // we are submitting via xhr below
 
     // add form-specific values into the data
     formData.formDataNameOrder = JSON.stringify(fields);
@@ -53,11 +53,15 @@
   }
 
   function handleFormSubmit(event) {  // handles form submit without any jquery
-    event.preventDefault();
+    const loading = document.getElementById('loading-message-sending');
+    const ready = document.getElementById('loading-message-ready');
     var form = event.target;
     var formData = getFormData(form);
     var data = formData.data;
 
+    event.preventDefault();
+        ready.style.display = "none";
+    loading.style.display = "block";
     // If a honeypot field is filled, assume it was done so by a spam bot.
     if (formData.honeypot) {
       return false;
@@ -67,17 +71,14 @@
     var url = form.action;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
-    // xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        form.reset();
-        form.buttons.reset();
         var formElements = form.querySelector(".form-elements")
-        if (formElements) {
-          formElements.style.display = "none"; // hide form
-        }
-        alert("Изпратихте съобщението успешно!");
+        loading.style.display = "none";
+        ready.style.display = "block";
+        form.reset();
+        enableAllButtons(form);
       }
     };
     // url encode form data for sending as post data
@@ -100,6 +101,12 @@
     var buttons = form.querySelectorAll("button");
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true;
+    }
+  }
+  function enableAllButtons(form) {
+    var buttons = form.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = false;
     }
   }
 })();

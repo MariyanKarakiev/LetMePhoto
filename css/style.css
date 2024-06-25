@@ -465,7 +465,6 @@ img {
 
 
 
-
 nav {
   background-color: transparent;
 }
@@ -649,21 +648,21 @@ footer {
 
 /* Track */
 .scrollable-container::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
   margin-left: 10px;
   width: 10px;
   border-radius: 20px;
 }
- 
+
 /* Handle */
 .scrollable-container::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 .scrollable-container::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 
@@ -710,9 +709,20 @@ footer img {
   text-align: start;
 }
 
+
 .card img {
   display: none;
+  width: 2.4rem;
 }
+
+#loading-message-sending {
+  animation: spin 2s infinite;
+}
+
+#loading-message-ready {
+  animation: ease-in 1s;
+}
+
 
 .card .info-wrapper {
   height: 25.8vh;
@@ -806,6 +816,8 @@ footer img {
 
   .gallery-container {
     width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .logo {
@@ -827,7 +839,11 @@ footer img {
     top: 87.5% !important;
 
   }
-
+  .scrollable-container {
+    height: auto;
+  
+    overflow-y:visible;
+  }
   .menu {
     left: 8%;
     width: 83.5vw;

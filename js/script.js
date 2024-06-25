@@ -37,9 +37,9 @@ function populateGallery(galleryName) {
             imgsCount = 3
             break;
     }
-        galleryElementFactory(galleryContainer)
-        galleryContainer.hidden = false;
-        galleryContainer.style.display = "block";
+    galleryElementFactory(galleryContainer)
+    galleryContainer.hidden = false;
+    galleryContainer.style.display = "block";
     //     galleryContainer.scrollIntoView({
     //         behavior: 'smooth' // You can also use 'auto' or 'instant'
     // })
@@ -61,7 +61,7 @@ function populateGallery(galleryName) {
             let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
             let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
-            imageCard.classList = [`image-link text-center ${imageType} px-0-2`];
+            imageCard.classList = [`image-link text-center ${imageType}`];
 
             //for lazy loading 
             image.classList = ["lazy img-fluid mb-3  mx-auto rounded"];
@@ -137,7 +137,6 @@ function menuListeners() {
         a.addEventListener('click', (e) => {
             console.log(a)
             e.preventDefault();
-            //hide gallery
             window.scrollTo(0, 0);
 
             setTimeout(() => { galleryContainer.style.display = "none" }, 1000)
