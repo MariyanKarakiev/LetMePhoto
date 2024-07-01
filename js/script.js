@@ -1,15 +1,15 @@
 "use strict";
 
 const form = document.getElementById('form');
-const body = document.getElementById('body');
+const body = document.querySelector('body');
+const galleryContainer = document.getElementById("gallery");
 let scrolled = false;
 let path = window.location.pathname;
 let page = path.split("/").pop();
 let imgsCount = 0
 
 function populateGallery(galleryName) {
-    const galleryContainer = document.getElementById("gallery");
-    galleryContainer.hidden = false;
+
     const widths = [767, 1024]
     const pageName = 'portraits'
     const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
@@ -37,9 +37,17 @@ function populateGallery(galleryName) {
             imgsCount = 3
             break;
     }
+    galleryElementFactory(galleryContainer)
+    galleryContainer.hidden = false;
+    galleryContainer.style.display = "block";
+    //     galleryContainer.scrollIntoView({
+    //         behavior: 'smooth' // You can also use 'auto' or 'instant'
+    // })
+
 
     function galleryElementFactory(galleryContainer) {
         //clean images
+
         while (galleryContainer.firstChild) {
             galleryContainer.removeChild(galleryContainer.firstChild)
         }
@@ -55,15 +63,8 @@ function populateGallery(galleryName) {
             let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
             imageCard.classList = [`image-link text-center ${imageType}`];
 
-            //sets class for chocolat usage
-            imageLink.classList = ["galleryImg"]
-            //for when optimised images are not available in chocolat
-            //imageLink.href = `${href2}/img${i}.jpg`
-            //for delivery of optimised images in chocolat
-            //  imageLink.dataset.srcset = srcsetArr
-
             //for lazy loading 
-            image.classList = ["lazy img-fluid mx-auto"];
+            image.classList = ["lazy img-fluid mb-3  mx-auto rounded"];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
@@ -74,46 +75,6 @@ function populateGallery(galleryName) {
             galleryContainer.appendChild(imageCard);
         }
     }
-    galleryElementFactory(galleryContainer)
-    galleryContainer.scrollIntoView({
-        behavior: 'smooth' // You can also use 'auto' or 'instant'
-    });
-}
-function overlayMenu() {
-    if (document.getElementsByClassName('.nav-overlay').length) {
-        return false;
-    }
-
-    var body = undefined;
-    var menu = undefined;
-    var menuItems = undefined;
-
-    var init = function init() {
-        body = document.querySelector('body');
-        menu = document.querySelector('.menu-btn');
-        menuItems = document.querySelectorAll('.nav__list-item');
-        applyListeners();
-    };
-
-    var applyListeners = function applyListeners() {
-
-        menu.addEventListener('click', function () {
-            return toggleClass(body, 'nav-active');
-        });
-
-        menuItems.forEach(i => {
-            if (i.textContent.trim() == "Контакти") {
-                i.addEventListener('click', function () {
-                    return toggleClass(body, "nav-active")
-                })
-            }
-        });
-
-    };
-    var toggleClass = function toggleClass(element, stringClass) {
-        if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
-    };
-    init();
 }
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
@@ -140,8 +101,8 @@ function addBgToCards() {
         let img = card.children[0];
         img.addEventListener('load', function () {
             var selectedSrc = img.currentSrc || img.src;
+            console.log(selectedSrc)
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
-            // card.style.filter = 'brightness(0%)';
         });
 
         if (!img.completed) {
@@ -176,10 +137,13 @@ function menuListeners() {
         a.addEventListener('click', (e) => {
             console.log(a)
             e.preventDefault();
+            window.scrollTo(0, 0);
+
+            setTimeout(() => { galleryContainer.style.display = "none" }, 1000)
 
             for (let i = 0; i < components.length; i++) {
                 let component = components[i];
-                
+
                 if (component.id == a.id) {
                     console.log(a.id + '  ' + component.id + 'if')
                     component.style.display = 'block'
@@ -187,23 +151,39 @@ function menuListeners() {
 
                 }
                 else {
-                    console.log(a.id + '  ' + component.id)      
+                    console.log(a.id + '  ' + component.id)
                     component.style.display = 'none'
                     console.log(component.style.display)
-               
                 }
             }
 
         })
     }
 }
+
+function loadingScreen() {
+    const loadingScreen = document.getElementById("loading-screen");
+    var images = [...document.querySelectorAll('img')];
+    body.style.height = '100vh !important';
+    window.addEventListener("load", () => { setInterval(() => { loadingScreen.style.display = "none"; }, 2000); })
+
+}
+
 document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    loadingScreen();
     animateOnIntersect();
     addBgToCards();
     addGalleryToAnchor();
     menuListeners();
+
+    // Get references to the sections
+    const gallerySection = document.getElementById('gallery-section');
+    const targetSection = document.getElementById('highlight-section');
 });
+
+
+// Call disableScroll() to disable scrolling and enableScroll() to re-enable it.

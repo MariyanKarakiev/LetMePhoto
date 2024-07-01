@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Murs';
-  src: url('http://localhost:5500/fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
+  src: url('./fonts/MursGothic-WideDark.woff2') format('woff2'), url('http://localhost:5500/fonts/MursGothic-WideDark.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MySans3';
-  src: url('http://localhost:5500/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  src: url('./fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -28,6 +28,16 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+
+}
+
+.html::-webkit-scrollbar {
+  display: none;
 }
 
 /* Sections
@@ -419,6 +429,42 @@ img {
   margin-top: 1rem;
 }
 
+
+.loading-screen {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1999;
+  align-items: center;
+  background-color: #272a32;
+}
+
+.loading-screen img {
+  width: 100px;
+  height: 100px;
+  animation: spin 2s infinite;
+}
+
+@keyframes spin {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 nav {
   background-color: transparent;
 }
@@ -453,11 +499,7 @@ nav {
 }
 
 .carousel-item {
-  height: 93vh;
-}
-
-.carousel-inner {
-  border-radius: 20px;
+  height: 90vh;
 }
 
 .carousel-item img {
@@ -465,30 +507,13 @@ nav {
   object-position: center;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-}
 
-.hidden {
-  opacity: 0;
-  transition: ease-in 1.3s;
-}
-
-.visible {
-  opacity: 1 !important;
-}
-
-.fast-tr {
-  transition: ease-in 0.3s !important;
-}
-
-.text-link {
-  text-decoration: none;
-  color: #545a6b;
 }
 
 .carousel-item h2 {
   font-family: 'Murs', sans-serif;
   font-weight: 700;
+  font-size: 1.5rem;
   color: #f0f0f0;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -501,7 +526,6 @@ nav {
   font-size: 1em;
   font-family: 'MySans3';
   color: #f0f0f0;
-  border-radius: 0px;
   padding: 10px 60px;
   margin-top: 40px;
   background-color: transparent !important;
@@ -509,19 +533,18 @@ nav {
   text-decoration: none;
   text-shadow: 1px 2px 1px #353b41;
 }
-.contact{
+
+.contact {
   display: none;
 }
+
 .contact .card {
- height: 100%;
-  background-image: url("./contacts.jpg") !important;
+  height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   box-sizing: border-box;
 }
-
-.contact .gform {}
 
 .contact button {
   font-weight: 700;
@@ -552,9 +575,11 @@ nav {
 .contact input {
   box-shadow: 1px 1px 10px #353b41;
 }
+
 .contact textarea {
   box-shadow: 1px 1px 10px #353b41;
 }
+
 .contact input::placeholder {
   color: #373b46;
   font-family: 'MySans3';
@@ -568,9 +593,16 @@ nav {
 .pt-25 {
   padding-top: 25vh;
 }
+
 .pb-25 {
   padding-bottom: 25vh;
 }
+
+.px-0-2 {
+  padding-left: .2rem !important;
+  padding-right: .2rem !important;
+}
+
 .carousel-caption {
   bottom: 1.25rem;
 }
@@ -586,7 +618,7 @@ footer {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   position: absolute;
-  top: 85.5%;
+  top: 93.5%;
   padding: 10px;
 }
 
@@ -599,22 +631,58 @@ footer {
 }
 
 .main-section {
-  height: 93vh;
+  height: auto;
 }
 
+.scrollable-container {
+  height: 95vh;
+  white-space: nowrap;
+  overflow-y: scroll;
+}
+
+.scrollable-container::-webkit-scrollbar {
+  margin-left: 10px;
+  width: 10px;
+  border-radius: 20px;
+}
+
+/* Track */
+.scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-left: 10px;
+  width: 10px;
+  border-radius: 20px;
+}
+
+/* Handle */
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
 .gallery-container {
+  width: 100vw;
   margin-top: 0rem;
+
 }
 
 .gallery-container div {
-  margin-bottom: 7px;
-  padding: 20px 20px;
+  padding: 0px 0px;
 }
 
 .gallery-container img {
-  border-radius: 20px;
   max-height: 95vh !important;
 
+}
+
+.gallery-section-mobile {
+  display: none;
 }
 
 footer img {
@@ -623,7 +691,7 @@ footer img {
 }
 
 .mobile-visible {
-  visibility: visible;
+  display: none;
 }
 
 .menu img {
@@ -641,9 +709,20 @@ footer img {
   text-align: start;
 }
 
+
 .card img {
   display: none;
+  width: 2.4rem;
 }
+
+#loading-message-sending {
+  animation: spin 2s infinite;
+}
+
+#loading-message-ready {
+  animation: ease-in 1s;
+}
+
 
 .card .info-wrapper {
   height: 25.8vh;
@@ -688,6 +767,24 @@ footer img {
   border-radius: 20px !important;
 }
 
+.hidden {
+  opacity: 0;
+  transition: ease-in 1.3s;
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+.fast-tr {
+  transition: ease-in 0.3s !important;
+}
+
+.text-link {
+  text-decoration: none;
+  color: #545a6b;
+}
+
 /*! CSS Used fontfaces */
 
 
@@ -701,8 +798,16 @@ footer img {
     height: auto !important;
   }
 
+  .gallery-section-mobile {
+    display: block;
+  }
+
+  .gallery-section {
+    display: none;
+  }
+
   .carousel-item {
-    height: 77vh !important;
+    height: 75vh !important;
   }
 
   .carousel {
@@ -711,6 +816,8 @@ footer img {
 
   .gallery-container {
     width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .logo {
@@ -729,33 +836,40 @@ footer img {
 
   .carousel-control-next-icon,
   .carousel-control-prev-icon {
-    top: 70.5% !important;
+    top: 87.5% !important;
 
   }
-
+  .scrollable-container {
+    height: auto;
+  
+    overflow-y:visible;
+  }
   .menu {
-    /* padding-top: 15px !important; */
+    left: 8%;
+    width: 83.5vw;
     position: fixed;
     z-index: 3;
-    left: 5%;
-    top: 89.5%;
-    /* border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important; */
-    width: 90.5%;
-    height: 4vh;
+    top: 92.5%;
     box-shadow: 1px 1px 3px #272a32;
   }
 
   .menu img {
     width: 1.2rem !important;
   }
+
   .mobile-visible {
-    visibility: visible !important;
+    display: block !important;
   }
-  .pt-25{
-    padding-top: 13vh !important;
+
+  .pt-25 {
+    padding-top: 16vh !important;
   }
-  .pb-25{
+
+  .pb-25 {
     padding-bottom: 12vh !important;
+  }
+
+  .contact .card {
+    height: auto !important;
   }
 }
