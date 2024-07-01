@@ -64,7 +64,7 @@ function populateGallery(galleryName) {
             imageCard.classList = [`image-link text-center ${imageType}`];
 
             //for lazy loading 
-            image.classList = ["lazy img-fluid mb-3  mx-auto rounded"];
+            image.classList = ["lazy img-fluid mb-3 mx-auto rounded"];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
@@ -101,7 +101,6 @@ function addBgToCards() {
         let img = card.children[0];
         img.addEventListener('load', function () {
             var selectedSrc = img.currentSrc || img.src;
-            console.log(selectedSrc)
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
         });
 
@@ -125,7 +124,6 @@ function addGalleryToAnchor() {
         });
     });
 }
-
 function menuListeners() {
     const menu = document.getElementById('menu');
     const components = document.getElementsByClassName('component');
@@ -135,32 +133,25 @@ function menuListeners() {
         let a = ancorsInMenu[i];
 
         a.addEventListener('click', (e) => {
-            console.log(a)
             e.preventDefault();
             window.scrollTo(0, 0);
 
-            setTimeout(() => { galleryContainer.style.display = "none" }, 1000)
+            setInterval(() => { galleryContainer.style.display = "none" }, 1000)
 
             for (let i = 0; i < components.length; i++) {
                 let component = components[i];
 
                 if (component.id == a.id) {
-                    console.log(a.id + '  ' + component.id + 'if')
                     component.style.display = 'block'
-                    console.log(component.style.display)
-
                 }
                 else {
-                    console.log(a.id + '  ' + component.id)
-                    component.style.display = 'none'
-                    console.log(component.style.display)
+                    component.style.display = 'none'  
                 }
             }
 
         })
     }
 }
-
 function loadingScreen() {
     const loadingScreen = document.getElementById("loading-screen");
     var images = [...document.querySelectorAll('img')];
@@ -169,21 +160,10 @@ function loadingScreen() {
 
 }
 
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     loadingScreen();
     animateOnIntersect();
     addBgToCards();
     addGalleryToAnchor();
     menuListeners();
-
-    // Get references to the sections
-    const gallerySection = document.getElementById('gallery-section');
-    const targetSection = document.getElementById('highlight-section');
 });
-
-
-// Call disableScroll() to disable scrolling and enableScroll() to re-enable it.
