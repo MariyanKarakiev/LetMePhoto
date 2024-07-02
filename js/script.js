@@ -9,8 +9,7 @@ let page = path.split("/").pop();
 let imgsCount = 0
 
 function populateGallery(galleryName) {
-
-    const widths = [767, 1024]
+    const widths = [400, 767, 1200]
     const pageName = 'portraits'
     const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
     const href2 = 'images/' + galleryName
@@ -133,11 +132,14 @@ function menuListeners() {
         let a = ancorsInMenu[i];
 
         a.addEventListener('click', (e) => {
+            console.log(a)
             e.preventDefault();
             window.scrollTo(0, 0);
 
-            setInterval(() => { galleryContainer.style.display = "none" }, 1000)
-
+            if(a.id=='home'){
+galleryContainer.style.display = "none";
+            }
+            
             for (let i = 0; i < components.length; i++) {
                 let component = components[i];
 
