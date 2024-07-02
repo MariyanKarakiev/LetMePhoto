@@ -739,7 +739,7 @@ footer img {
   left: 0;
   height: 25.8vh;
   position: absolute;
-  background-color: #343a4047;
+  background-color: #343a4078;
   border-radius: 16px !important;
   transition:  0.3s;
 }
@@ -775,7 +775,6 @@ footer img {
 }
 
 .card a:hover {
-  text-shadow: 1px 2px 30px #0e1011 !important;
   cursor: default;
 }
 
