@@ -518,7 +518,7 @@ nav {
   margin-bottom: 2rem;
   text-transform: uppercase;
   margin-bottom: 0px;
-  text-shadow: 6px 5px 2px #353b41;
+  text-shadow: 3px 3px 2px #353b41;
 }
 
 .carousel-item a {
@@ -531,9 +531,11 @@ nav {
   background-color: transparent !important;
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 4px 4px 2px #353b41;
+  text-shadow: 4px 2px 2px #353b41;
 }
+.carousel-item a:hover{
 
+}
 .contact {
   display: none;
 }
@@ -620,7 +622,8 @@ footer {
   padding-bottom: 17rem;
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
   align-items: end;
 }
 
@@ -642,9 +645,10 @@ footer {
   scrollbar-width: none;
   /* Firefox */
   padding-left: 0;
-    padding-right: 0;
+  padding-right: 0;
 
 }
+
 .scrollable-container::-webkit-scrollbar {
   display: none;
 }
@@ -728,13 +732,21 @@ footer img {
 
 
 .card .info-wrapper {
+  padding: 1rem 1rem;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  left: 0;
   height: 25.8vh;
-  position: relative;
-}
-
-.card p {
   position: absolute;
-  top: 5%;
+  background-color: #343a4047;
+  border-radius: 16px !important;
+  transition:  0.3s;
+}
+.info-wrapper:hover{
+  background-color: #343a4078;
+}
+.card p {
   font-weight: 700;
   font-size: 1em;
   font-family: 'MySans3';
@@ -747,8 +759,13 @@ footer img {
 
 
 .card a {
+  text-align: center !important;
+  padding-bottom: 0.5rem;
+  align-content: end;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  bottom: 5%;
+  bottom: 0%;
   font-family: 'Murs', sans-serif;
   font-weight: 700;
   text-align: start;
@@ -839,17 +856,21 @@ footer img {
   .carousel-control-prev-icon {
     padding-bottom: 8rem;
   }
+
   .scrollable-container {
     height: auto;
-  
-    overflow-y:visible;
+
+    overflow-y: visible;
   }
+
   .carousel-item h2 {
     font-size: 1.5rem;
   }
+
   .carousel-item a {
     font-size: 1rem;
   }
+
   .menu {
     left: 8%;
     width: 83.5vw;
