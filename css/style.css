@@ -538,10 +538,11 @@ nav {
 }
 .contact {
   display: none;
+  height: 90vh;
 }
 
 .contact .card {
-  height: 90vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
@@ -640,10 +641,9 @@ footer {
 }
 
 .scrollable-container {
-  height: 95vh;
+  height: 90vh;
   overflow-y: scroll;
   scrollbar-width: none;
-  /* Firefox */
   padding-left: 0;
   padding-right: 0;
 
