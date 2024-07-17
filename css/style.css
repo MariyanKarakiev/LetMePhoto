@@ -719,9 +719,11 @@ nav {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  text-align: start;
+  text-align: end;
 }
-
+.text-end{
+  text-align: end;
+}
 .highlight-section {
   height: 90vh !important;
   display: grid;
