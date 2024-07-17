@@ -57,13 +57,13 @@ function populateGallery(galleryName) {
             const imageLink = document.createElement('a');
             const image = document.createElement('img');
 
+
             let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
             let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
-            imageCard.classList = [`image-link text-center ${imageType}`];
-
+            imageCard.classList = [`image-link text-center `];
             //for lazy loading 
-            image.classList = ["lazy img-fluid mb-3 mx-auto rounded"];
+            image.classList = [`lazy img-fluid ${imageType} mb-3 mx-auto rounded`];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
@@ -134,12 +134,12 @@ function menuListeners() {
         a.addEventListener('click', (e) => {
             console.log(a)
             e.preventDefault();
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 
-            if(a.id=='home'){
-galleryContainer.style.display = "none";
+            if (a.id == 'home') {
+                galleryContainer.style.display = "none";
             }
-            
+
             for (let i = 0; i < components.length; i++) {
                 let component = components[i];
 
@@ -147,7 +147,7 @@ galleryContainer.style.display = "none";
                     component.style.display = 'block'
                 }
                 else {
-                    component.style.display = 'none'  
+                    component.style.display = 'none'
                 }
             }
 
@@ -161,6 +161,17 @@ function loadingScreen() {
     window.addEventListener("load", () => { setInterval(() => { loadingScreen.style.display = "none"; }, 2000); })
 
 }
+function highlightOpen() {
+    const text = document.getElementById("highlight1");
+    const homeButton = document.getElementById("contact");
+
+    text.addEventListener('click', (e) => {
+        e.preventDefault();
+        homeButton.click();
+        populateGallery('products');
+        document.getElementById("gallery").scrollIntoView({ behavior: 'smooth' })
+    })
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     loadingScreen();
@@ -168,4 +179,5 @@ document.addEventListener("DOMContentLoaded", () => {
     addBgToCards();
     addGalleryToAnchor();
     menuListeners();
+    highlightOpen();
 });
