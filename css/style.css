@@ -672,23 +672,30 @@ nav {
   display: grid !important;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
-  grid-auto-rows: 40vh;;
+  grid-auto-rows: 40vh;
+  ;
 }
 
 .card-tall {
   grid-row: span 2/auto;
 }
+
 .card-wide {
   grid-column: span 2/auto;
 }
+
 .gallery-container .card {
   padding: 1rem 1rem;
   background-color: #373b46;
   text-align: center;
 }
-.gallery-container .card a{
+
+.gallery-container .card a {
   text-align: start;
   align-content: start;
+}
+.gallery-container .card p {
+  text-transform: none;
 }
 
 .gallery-section-mobile {
@@ -779,6 +786,10 @@ nav {
   text-shadow: 1px 2px 1px #343a4094;
 }
 
+.card p a {
+  color: #545a6b;
+}
+
 .card a {
   align-content: end;
   width: 100%;
@@ -841,6 +852,23 @@ footer img {
 /*! CSS Used fontfaces */
 
 
+@media only screen and (min-width: 1646px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-wide {
+    grid-column: 1;
+    grid-row: span 2/auto;
+  }
+
+}
 
 @media only screen and (max-width: 767px) {
   .img-to-right {
@@ -863,6 +891,18 @@ footer img {
     display: none;
   }
 
+  .gallery-container .card a {
+    text-align: center;
+    font-size: 1rem ;
+  }
+
+  .gallery-container{
+    grid-auto-rows: 30vh;
+  }
+
+  .card p {
+    text-align: justify ;
+  }
   .carousel-item {
     height: 75vh !important;
   }
@@ -871,13 +911,6 @@ footer img {
     width: 100vw !important;
   }
 
-  .gallery-container {
-    width: 100vw !important; 
-grid-template-columns: 1fr;
-  }
-  .card-wide{
-    grid-column: 1;
-  }
   .logo {
     height: 2.5rem !important;
     margin-top: 1rem !important;
