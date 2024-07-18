@@ -900,7 +900,7 @@ footer img {
     grid-auto-rows: 30vh;
   }
 
-  .card p {
+  .gallery-container .card p {
     text-align: justify ;
   }
   .carousel-item {
