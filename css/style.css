@@ -668,45 +668,45 @@ nav {
 
 
 .gallery-container {
-  width: 100vw;
-  margin-top: 0rem;
-
+  width: 100%;
+  display: grid !important;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
+  grid-auto-rows: 40vh;;
 }
 
-.gallery-container div {
-  padding: 0px 0px;
+.card-tall {
+  grid-row: span 2/auto;
 }
-
-.gallery-container .img-wide {
-  max-height: 90vh !important;
-
+.card-wide {
+  grid-column: span 2/auto;
 }
-
-.gallery-container .img-tall {
-  max-height: 85vh !important;
-}
-
 .gallery-container .card {
-  padding: .2rem 1rem;
-  background-color: grey;
+  padding: 1rem 1rem;
+  background-color: #373b46;
+  text-align: center;
+}
+.gallery-container .card a{
+  text-align: start;
+  align-content: start;
 }
 
 .gallery-section-mobile {
   display: none;
 }
 
-#text{
+#text {
   color: #f0f0f0;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-    bottom: 0%;
-    font-family: 'Murs', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    text-shadow: 1px 2px 1px #353b41;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  font-family: 'Murs', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 1px #353b41;
 }
 
 .menu img {
@@ -720,10 +720,13 @@ nav {
   background-position: center;
   box-sizing: border-box;
   text-align: end;
+  color: white;
 }
-.text-end{
+
+.text-end {
   text-align: end;
 }
+
 .highlight-section {
   height: 90vh !important;
   display: grid;
@@ -767,7 +770,7 @@ nav {
 
 .card p {
   font-weight: 700;
-  font-size: 1em;
+  font-size: .9rem;
   font-family: 'Segoe UI';
   text-align: start;
   background-color: transparent !important;
@@ -779,7 +782,6 @@ nav {
 .card a {
   align-content: end;
   width: 100%;
-  height: 100%;
   bottom: 0%;
   font-family: 'Murs', sans-serif;
   font-weight: 700;
@@ -870,9 +872,12 @@ footer img {
   }
 
   .gallery-container {
-    width: 100vw !important;
+    width: 100vw !important; 
+grid-template-columns: 1fr;
   }
-
+  .card-wide{
+    grid-column: 1;
+  }
   .logo {
     height: 2.5rem !important;
     margin-top: 1rem !important;

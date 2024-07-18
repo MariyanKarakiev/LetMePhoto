@@ -38,7 +38,7 @@ function populateGallery(galleryName) {
     }
     galleryElementFactory(galleryContainer)
     galleryContainer.hidden = false;
-    galleryContainer.style.display = "block";
+    galleryContainer.style.display = "grid";
     //     galleryContainer.scrollIntoView({
     //         behavior: 'smooth' // You can also use 'auto' or 'instant'
     // })
@@ -54,23 +54,18 @@ function populateGallery(galleryName) {
         for (let i = imgsCount; 1 <= i; i--) {
 
             const imageCard = document.createElement('div');
-            const imageLink = document.createElement('a');
             const image = document.createElement('img');
 
-
             let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
-
-            let imageType = tallImgNumbers.includes(i) ? 'img-tall' : 'img-wide';
-            imageCard.classList = [`image-link text-center `];
+            imageCard.classList = [``];
             //for lazy loading 
-            image.classList = [`lazy img-fluid ${imageType} mb-3 mx-auto rounded`];
+            image.classList = [`lazy img-fluid rounded`];
             //for delivery of optimised images in gallery section
             image.srcset = srcsetArr;
             //for when optimised images are not available
             image.src = `${href2}/img${i}.jpg`
 
-            imageLink.appendChild(image);
-            imageCard.appendChild(imageLink);
+            imageCard.appendChild(image);
             galleryContainer.appendChild(imageCard);
         }
     }
