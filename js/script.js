@@ -15,14 +15,14 @@ const gallery_data =
         "img_sizes": {
             "2": "tall",
             "4": "tall",
-            "7": "tall",      
+            "7": "tall",
         },
-        "text":""
+        "text": ""
     },
     "events": {
         "name": "events",
         "img_count": 11,
-        "img_sizes": { 
+        "img_sizes": {
         }
     },
     "weddings": {
@@ -36,9 +36,9 @@ const gallery_data =
         "name": "products",
         "img_count": 20,
         "img_sizes": {
-        
+
         },
-         "text":""
+        "text": ""
     },
     "street": {
         "name": "street",
@@ -82,7 +82,7 @@ function galleryElementFactory(galleryName, galleryContainer) {
         const image = document.createElement('img');
         const imageSize = galleryData.img_sizes[i];
         image.classList.add(`lazy`);
-        
+
         const card = document.createElement('div');
         card.classList.add('card');
         if (imageSize) {
@@ -126,12 +126,16 @@ function addBgToCards() {
         let img = card.children[0];
         img.addEventListener('load', function () {
             var selectedSrc = img.currentSrc || img.src;
+            if (selectedSrc) {
+                card.style.backgroundImage = 'url(' + selectedSrc + ')';
+            }
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
         });
-
         if (!img.completed) {
             var selectedSrc = img.currentSrc || img.src;
-            card.style.backgroundImage = 'url(' + selectedSrc + ')';
+            if (selectedSrc) {
+                card.style.backgroundImage = 'url(' + selectedSrc + ')';
+            }
         }
     });
 };
@@ -158,11 +162,11 @@ function menuListeners() {
         let a = ancorsInMenu[i];
 
         a.addEventListener('click', (e) => {
-            console.log(a)
             e.preventDefault();
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-
             if (a.id == 'home') {
+                var h = document.getElementById('home');
+                h.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                 galleryContainer.style.display = "none";
             }
 
@@ -192,7 +196,6 @@ function highlightOpen() {
 
     text.addEventListener('click', (e) => {
         e.preventDefault();
-        homeButton.click();
         populateGallery('products');
         document.getElementById("gallery").scrollIntoView({ behavior: 'smooth' })
     })
