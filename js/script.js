@@ -1,5 +1,55 @@
 "use strict";
 
+const gallery_data =
+{
+    "portraitss": {
+        "name": "portraitss",
+        "img_count": 16,
+        "img_sizes": {
+            "1": "tall",
+        }
+    },
+    "balls": {
+        "name": "balls",
+        "img_count": 13,
+        "img_sizes": {
+            "2": "tall",
+            "4": "tall",
+            "7": "tall",      
+        },
+        "text":""
+    },
+    "events": {
+        "name": "events",
+        "img_count": 11,
+        "img_sizes": { 
+        }
+    },
+    "weddings": {
+        "name": "weddings",
+        "img_count": 7,
+        "img_sizes": {
+            "7": "tall"
+        }
+    },
+    "products": {
+        "name": "products",
+        "img_count": 20,
+        "img_sizes": {
+        
+        },
+         "text":""
+    },
+    "street": {
+        "name": "street",
+        "img_count": 3,
+        "img_sizes": {
+            "1": "tall"
+        }
+    }
+}
+
+const widths = [400, 767, 1200]
 const form = document.getElementById('form');
 const body = document.querySelector('body');
 const galleryContainer = document.getElementById("gallery");
@@ -9,66 +59,47 @@ let page = path.split("/").pop();
 let imgsCount = 0
 
 function populateGallery(galleryName) {
-    const widths = [400, 767, 1200]
-    const pageName = 'portraits'
-    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryName
-    const href2 = 'images/' + galleryName
-    let tallImgNumbers = []
 
-    //sets number of images to be requested and images with numbers in their names that are tall
-    switch (galleryName) {
-        case "portraitss":
-            imgsCount = 16
-            break;
-        case "balls":
-            imgsCount = 13
-            break;
-        case "events":
-            imgsCount = 11
-            break;
-        case "weddings":
-            imgsCount = 7
-            break;
-        case "products":
-            imgsCount = 20
-            break;
-        case "street":
-            imgsCount = 3
-            break;
-    }
-    galleryElementFactory(galleryContainer)
+    galleryElementFactory(galleryName, galleryContainer);
     galleryContainer.hidden = false;
     galleryContainer.style.display = "grid";
     //     galleryContainer.scrollIntoView({
     //         behavior: 'smooth' // You can also use 'auto' or 'instant'
     // })
+}
+function galleryElementFactory(galleryName, galleryContainer) {
+    const galleryData = gallery_data[galleryName]
+    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryData.name
+    const href2 = 'images/' + galleryData.name
 
-
-    function galleryElementFactory(galleryContainer) {
-        //clean images
-
-        while (galleryContainer.firstChild) {
-            galleryContainer.removeChild(galleryContainer.firstChild)
-        }
-
-        for (let i = imgsCount; 1 <= i; i--) {
-
-            const imageCard = document.createElement('div');
-            const image = document.createElement('img');
-
-            let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
-            imageCard.classList = [``];
-            //for lazy loading 
-            image.classList = [`lazy img-fluid rounded`];
-            //for delivery of optimised images in gallery section
-            image.srcset = srcsetArr;
-            //for when optimised images are not available
-            image.src = `${href2}/img${i}.jpg`
-
-            imageCard.appendChild(image);
-            galleryContainer.appendChild(imageCard);
-        }
+    // clean gallery
+    while (galleryContainer.firstChild) {
+        galleryContainer.removeChild(galleryContainer.firstChild)
     }
+
+    // populate
+    for (let i = galleryData.img_count; 1 <= i; i--) {
+        const image = document.createElement('img');
+        const imageSize = galleryData.img_sizes[i];
+        image.classList.add(`lazy`);
+        
+        const card = document.createElement('div');
+        card.classList.add('card');
+        if (imageSize) {
+            card.classList.add(`card-${imageSize}`);
+            console.log(`card-${imageSize}`)
+        }
+
+        //for delivery of optimised images
+        let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
+        image.srcset = srcsetArr;
+        //for when optimised images are not available
+        image.src = `${href2}/img${i}.jpg`
+
+        card.appendChild(image);
+        galleryContainer.appendChild(card);
+    }
+    addBgToCards();
 }
 function animateOnIntersect() {
     const observer = new IntersectionObserver((entries) => {
@@ -158,7 +189,6 @@ function loadingScreen() {
 }
 function highlightOpen() {
     const text = document.getElementById("highlight1");
-    const homeButton = document.getElementById("contact");
 
     text.addEventListener('click', (e) => {
         e.preventDefault();
@@ -168,11 +198,17 @@ function highlightOpen() {
     })
 }
 
+function galleryFactory(galleryName) {
+    gallery_data[galleryName]
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     loadingScreen();
     animateOnIntersect();
-    addBgToCards();
     addGalleryToAnchor();
+    addBgToCards();
     menuListeners();
     highlightOpen();
 });
