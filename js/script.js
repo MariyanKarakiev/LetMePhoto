@@ -6,7 +6,22 @@ const gallery_data =
         "name": "portraitss",
         "img_count": 16,
         "img_sizes": {
-            "1": "tall",
+            "2": "tall",
+            "3": "tall",
+            "4": "tall",
+            "6": "tall",
+            "9": "tall",
+            "9": "tall",
+            "11": "tall",
+            "12": "tall",
+            "13": "tall",
+            "16": "tall",
+        },
+        "textCards": {
+            "19": {
+                "title": "ПРОДУКТОВА ФОТОСЕСИЯ ЗА РЕСТОРАНТ",
+                "content": ``
+            }
         }
     },
     "balls": {
@@ -17,12 +32,33 @@ const gallery_data =
             "4": "tall",
             "7": "tall",
         },
-        "text": ""
+        "textCards": {
+            "13": {
+                "id": "prom_session",
+                "title": "ЗАСНЕМАНЕ НА АБИТУРИЕНТСКА ФОТОСЕСИЯ",
+                "content": `С гордост представяме нашата абитуриентска фотосесия с красивата абитуриентка Дани. Екипът на LetMePhoto имаше
+                удоволствието да улови магията и емоцията на този незабравим момент. Всяка снимка отразява радостта, красотата и вълнението,
+                които съпътстват този специален ден. Ние, от LetMePhoto, разбираме значението на абитуриентския бал и се стремим да създадем 
+                спомени, които ще останат завинаги. Разгледайте нашата галерия, за да видите още примери от нашата професионална фотография и да се уверите в качеството на нашата работа.`,
+                "card_size": ""
+            }
+        }
     },
     "events": {
         "name": "events",
         "img_count": 11,
         "img_sizes": {
+            "2": "tall",
+            "4": "tall",
+            "7": "tall",
+        },
+        "textCards": {
+            "19": {
+                "title": "ПРОДУКТОВА ФОТОСЕСИЯ ЗА РЕСТОРАНТ",
+                "content": `Разгледайте нашата сватбена галерия, за да откриете още вдъхновяващи примери от нашата професионална фотография. Ние предлагаме разнообразни услуги - 
+                от сватбени и абитуриентски фотосесии до заснемане на специални събития, като гарантираме висококачествени и емоционално наситени снимки.`,
+                "card_size": ""
+            }
         }
     },
     "weddings": {
@@ -30,6 +66,24 @@ const gallery_data =
         "img_count": 7,
         "img_sizes": {
             "7": "tall"
+        },
+        "textCards": {
+            "6": {
+                "id":"gz_wedding_session",
+                "title": "СВАТБАТА НА ГЕОРГИ И ЗДРАВКА",
+                "content": `С огромно удоволствие представяме вълнуващите мигове от сватбата на Георги и Здравка, заснети от талантливия екип на LetMePhoto. 
+                Целта ни беше да уловим всяка искра любов и щастие, които озариха този специален ден. Резултатът е серия от снимки, които разказват историята 
+                - от емоционалния момент на подписването и красивата церемония на венчавката до веселите танци и смеха по време на празненството, запечатвайки всеки вълнуващ миг и искрена усмивка.
+                `,
+                "card_size": ""
+            },
+            "5": {
+                "id":"",
+                "title": "",
+                "content": `Разгледайте сватбената ни галерия, за да откриете още вдъхновяващи примери от нашата фотография. Ние предлагаме разнообразни услуги - от сватбени и абитуриентски фотосесии до заснемане на специални събития, като гарантираме висококачествени и емоционално наситени снимки.
+                С LetMePhoto ще запазите вашите най-ценни моменти в изящни и уникални кадри. Свържете се с нас днес, за да резервирате вашата фотосесия и да създадете вечни спомени.`,
+                "card_size": ""
+            }
         }
     },
     "products": {
@@ -38,13 +92,34 @@ const gallery_data =
         "img_sizes": {
 
         },
-        "text": ""
+        "textCards": {
+            "20": {
+                "id": "alinea_session",
+                "title": "ПРОДУКТОВА ФОТОСЕСИЯ ЗА РЕСТОРАНТ",
+                "content": `Представяме нашата продуктова фотосесия за изискания ресторант <a href="https://www.facebook.com/profile.php?id=100092984575732">Alinea</a>.Колективът на LetMePhoto имаше удоволствието да улови съвършенството и детайлите на кулинарните творения в този изключителен ресторант.Всяка снимка отразява високите
+        стандарти и изтънчеността на <a href="https://www.facebook.com/profile.php?id=100092984575732">Alinea</a>, предлагайки ви визуално пиршество, което съчетава
+        изкуството на фотографията и кулинарията.Надяваме се, че ще се насладите на тези 
+        кадри и ще усетите страстта и майсторството, които влагаме във всяка една от тях.
+        Разгледайте галерията ни, за да видите още примери от нашата професионална продуктова фотография.`,
+                "card_size": ""
+            }
+        }
+
+
     },
     "street": {
         "name": "street",
         "img_count": 3,
         "img_sizes": {
-            "1": "tall"
+            "2": "tall",
+            "3": "tall"
+        },
+        "textCards": {
+            "3": {
+                "title": "ПРОДУКТОВА ФОТОСЕСИЯ ЗА РЕСТОРАНТ",
+                "content": ``,
+                "card_size": ""
+            }
         }
     }
 }
@@ -52,6 +127,8 @@ const gallery_data =
 const widths = [400, 767, 1200]
 const form = document.getElementById('form');
 const body = document.querySelector('body');
+let h = document.getElementById('home');
+
 const galleryContainer = document.getElementById("gallery");
 let scrolled = false;
 let path = window.location.pathname;
@@ -66,11 +143,12 @@ function populateGallery(galleryName) {
     //     galleryContainer.scrollIntoView({
     //         behavior: 'smooth' // You can also use 'auto' or 'instant'
     // })
+
+
 }
 function galleryElementFactory(galleryName, galleryContainer) {
     const galleryData = gallery_data[galleryName]
-    const href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryData.name
-    const href2 = 'images/' + galleryData.name
+    let galleryCards = '';
 
     // clean gallery
     while (galleryContainer.firstChild) {
@@ -79,26 +157,29 @@ function galleryElementFactory(galleryName, galleryContainer) {
 
     // populate
     for (let i = galleryData.img_count; 1 <= i; i--) {
-        const image = document.createElement('img');
+        let href = 'https://ik.imagekit.io/ycbriiund/LetMePhoto/' + galleryData.name
+        let href2 = 'images/' + galleryData.name
         const imageSize = galleryData.img_sizes[i];
-        image.classList.add(`lazy`);
+        href = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
 
-        const card = document.createElement('div');
-        card.classList.add('card');
-        if (imageSize) {
-            card.classList.add(`card-${imageSize}`);
-            console.log(`card-${imageSize}`)
+        let imgCard = `<div class="card ${galleryData.img_sizes[i] ? 'card-' + galleryData.img_sizes[i] : ''}">
+                    <img class="lazy" src="${href2}"
+                        srcset="${href}">
+                    </div>`
+
+        let textCard = galleryData.textCards[i];
+
+        if (textCard) {
+            let textCardHtml = `<div class="card card-${textCard.card_size} px-4 py-auto" id="${textCard.id}">
+                        <a class="mb-3">${textCard.title}</a>
+                        <p>${textCard.content}</p>
+                    </div>`
+            galleryCards += textCardHtml;
         }
 
-        //for delivery of optimised images
-        let srcsetArr = widths.map(w => `${href}/tr:w-${w}/img${i}.jpg ${w}w`)
-        image.srcset = srcsetArr;
-        //for when optimised images are not available
-        image.src = `${href2}/img${i}.jpg`
-
-        card.appendChild(image);
-        galleryContainer.appendChild(card);
+        galleryCards += imgCard;
     }
+    galleryContainer.innerHTML = galleryCards;
     addBgToCards();
 }
 function animateOnIntersect() {
@@ -142,7 +223,6 @@ function addBgToCards() {
 function addGalleryToAnchor() {
     // Get all anchor elements within the carousel
     var carouselAnchors = document.querySelectorAll('.carousel-item a');
-
     // Add click event listeners to each anchor
     carouselAnchors.forEach(function (anchor) {
         anchor.addEventListener('click', function (event) {
@@ -165,7 +245,6 @@ function menuListeners() {
             e.preventDefault();
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
             if (a.id == 'home') {
-                var h = document.getElementById('home');
                 h.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                 galleryContainer.style.display = "none";
             }
@@ -192,20 +271,42 @@ function loadingScreen() {
 
 }
 function highlightOpen() {
-    const text = document.getElementById("highlight1");
+    let anchors = document.querySelectorAll('.highlight-section .card a');
 
-    text.addEventListener('click', (e) => {
-        e.preventDefault();
-        populateGallery('products');
-        document.getElementById("gallery").scrollIntoView({ behavior: 'smooth' })
-    })
+    for (let i = 0; i < anchors.length; i++) {
+        console.log(anchors[i])
+        anchors[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            var gallery = anchors[i].attributes['gallery'].nodeValue
+
+            populateGallery(gallery);
+            console.log(h.style.height == 'auto')
+            if (screen.width <= 767) {
+                window.scrollTo({
+                    top: findPosition(document.getElementById(anchors[i].attributes['target'].nodeValue)) - 100,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+            }
+            else {
+                h.scrollTo({
+                    top: findPosition(document.getElementById(anchors[i].attributes['target'].nodeValue)) - 100,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+            }
+        })
+    }
 }
-
-function galleryFactory(galleryName) {
-    gallery_data[galleryName]
+function findPosition(obj) {
+    var currenttop = 0;
+    if (obj.offsetParent) {
+        do {
+            currenttop += obj.offsetTop;
+        } while ((obj = obj.offsetParent));
+        return [currenttop];
+    }
 }
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     loadingScreen();
@@ -214,4 +315,5 @@ document.addEventListener("DOMContentLoaded", () => {
     addBgToCards();
     menuListeners();
     highlightOpen();
+
 });
