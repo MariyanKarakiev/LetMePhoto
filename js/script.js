@@ -213,14 +213,14 @@ function addBgToCards() {
 
         let img = card.children[0];
         img.addEventListener('load', function () {
-            var selectedSrc = img.currentSrc || img.src;
+            var selectedSrc = img.currentSrc;
             if (selectedSrc) {
                 card.style.backgroundImage = 'url(' + selectedSrc + ')';
             }
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
         });
         if (!img.completed) {
-            var selectedSrc = img.currentSrc || img.src;
+            var selectedSrc = img.currentSrc;
             if (selectedSrc) {
                 card.style.backgroundImage = 'url(' + selectedSrc + ')';
             }
