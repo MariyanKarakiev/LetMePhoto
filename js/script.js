@@ -18,8 +18,12 @@ const gallery_data =
             "16": "tall",
         },
         "textCards": {
-            "19": {
-                "title": "ПРОДУКТОВА ФОТОСЕСИЯ ЗА РЕСТОРАНТ",
+            "13": {
+                "title": "Коледна фотосесия с Театрална работилница за мечти",
+                "content": ``
+            },
+            "0": {
+                "title": "",
                 "content": ``
             }
         }
@@ -40,7 +44,7 @@ const gallery_data =
                 удоволствието да улови магията и емоцията на този незабравим момент. Всяка снимка отразява радостта, красотата и вълнението,
                 които съпътстват този специален ден. Ние, от LetMePhoto, разбираме значението на абитуриентския бал и се стремим да създадем 
                 спомени, които ще останат завинаги. Разгледайте нашата галерия, за да видите още примери от нашата професионална фотография и да се уверите в качеството на нашата работа.`,
-                "card_size": ""
+                "card_size": "tall-mobile"
             }
         }
     },
@@ -48,15 +52,14 @@ const gallery_data =
         "name": "events",
         "img_count": 11,
         "img_sizes": {
-            "2": "tall",
-            "4": "tall",
-            "7": "tall",
+            "9": "tall",
         },
         "textCards": {
-            "19": {
-                "title": "ПРОДУКТОВА ФОТОСЕСИЯ ЗА РЕСТОРАНТ",
-                "content": `Разгледайте нашата сватбена галерия, за да откриете още вдъхновяващи примери от нашата професионална фотография. Ние предлагаме разнообразни услуги - 
-                от сватбени и абитуриентски фотосесии до заснемане на специални събития, като гарантираме висококачествени и емоционално наситени снимки.`,
+            "11": {
+                "title": "Йорданов ден в село Косово",
+                "content": `Ежегодното празнуване на Йорданов ден в село Косово предлага уникална възможност 
+                да се потопите в българските традиции.  Тази година събитието бе оживено от участието на сдружение "Хайдути", както и 
+                изпълненията на гайдари и тъпанджии.`,
                 "card_size": ""
             }
         }
@@ -68,8 +71,8 @@ const gallery_data =
             "7": "tall"
         },
         "textCards": {
-            "6": {
-                "id":"gz_wedding_session",
+            "7": {
+                "id": "gz_wedding_session",
                 "title": "СВАТБАТА НА ГЕОРГИ И ЗДРАВКА",
                 "content": `С огромно удоволствие представяме вълнуващите мигове от сватбата на Георги и Здравка, заснети от талантливия екип на LetMePhoto. 
                 Целта ни беше да уловим всяка искра любов и щастие, които озариха този специален ден. Резултатът е серия от снимки, които разказват историята 
@@ -78,7 +81,7 @@ const gallery_data =
                 "card_size": ""
             },
             "5": {
-                "id":"",
+                "id": "",
                 "title": "",
                 "content": `Разгледайте сватбената ни галерия, за да откриете още вдъхновяващи примери от нашата фотография. Ние предлагаме разнообразни услуги - от сватбени и абитуриентски фотосесии до заснемане на специални събития, като гарантираме висококачествени и емоционално наситени снимки.
                 С LetMePhoto ще запазите вашите най-ценни моменти в изящни и уникални кадри. Свържете се с нас днес, за да резервирате вашата фотосесия и да създадете вечни спомени.`,
@@ -101,7 +104,7 @@ const gallery_data =
         изкуството на фотографията и кулинарията.Надяваме се, че ще се насладите на тези 
         кадри и ще усетите страстта и майсторството, които влагаме във всяка една от тях.
         Разгледайте галерията ни, за да видите още примери от нашата професионална продуктова фотография.`,
-                "card_size": ""
+                "card_size": "tall"
             }
         }
 
@@ -140,6 +143,10 @@ function populateGallery(galleryName) {
     galleryElementFactory(galleryName, galleryContainer);
     galleryContainer.hidden = false;
     galleryContainer.style.display = "grid";
+
+    if (screen.width < 767) {
+        galleryContainer.style.display = "flex";
+    }
     //     galleryContainer.scrollIntoView({
     //         behavior: 'smooth' // You can also use 'auto' or 'instant'
     // })
@@ -170,7 +177,7 @@ function galleryElementFactory(galleryName, galleryContainer) {
         let textCard = galleryData.textCards[i];
 
         if (textCard) {
-            let textCardHtml = `<div class="card card-${textCard.card_size} px-4 py-auto" id="${textCard.id}">
+            let textCardHtml = `<div class="card card-${textCard['card_size']} px-4 py-auto" id="${textCard.id}">
                         <a class="mb-3">${textCard.title}</a>
                         <p>${textCard.content}</p>
                     </div>`
@@ -230,6 +237,12 @@ function addGalleryToAnchor() {
             event.preventDefault();
             // Get the text content of the clicked anchor's parent carousel-caption
             populateGallery(anchor.id);
+            if (screen.width < 767) {
+                galleryContainer.scrollIntoView();
+            }
+            else {
+                h.scrollTo({ top: 900, left: 0, behavior: 'smooth' });
+            }
         });
     });
 }

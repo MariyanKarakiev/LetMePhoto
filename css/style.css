@@ -669,7 +669,7 @@ nav {
 
 .gallery-container {
   width: 100%;
-  display: grid !important;
+  display: grid ;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
   grid-auto-rows: 348px;
@@ -684,7 +684,9 @@ nav {
   grid-column: span 2/auto;
 }
 
+
 .gallery-container .card {
+  justify-content: center;
   padding: 1rem 1rem;
   background-color: #373b46;
   text-align: center;
@@ -694,6 +696,7 @@ nav {
   text-align: start;
   align-content: start;
 }
+
 .gallery-container .card p {
   text-transform: none;
 }
@@ -856,21 +859,28 @@ footer img {
   .gallery-container {
     grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   }
-}
 
-@media only screen and (max-width: 500px) {
-  .gallery-container {
-    grid-template-columns: 1fr;
-  }
-
-  .card-wide {
-    grid-column: 1;
+  .card-tall-mobile {
     grid-row: span 2/auto;
   }
-
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
+  .gallery-container {
+display: flex;
+flex-direction: column;
+  }
+  .gallery-container .card {
+    min-height: 33vh;
+    grid-column: 1;
+  }
+
+  .gallery-container .card-tall {
+    min-height: 79vh;
+  }
+}
+
+@media only screen and (max-width: 766px) {
   .img-to-right {
     object-position: right !important;
   }
@@ -893,16 +903,21 @@ footer img {
 
   .gallery-container .card a {
     text-align: center;
-    font-size: 1rem ;
+    font-size: 1rem;
   }
 
-  .gallery-container{
+  .card-tall-mobile {
+    grid-row: span 2/auto;
+  }
+
+  .gallery-container {
     grid-auto-rows: 30vh;
   }
 
   .gallery-container .card p {
-    text-align: justify ;
+    text-align: justify;
   }
+
   .carousel-item {
     height: 75vh !important;
   }
