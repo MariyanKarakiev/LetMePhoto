@@ -280,7 +280,7 @@ function loadingScreen() {
     const loadingScreen = document.getElementById("loading-screen");
     var images = [...document.querySelectorAll('img')];
     body.style.height = '100vh !important';
-    window.addEventListener("load", () => { setInterval(() => { loadingScreen.style.display = "none"; }, 2000); })
+    window.addEventListener("load", () => { setInterval(() => { loadingScreen.style.display = "none"; }, 1000); })
 
 }
 function highlightOpen() {
