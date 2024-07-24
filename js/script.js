@@ -175,6 +175,7 @@ function galleryElementFactory(galleryName, galleryContainer) {
                     </div>`
 
         let textCard = galleryData.textCards[i];
+        console.log(href)
 
         if (textCard) {
             let textCardHtml = `<div class="card card-${textCard['card_size']} px-4 py-auto" id="${textCard.id}">
@@ -204,29 +205,28 @@ function animateOnIntersect() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el))
 }
+var selectedSrc = ''
 function addBgToCards() {
     // взимат се всички карти
     var cards = document.querySelectorAll('.card');
 
     //за всяка карта се излича img и при налична такава се задава bg-image
     cards.forEach((card) => {
-
         let img = card.children[0];
         img.addEventListener('load', function () {
-            var selectedSrc = img.currentSrc;
-            if (selectedSrc) {
-                card.style.backgroundImage = 'url(' + selectedSrc + ')';
-            }
+            selectedSrc = img.currentSrc;
+            console.log(selectedSrc)
             card.style.backgroundImage = 'url(' + selectedSrc + ')';
-        });
-        if (!img.completed) {
-            var selectedSrc = img.currentSrc;
-            if (selectedSrc) {
-                card.style.backgroundImage = 'url(' + selectedSrc + ')';
-            }
+        })
+        if (!img.Completed) {
+            selectedSrc = img.currentSrc;
+            console.log(selectedSrc)
+            card.style.backgroundImage = 'url(' + selectedSrc + ')';
         }
-    });
-};
+    })
+
+}
+
 function addGalleryToAnchor() {
     // Get all anchor elements within the carousel
     var carouselAnchors = document.querySelectorAll('.carousel-item a');
@@ -320,13 +320,19 @@ function findPosition(obj) {
         return [currenttop];
     }
 }
+function getBestUrl(links, viewportWidth) {
+
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     loadingScreen();
     animateOnIntersect();
     addGalleryToAnchor();
+
     addBgToCards();
     menuListeners();
     highlightOpen();
 
 });
+document.addEventListener("load", () => {
+})
