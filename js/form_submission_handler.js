@@ -72,10 +72,7 @@
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.setTimeout(() => {
-      alert("try again");
-      loading.style.display = "none";
-    }, );
+  
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var formElements = form.querySelector(".form-elements")
