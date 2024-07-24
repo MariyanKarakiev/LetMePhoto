@@ -144,7 +144,7 @@ function populateGallery(galleryName) {
     galleryContainer.hidden = false;
     galleryContainer.style.display = "grid";
 
-    if (screen.width < 767) {
+    if (screen.width < 1024) {
         galleryContainer.style.display = "flex";
     }
     //     galleryContainer.scrollIntoView({
