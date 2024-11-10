@@ -556,7 +556,7 @@ nav {
   font-family: 'Murs', sans-serif;
   color: #f0f0f0;
   background-color: #373b4600;
-  border:none;
+  border: none;
   text-transform: uppercase;
   text-shadow: 1px 2px 1px #353b41;
   transition: transform 0.3s ease;
@@ -673,7 +673,7 @@ nav {
 
 .gallery-container {
   width: 100%;
-  display: grid ;
+  display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
   grid-auto-rows: 348px;
@@ -856,6 +856,11 @@ footer img {
   color: #545a6b;
 }
 
+.text-link:hover {
+  text-decoration: none;
+  color: #abdde5;
+}
+
 /*! CSS Used fontfaces */
 
 
@@ -871,9 +876,10 @@ footer img {
 
 @media only screen and (max-width: 1024px) {
   .gallery-container {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
+
   .gallery-container .card {
     min-height: 33vh;
     grid-column: 1;
